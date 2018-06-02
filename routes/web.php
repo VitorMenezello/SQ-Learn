@@ -16,8 +16,8 @@ $router->get('/', function () use ($router) {
     //TODO: index
 });
 
-$router->get('/tutorial', function (){
-    return view('index', ['name' => 'Amor']);
+$router->get('/', function (){
+    return view('index');
 });
 
 $router->get('/praticando-sql', function (){
