@@ -20,6 +20,10 @@ $router->get('/', function (){
     return view('index');
 });
 
+$router->get('/tutorial', function (){
+    return view('tutorial');
+});
+
 $router->get('/praticando-sql', function (){
     return 'Praticando';
 });
