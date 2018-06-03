@@ -5,60 +5,52 @@
 @section('scripts')
     <script>
         app.controller('TutorialController', function ($scope) {
+            $scope.licoes = [
+                {
+                    titulo: "SELECT",
+                    conteudo: "SQL é uma linguagem de manipulação de dados em bancos de dados relacionais. Aqui você irá aprender a fazer buscas em bancos usando o comando SELECT. Ao lado você pode ver o esquema do banco sobre cartoons que iremos usar e há um console para que você possa praticar o que aprendeu em tempo real.",
+                    licaoSeguinte: true,
+                    licaoAnterior: false,
+                    resposta: "SELECT * FROM cartoon;"
+                }
+            ];
 
+            $scope.licao = $scope.licoes[0];
         });
     </script>
 @endsection
 
 @section('stylesheets')
-    <style>
-        body {
-            margin: 0;
-            height: 100%;
-            min-height: 100%;
-            background-color: #C83232;
-        }
-
-        .header-container {
-            color: #FEFEFE;
-            text-align: center;
-            height: 150px;
-        }
-
-        .content-container {
-            background-color: #C83232;
-        }
-
-        .content {
-            padding: 20px 100px;
-        }
-
-        .center {
-            text-align: center;
-        }
-
-    </style>
 @endsection
 
 @section('body')
 
     <div ng-controller="TutorialController">
 
-        <div layout="row" layout-align="center end" class="header-container">
-
-            <div flex>
-                <h1>
-                    Tutorial SQL
-                </h1>
-            </div>
-
-        </div>
-
         <md-content class="content-container">
 
-            <div class="content" layout="row">
+            <div class="content">
 
-                <p>Lorem Ipsum</p>
+                <div layout="row">
+
+                    <div flex="50" layout="column">
+
+                        @component('components.lesson')
+                        @endcomponent
+
+                        @component('components.console')
+                        @endcomponent
+
+                    </div>
+
+                    <div flex="50">
+
+                        @component('components.schema')
+                        @endcomponent
+
+                    </div>
+
+                </div>
 
             </div>
 
