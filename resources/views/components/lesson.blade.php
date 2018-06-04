@@ -9,17 +9,17 @@
     <div class="lesson-content">
 
         <div layout="row" layout-align="center center">
-            <md-button class="md-raised" ng-disabled="!licao.licaoAnterior" ng-click="previousLesson()"> < </md-button>
-            <h3>Lição @{ numeroLicao }@</h3>
-            <md-button class="md-raised" ng-disabled="!licao.licaoSeguinte" ng-click="nextLesson()"> > </md-button>
+            <md-button class="md-raised" ng-disabled="!lesson.previous" ng-click="previousLesson()"> < </md-button>
+            <h3>Lição @{ currentLesson }@</h3>
+            <md-button class="md-raised" ng-disabled="!lesson.next" ng-click="nextLesson()"> > </md-button>
         </div>
 
         <div layout="row" layout-align="center center">
-            <h3>@{ licao.titulo }@</h3>
+            <h3>@{ lesson.title }@</h3>
         </div>
 
         <div layout="row" class="lesson-content-text justify">
-            @{ licao.conteudo }@
+            @{ lesson.content }@
         </div>
 
     </div>

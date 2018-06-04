@@ -129,6 +129,64 @@
             text-align: justify;
         }
 
+        /* Schema */
+
+        .schema-table ul {
+            list-style-type: none;
+        }
+
+        .schema-underline {
+            text-decoration: underline;
+        }
+
+        .schema-table .title-1 {
+            background-color: #FF88BA;
+        }
+
+        .schema-table .content-1 {
+            background-color: #FF9EC8;
+        }
+
+        .schema-table .title-2 {
+            background-color: #66AAAA;
+        }
+
+        .schema-table .content-2 {
+            background-color: #8CBFBF;
+        }
+
+        .schema-table .title-3 {
+            background-color: #FFED77;
+        }
+
+        .schema-table .content-3 {
+            background-color: #F7F39E;
+        }
+
+        .schema-table .title-4 {
+            background-color: #65AA65;
+        }
+
+        .schema-table .content-4 {
+            background-color: #8BBC8B;
+        }
+
+        .schema-table .title-5 {
+            background-color: #FFAB55;
+        }
+
+        .schema-table .content-5 {
+            background-color: #FFBE7B;
+        }
+
+        .schema-table .title-6 {
+            background-color: #CC89EF;
+        }
+
+        .schema-table .content-6 {
+            background-color: #D5A5F8;
+        }
+
     </style>
 
     @yield('stylesheets')
