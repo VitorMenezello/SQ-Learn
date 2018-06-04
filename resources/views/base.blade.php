@@ -20,8 +20,10 @@
     @component('components.stylesheets')
     @endcomponent
 
+
     <style>
-        /* Everythin */
+    <style>
+        /* Everything */
         body {
             margin: 0;
             height: 100%;
