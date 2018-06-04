@@ -1,17 +1,16 @@
-<div layout="row" layout-align="center end" class="header-container">
+<div layout="row" layout-align="center center" class="header-container">
 
-    <div flex="20" class="logo">
+    <div flex="20" class="logo center" layout="column">
         <!-- img -->
-        <h1>
-            SQ-Learn
-        </h1>
+        <md-button class="logo-button" href="/">SQ-Learn</md-button>
+
     </div>
 
-    <div flex="80" class="menu" layout="column">
+    <div flex="80" class="menu right" layout="column">
         <ul>
-            <li flex>Tutorial</li>
-            <li flex>Praticando</li>
-            <li flex>SQ-Look</li>
+            <li flex><md-button href="/tutorial">Tutorial</md-button></li>
+            <li flex><md-button href="/praticando">Praticando</md-button></li>
+            <li flex><md-button href="/sq-look">SQ-Look</md-button></li>
         </ul>
     </div>
 

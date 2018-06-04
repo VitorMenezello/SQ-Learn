@@ -21,6 +21,7 @@
     @endcomponent
 
     <style>
+        /* Everythin */
         body {
             margin: 0;
             height: 100%;
@@ -31,10 +32,21 @@
             background-color: #C83232;
             color: #FEFEFE;
             height: 80px;
+            padding-left: 100px;
+            padding-right: 100px;
         }
 
         .logo {
-            text-align: center;
+            height: inherit;
+        }
+
+        .logo-button {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            padding-top: 12px;
+            height: 60px;
+            font-size: 30px;
         }
 
         .menu ul {
@@ -67,10 +79,52 @@
             text-align: center;
         }
 
+        .right {
+            text-align: right;
+        }
+
         .learn ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
+        }
+
+        /* Console */
+
+        .console-label {
+            background-color: #9B9B9B;
+        }
+
+        .console textarea {
+            background-color: #464646;
+            color: #FEFEFE;
+            height: 100px;
+            max-height: 100px;
+        }
+
+        md-input-container {
+            margin: 0;
+            padding: 0;
+        }
+
+        md-input-container:not(.md-input-invalid).md-input-focused .md-input{
+            border-color: #464646;
+        }
+
+        /* Lesson */
+
+        .lesson {
+            background-color: #C83232;
+            color: #FEFEFE;
+        }
+
+        .lesson-content {
+            background-color: #C85050;
+        }
+
+        .lesson-content-text {
+            padding: 20px;
+            text-align: justify;
         }
 
     </style>

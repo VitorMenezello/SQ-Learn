@@ -24,7 +24,7 @@ $router->get('/tutorial', function (){
     return view('tutorial');
 });
 
-$router->get('/praticando-sql', function (){
+$router->get('/praticando', function (){
     return 'Praticando';
 });
 
