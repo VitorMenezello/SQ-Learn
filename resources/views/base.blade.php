@@ -7,21 +7,13 @@
     @endcomponent
 
     <!-- TODO: fix assets -->
-    <script>
-        let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngAnimate', 'ngMdIcons'])
-
-            .config(function ($interpolateProvider) {
-                $interpolateProvider.startSymbol('@{').endSymbol('}@');
-            })
-    </script>
+    <script src="{{ url('/angularjs/app.js') }}"></script>
 
     @yield('scripts')
 
     @component('components.stylesheets')
     @endcomponent
 
-
-    <style>
     <style>
         /* Everything */
         body {
