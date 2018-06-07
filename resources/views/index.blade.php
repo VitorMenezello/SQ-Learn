@@ -3,11 +3,7 @@
 @section('title', 'Index')
 
 @section('scripts')
-    <script>
-        app.controller('IndexController', function ($scope) {
-
-        });
-    </script>
+    <script src="{{ url('/angularjs/index.js') }}"></script>
 @endsection
 
 @section('stylesheets')
