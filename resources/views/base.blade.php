@@ -7,7 +7,13 @@
     @endcomponent
 
     <!-- TODO: fix assets -->
-    <script src="{{ url('/angularjs/app.js') }}"></script>
+    <script>
+        let app = angular.module('App', ['ngMaterial'])
+
+            .config(function ($interpolateProvider) {
+                $interpolateProvider.startSymbol('@{').endSymbol('}@');
+            })
+    </script>
 
     @yield('scripts')
 

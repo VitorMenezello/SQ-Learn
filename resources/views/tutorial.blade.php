@@ -233,10 +233,6 @@
 
             </div>
 
-            <div class="footer">
-
-            </div>
-
         </md-content>
 
     </div>
