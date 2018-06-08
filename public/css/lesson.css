@@ -1,0 +1,13 @@
+.lesson {
+    background-color: #C83232;
+    color: #FEFEFE;
+}
+
+.lesson-content {
+    background-color: #C85050;
+}
+
+.lesson-content-text {
+    padding: 20px;
+    text-align: justify;
+}

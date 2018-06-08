@@ -9,9 +9,17 @@
     <div class="lesson-content">
 
         <div layout="row" layout-align="center center">
-            <md-button class="md-raised" ng-disabled="!lesson.previous" ng-click="previousLesson()"> < </md-button>
-            <h3>Lição @{ currentLesson }@</h3>
-            <md-button class="md-raised" ng-disabled="!lesson.next" ng-click="nextLesson()"> > </md-button>
+
+            <md-button class="md-raised" ng-disabled="!lesson.previous" ng-click="previousLesson()">
+                <md-icon md-svg-icon="chevron-left"></md-icon>
+            </md-button>
+
+            <h3>Lição @{ currentLesson + 1 }@</h3>
+
+            <md-button class="md-raised" ng-disabled="!lesson.next" ng-click="nextLesson()">
+                <md-icon md-svg-icon="chevron-right"></md-icon>
+            </md-button>
+
         </div>
 
         <div layout="row" layout-align="center center">

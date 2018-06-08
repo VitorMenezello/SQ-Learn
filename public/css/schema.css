@@ -1,0 +1,40 @@
+.schema {
+    background-color: #FFFFFF;
+}
+
+.schema-table ul {
+    list-style-type: none;
+}
+
+.schema-table li {
+    opacity: 0.75;
+}
+
+.schema-underline {
+    text-decoration: underline;
+}
+
+.schema-table .color-1 {
+    background-color: #FF88BB;
+}
+
+
+.schema-table .color-2 {
+    background-color: #66AAAA;
+}
+
+.schema-table .color-3 {
+    background-color: #FFEE77;
+}
+
+.schema-table .color-4 {
+    background-color: #66AA66;
+}
+
+.schema-table .color-5 {
+    background-color: #FFAA55;
+}
+
+.schema-table .color-6 {
+    background-color: #CC88FF;
+}

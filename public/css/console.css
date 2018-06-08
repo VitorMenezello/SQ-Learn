@@ -1,0 +1,19 @@
+.console-label {
+    background-color: #9B9B9B;
+}
+
+.console textarea {
+    background-color: #464646;
+    color: #FEFEFE;
+    height: 100px;
+    max-height: 100px;
+}
+
+md-input-container {
+    margin: 0;
+    padding: 0;
+}
+
+md-input-container:not(.md-input-invalid).md-input-focused .md-input{
+    border-color: #464646;
+}

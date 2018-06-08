@@ -3,11 +3,13 @@
 @section('title', 'Tutorial')
 
 @section('scripts')
-    <script src="{{ url('/angularjs/tutorial.js') }}">
-    </script>
+    <script src="{{ url('/angularjs/tutorial.js') }}"></script>
 @endsection
 
 @section('stylesheets')
+    <link rel="stylesheet" href="{{ url('/css/console.css') }}">
+    <link rel="stylesheet" href="{{ url('/css/lesson.css') }}">
+    <link rel="stylesheet" href="{{ url('/css/schema.css') }}">
 @endsection
 
 @section('body')
