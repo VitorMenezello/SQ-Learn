@@ -3,6 +3,9 @@
 @section('title', 'Tutorial')
 
 @section('scripts')
+    <script src="{{ url('/angularjs/constants/lessons.js') }}"></script>
+    <script src="{{ url('/angularjs/constants/schemas.js') }}"></script>
+    <script src="{{ url('/angularjs/constants/datatables.js') }}"></script>
     <script src="{{ url('/angularjs/tutorial.js') }}"></script>
 @endsection
 
@@ -16,30 +19,29 @@
 
     <div ng-controller="TutorialController">
 
-        <md-content class="content-container">
+        <md-content class="content-container" layout="row">
 
-            <div class="content">
+            <div flex="35">
 
-                <div layout="row">
+                @component('components.lesson')
+                @endcomponent
 
-                    <div flex="50">
+            </div>
 
-                        @component('components.lesson')
-                        @endcomponent
+            <div flex="35" layout="column">
 
-                    </div>
+                @component('components.schema')
+                @endcomponent
 
-                    <div flex="50" layout="column">
+                @component('components.console')
+                @endcomponent
 
-                        @component('components.schema')
-                        @endcomponent
+            </div>
 
-                        @component('components.console')
-                        @endcomponent
+            <div flex="30">
 
-                    </div>
-
-                </div>
+                @component('components.datatable')
+                @endcomponent
 
             </div>
 

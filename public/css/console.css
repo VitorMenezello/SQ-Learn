@@ -14,6 +14,6 @@ md-input-container {
     padding: 0;
 }
 
-md-input-container:not(.md-input-invalid).md-input-focused .md-input{
+#console md-input-container:not(.md-input-invalid).md-input-focused .md-input{
     border-color: #464646;
 }

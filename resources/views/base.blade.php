@@ -16,13 +16,6 @@
     <link rel="stylesheet" href="{{ url('/css/base.css') }}">
 
     <style>
-        .content-container {
-        }
-
-        .content {
-            padding: 20px 100px;
-        }
-
         .card {
             margin: 50px;
         }

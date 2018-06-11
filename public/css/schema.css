@@ -2,39 +2,116 @@
     background-color: #FFFFFF;
 }
 
-.schema-table ul {
-    list-style-type: none;
+.schema-table {
+    padding: 10px;
 }
 
-.schema-table li {
-    opacity: 0.75;
+.schema-table ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
+
+.schema-table li div {
+    display: inline-block;
+}
+
+.schema h3 {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.schema li {
+    font-size: 14px;
+}
+
+/* Primary Key Underline*/
 
 .schema-underline {
     text-decoration: underline;
 }
 
-.schema-table .color-1 {
+.color-1 .schema-underline {
+    text-decoration-color: #FF88BB;
+}
+
+.color-2 .schema-underline {
+    text-decoration-color: #63BAB9;
+}
+
+.color-3 .schema-underline {
+    text-decoration-color: #F9B450;
+}
+
+.color-4 .schema-underline {
+    text-decoration-color: #74BC62;
+}
+
+.color-5 .schema-underline {
+    text-decoration-color: #F9835A;
+}
+
+.color-6 .schema-underline {
+    text-decoration-color: #CC88FF;
+}
+
+/* Title and Icon Color */
+
+.color-1 h3, .color-1 md-icon {
+    color: #FF88BB;
+}
+
+.color-2 h3, .color-2 md-icon {
+    color: #63BAB9;
+}
+
+.color-3 h3, .color-3 md-icon {
+    color: #F9B450;
+}
+
+.color-4 h3, .color-4 md-icon {
+    color: #74BC62;
+}
+
+.color-5 h3, .color-5 md-icon {
+    color: #F9835A;
+}
+
+.color-6 h3, .color-6 md-icon {
+    color: #CC88FF;
+}
+
+/* Referred Attribute */
+
+.referred-attribute {
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 2px 4px;
+    border-radius: 6px;
+}
+
+.color-1 .referred-attribute {
     background-color: #FF88BB;
 }
 
-
-.schema-table .color-2 {
-    background-color: #66AAAA;
+.color-2 .referred-attribute {
+    background-color: #63BAB9;
 }
 
-.schema-table .color-3 {
-    background-color: #FFEE77;
+.color-3 .referred-attribute {
+    background-color: #F9B450;
 }
 
-.schema-table .color-4 {
-    background-color: #66AA66;
+.color-4 .referred-attribute {
+    background-color: #74BC62;
 }
 
-.schema-table .color-5 {
-    background-color: #FFAA55;
+.color-5 .referred-attribute {
+    background-color: #F9835A;
 }
 
-.schema-table .color-6 {
+.color-6 .referred-attribute {
     background-color: #CC88FF;
 }

@@ -15,6 +15,7 @@
             <div ng-class="colors[$index]">
 
                 <h3>@{ table.title }@</h3>
+                <md-tooltip> @{ table.title }@ </md-tooltip>
 
             </div>
 
@@ -22,15 +23,20 @@
 
                 <li ng-repeat="attribute in table.attributes">
 
-                    <span class="ng-class: colors[table.id]">
-                        <span ng-class="{'schema-underline': attribute.primaryKey}">
+                    <div ng-class="colors[table.id]">
+                        <md-icon md-svg-icon="chevron-right"></md-icon>
+
+                        <span ng-class="{'schema-underline': attribute.pkey}">
                             @{ attribute.name }@
                         </span>
-                    </span>
+                    </div>
 
-                    <span ng-if="attribute.ref" class="ng-class: colors[attribute.referredTable]">
-                        @{ attribute.referredAttribute }@
-                    </span>
+                    <div ng-if="attribute.ref" ng-class="colors[attribute.refTableId]">
+                        <span class="referred-attribute">
+                            @{ attribute.refAttribute }@
+                            <md-tooltip> @{ schema.tables[attribute.refTableId].title }@ </md-tooltip>
+                        </span>
+                    </div>
 
                 </li>
 
