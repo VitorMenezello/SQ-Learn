@@ -25,10 +25,6 @@
             background-color: #EEEEEE;
         }
 
-        .center {
-            text-align: center;
-        }
-
         .right {
             text-align: right;
         }

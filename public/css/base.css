@@ -8,8 +8,8 @@ body {
     background-color: #C83232;
     color: #FEFEFE;
     height: 80px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .logo {
@@ -17,12 +17,18 @@ body {
 }
 
 .logo-button {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    padding-top: 12px;
-    height: 60px;
     font-size: 30px;
+}
+
+.logo-button img {
+    width: 40px;
+    height: auto;
+    margin: 10px;
+}
+
+md-menu-content a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.54);
 }
 
 .menu ul {
@@ -37,4 +43,9 @@ body {
 
 .content-container {
     padding: 0;
+    height: 600px;
+}
+
+.current-page {
+    font-weight: bold;
 }

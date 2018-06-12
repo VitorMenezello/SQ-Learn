@@ -1,12 +1,12 @@
-<div class="lesson">
+<div class="lesson" layout="column">
 
-    <div layout="row" class="lesson-header" layout-align="center start">
+    <div flex="10" layout="row" class="lesson-header" layout-align="center start">
 
         <h3>Tutorial SQL</h3>
 
     </div>
 
-    <div class="lesson-content">
+    <div flex="90" class="lesson-content">
 
         <div layout="row" layout-align="center center">
 

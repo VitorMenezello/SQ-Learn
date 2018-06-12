@@ -1,17 +1,59 @@
-<div layout="row" layout-align="center center" class="header-container">
+<div layout="row" layout-align="space-between center" class="header-container">
 
-    <div flex="20" class="logo center" layout="column">
-        <!-- img -->
-        <md-button class="logo-button" href="/">SQ-Learn</md-button>
+    <md-menu ng-controller="MenuController">
 
-    </div>
+        <md-button aria-label="SQ-Look menu" class="md-icon-button" ng-click="$mdMenu.open()">
+            <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
 
-    <div flex="80" class="menu right" layout="column">
-        <ul>
-            <li flex><md-button href="/tutorial">Tutorial</md-button></li>
-            <li flex><md-button href="/praticando">Praticando</md-button></li>
-            <li flex><md-button href="/sq-look">SQ-Look</md-button></li>
-        </ul>
+        <md-menu-content width="3">
+
+            <md-menu-item>
+                <md-button>
+                    <a href="/tutorial">
+                        <md-icon md-svg-icon="school"></md-icon>
+                        <span ng-class="{'current-page': currentPage === 'tutorial'}">
+                            Tutorial
+                        </span>
+                    </a>
+                </md-button>
+            </md-menu-item>
+
+            <md-menu-item>
+                <md-button>
+                    <a href="/praticando">
+                        <md-icon md-svg-icon="database"></md-icon>
+                        <span ng-class="{'current-page': currentPage === 'praticando'}">
+                            Praticando
+                        </span>
+                    </a>
+                </md-button>
+            </md-menu-item>
+
+            <md-menu-item>
+                <md-button>
+                    <a href="/sq-look">
+                        <md-icon md-svg-icon="magnify"></md-icon>
+                        <span ng-class="{'current-page': currentPage === 'sq-look'}">
+                            SQ-Look
+                        </span>
+                    </a>
+                </md-button>
+            </md-menu-item>
+
+        </md-menu-content>
+
+    </md-menu>
+
+    <div flex="20" class="logo" layout="column" layout-align="center center">
+
+        <md-button class="logo-button" href="/" layout="row" layout-align="center center">
+            <img src="{{ url('/images/sq-learn-logo.png') }}" href="/">
+            <span class="logo-text">
+                SQ-Learn
+            </span>
+        </md-button>
+
     </div>
 
 </div>

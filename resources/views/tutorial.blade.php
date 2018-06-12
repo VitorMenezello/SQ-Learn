@@ -10,6 +10,7 @@
 @endsection
 
 @section('stylesheets')
+    <link rel="stylesheet" href="{{ url('/css/tutorial.css') }}">
     <link rel="stylesheet" href="{{ url('/css/console.css') }}">
     <link rel="stylesheet" href="{{ url('/css/lesson.css') }}">
     <link rel="stylesheet" href="{{ url('/css/schema.css') }}">
@@ -21,27 +22,43 @@
 
         <md-content class="content-container" layout="row">
 
-            <div flex="35">
+            <div flex="40">
 
                 @component('components.lesson')
                 @endcomponent
 
             </div>
 
-            <div flex="35" layout="column">
+            <div flex="60" layout="column">
 
-                @component('components.schema')
-                @endcomponent
+                <md-tabs md-stretch-tabs="always" flex="75">
 
-                @component('components.console')
-                @endcomponent
+                    <md-tab>
+                        <md-tab-label>
+                            Esquema Relacional
+                        </md-tab-label>
+                        <md-tab-body>
+                            @component('components.schema')
+                            @endcomponent
+                        </md-tab-body>
+                    </md-tab>
 
-            </div>
+                    <md-tab>
+                        <md-tab-label>
+                            Resultados
+                        </md-tab-label>
+                        <md-tab-body>
+                            @component('components.datatable')
+                            @endcomponent
+                        </md-tab-body>
+                    </md-tab>
 
-            <div flex="30">
+                </md-tabs>
 
-                @component('components.datatable')
-                @endcomponent
+                <div flex="25">
+                    @component('components.console')
+                    @endcomponent
+                </div>
 
             </div>
 

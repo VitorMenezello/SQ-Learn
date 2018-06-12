@@ -5,8 +5,6 @@
 .console textarea {
     background-color: #464646;
     color: #FEFEFE;
-    height: 100px;
-    max-height: 100px;
 }
 
 md-input-container {
