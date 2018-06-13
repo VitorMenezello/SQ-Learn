@@ -10,6 +10,10 @@
 
     <div layout="row" layout-align="center center">
 
+        <span ng-if="!result" class="no-results">
+            Nenhuma query computada.
+        </span>
+
         <table>
 
             <tr>

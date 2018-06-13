@@ -1,49 +1,53 @@
 <div layout="row" layout-align="space-between center" class="header-container">
 
-    <md-menu ng-controller="MenuController">
+    <div ng-controller="MenuController">
 
-        <md-button aria-label="SQ-Look menu" class="md-icon-button" ng-click="$mdMenu.open()">
-            <md-icon md-svg-icon="menu"></md-icon>
-        </md-button>
+        <md-menu>
 
-        <md-menu-content width="3">
+            <md-button aria-label="SQ-Look menu" class="md-icon-button menu-button" ng-mouseenter="$mdMenu.open()">
+                <md-icon md-svg-icon="menu"></md-icon>
+            </md-button>
 
-            <md-menu-item>
-                <md-button>
-                    <a href="/tutorial">
-                        <md-icon md-svg-icon="school"></md-icon>
-                        <span ng-class="{'current-page': currentPage === 'tutorial'}">
-                            Tutorial
-                        </span>
-                    </a>
-                </md-button>
-            </md-menu-item>
+            <md-menu-content width="3" ng-mouseleave="$mdMenu.close()">
 
-            <md-menu-item>
-                <md-button>
-                    <a href="/praticando">
-                        <md-icon md-svg-icon="database"></md-icon>
-                        <span ng-class="{'current-page': currentPage === 'praticando'}">
-                            Praticando
-                        </span>
-                    </a>
-                </md-button>
-            </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        <a href="/tutorial" ng-class="{'current-page': currentPage === 'tutorial'}">
+                            <md-icon md-svg-icon="school"></md-icon>
+                            <span>
+                                Tutorial
+                            </span>
+                        </a>
+                    </md-button>
+                </md-menu-item>
 
-            <md-menu-item>
-                <md-button>
-                    <a href="/sq-look">
-                        <md-icon md-svg-icon="magnify"></md-icon>
-                        <span ng-class="{'current-page': currentPage === 'sq-look'}">
-                            SQ-Look
-                        </span>
-                    </a>
-                </md-button>
-            </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        <a href="/praticando" ng-class="{'current-page': currentPage === 'praticando'}">
+                            <md-icon md-svg-icon="database"></md-icon>
+                            <span>
+                                Praticando
+                            </span>
+                        </a>
+                    </md-button>
+                </md-menu-item>
 
-        </md-menu-content>
+                <md-menu-item>
+                    <md-button>
+                        <a href="/sq-look" ng-class="{'current-page': currentPage === 'sq-look'}">
+                            <md-icon md-svg-icon="magnify"></md-icon>
+                            <span>
+                                SQ-Look
+                            </span>
+                        </a>
+                    </md-button>
+                </md-menu-item>
 
-    </md-menu>
+            </md-menu-content>
+
+        </md-menu>
+
+    </div>
 
     <div flex="20" class="logo" layout="column" layout-align="center center">
 

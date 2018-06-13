@@ -5,7 +5,6 @@
 @section('scripts')
     <script src="{{ url('/angularjs/constants/lessons.js') }}"></script>
     <script src="{{ url('/angularjs/constants/schemas.js') }}"></script>
-    <script src="{{ url('/angularjs/constants/datatables.js') }}"></script>
     <script src="{{ url('/angularjs/tutorial.js') }}"></script>
 @endsection
 
@@ -31,26 +30,32 @@
 
             <div flex="60" layout="column">
 
-                <md-tabs md-stretch-tabs="always" flex="75">
+                <md-tabs md-border-bottom md-stretch-tabs="always" md-no-pagination="true" flex="75">
 
                     <md-tab>
+
                         <md-tab-label>
                             Esquema Relacional
                         </md-tab-label>
+
                         <md-tab-body>
                             @component('components.schema')
                             @endcomponent
                         </md-tab-body>
+
                     </md-tab>
 
                     <md-tab>
+
                         <md-tab-label>
                             Resultados
                         </md-tab-label>
+
                         <md-tab-body>
                             @component('components.datatable')
                             @endcomponent
                         </md-tab-body>
+
                     </md-tab>
 
                 </md-tabs>

@@ -27,6 +27,4 @@ app.controller('TutorialController', function ($scope) {
         "color-5",
         "color-6"
     ];
-
-    $scope.result = MOVIE_GENRE;
 });

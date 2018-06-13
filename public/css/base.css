@@ -26,6 +26,10 @@ body {
     margin: 10px;
 }
 
+.menu-button md-icon {
+    color: #FEFEFE;
+}
+
 md-menu-content a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.54);
@@ -43,9 +47,14 @@ md-menu-content a {
 
 .content-container {
     padding: 0;
-    height: 600px;
+    height: 700px;
 }
 
-.current-page {
+.current-page span {
     font-weight: bold;
+    color: #C83232;
+}
+
+.current-page md-icon {
+    color: #C83232;
 }
