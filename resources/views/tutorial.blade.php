@@ -5,7 +5,7 @@
 @section('scripts')
     <script src="{{ url('/angularjs/constants/lessons.js') }}"></script>
     <script src="{{ url('/angularjs/constants/schemas.js') }}"></script>
-    <script src="{{ url('/angularjs/tutorial.js') }}"></script>
+    <script src="{{ url('/angularjs/controllers/tutorial.js') }}"></script>
 @endsection
 
 @section('stylesheets')
@@ -30,7 +30,7 @@
 
             <div flex="60" layout="column">
 
-                <md-tabs md-border-bottom md-stretch-tabs="always" md-no-pagination="true" flex="75">
+                <md-tabs md-border-bottom md-stretch-tabs="always" md-no-pagination="true" flex="80">
 
                     <md-tab>
 
@@ -60,7 +60,7 @@
 
                 </md-tabs>
 
-                <div flex="25">
+                <div flex="20">
                     @component('components.console')
                     @endcomponent
                 </div>

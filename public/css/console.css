@@ -1,17 +1,35 @@
+.console {
+    height: 100%;
+    overflow: hidden;
+}
+
 .console-label {
     background-color: #9B9B9B;
 }
 
 .console textarea {
-    background-color: #464646;
     color: #FEFEFE;
 }
 
-md-input-container {
+.console textarea .md-input {
+    overflow: auto;
+}
+
+#console md-input-container {
     margin: 0;
     padding: 0;
+    background-color: #464646;
+    border: none;
+}
+
+#console md-input-container .md-input{
+    border: none;
 }
 
 #console md-input-container:not(.md-input-invalid).md-input-focused .md-input{
-    border-color: #464646;
+    border: none;
+}
+
+.md-errors-spacer {
+    display: none;
 }

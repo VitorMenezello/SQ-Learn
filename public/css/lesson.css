@@ -1,11 +1,11 @@
 .lesson {
-    background-color: #C83232;
+    background-color: #C85050;
     color: #FEFEFE;
+    height: 100%;
+    overflow: auto;
 }
 
 .lesson-content {
-    background-color: #C85050;
-    height: 100%;
 }
 
 .lesson-content-text p {

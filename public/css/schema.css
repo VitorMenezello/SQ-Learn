@@ -1,5 +1,14 @@
 .schema {
     background-color: #FFFFFF;
+    height: 100%;
+}
+
+.schema-select {
+    overflow: auto;
+}
+
+.schema-select md-select {
+    max-height: 60px;
 }
 
 .schema-table {

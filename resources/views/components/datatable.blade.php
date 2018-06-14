@@ -1,6 +1,6 @@
-<div class="datatable">
+<div id="datatable" class="datatable" layout="column">
 
-    <div layout="row" class="schema-title" layout-align="center start">
+    <div flex="15" class="schema-title" layout="row" layout-align="center center">
 
         <h3>
             Resultados
@@ -8,7 +8,7 @@
 
     </div>
 
-    <div layout="row" layout-align="center center">
+    <div flex layout="row" layout-align="center center">
 
         <span ng-if="!result" class="no-results">
             Nenhuma query computada.

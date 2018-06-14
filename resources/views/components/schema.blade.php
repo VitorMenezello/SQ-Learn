@@ -1,14 +1,19 @@
-<div class="schema">
+<div id="schema" class="schema" layout="column">
 
-    <div layout="row" class="schema-title" layout-align="center start">
+    <div flex="15" class="schema-title" layout="row" layout-align="center start">
 
         <h3>
-            Esquema do banco de dados @{ schema.title }@
+            <span ng-if="schema">
+                Esquema do banco de dados @{ schema.title }@
+            </span>
+            <span ng-if="!schema">
+                Selecione um banco de dados
+            </span>
         </h3>
 
     </div>
 
-    <div layout="row" layout-wrap>
+    <div flex="85" layout="row" layout-wrap>
 
         <div ng-repeat="table in schema.tables track by table.id" flex="33" class="schema-table">
 

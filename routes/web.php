@@ -25,9 +25,9 @@ $router->get('/tutorial', function (){
 });
 
 $router->get('/praticando', function (){
-    return 'Praticando';
+    return view('praticando');
 });
 
 $router->get('/sq-look', function (){
-    return 'SQ-Look';
+    return view('sq-look');
 });

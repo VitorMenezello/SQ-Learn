@@ -1,3 +1,3 @@
-<div class="footer-container center">
-    <p>Desenvolvido por Lívia Almeida e Vitor Menezello sob orientação da professora Mirella M. Moro</p>
+<div id="footer" class="footer-container" layout="row" layout-align="center center">
+    <p>Desenvolvido por Vitor Menezello sob orientação da professora Mirella M. Moro</p>
 </div>
