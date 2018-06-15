@@ -20,8 +20,15 @@
 
             <div flex="80" layout="row">
 
-                @component('components.schema-select')
-                @endcomponent
+                <div id="schema-select" class="schema-select" flex="60" layout="column">
+                    @component('components.schema-select')
+                    @endcomponent
+
+                    <div flex>
+                        @component('components.schema')
+                        @endcomponent
+                    </div>
+                </div>
 
                 <div flex="40">
                     @component('components.datatable')

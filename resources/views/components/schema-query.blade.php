@@ -1,4 +1,4 @@
-<div id="schema" class="schema" layout="column">
+<div id="schema-query" class="schema-query" layout="column">
 
     <div flex="15" class="schema-title" layout="row" layout-align="center start">
 
@@ -17,9 +17,16 @@
 
         <div ng-repeat="table in schema.tables track by table.id" flex="33" class="schema-table">
 
-            <div ng-class="colors[$index]">
+            <div ng-class="colors[table.id]">
 
-                <h3>@{ table.title }@</h3>
+                <md-checkbox aria-label="Select @{ schema.title }@"
+                             ng-checked="isChecked(table.id)"
+                             md-indeterminate="isIndeterminate(table.id)"
+                             ng-click="toggleAll(table.id)">
+                    <h3>
+                        @{ table.title }@
+                    </h3>
+                </md-checkbox>
 
             </div>
 
@@ -28,11 +35,12 @@
                 <li ng-repeat="attribute in table.attributes">
 
                     <div ng-class="colors[table.id]">
-                        <md-icon md-svg-icon="chevron-right"></md-icon>
-
-                        <span ng-class="{'schema-underline': attribute.pkey}">
-                            @{ attribute.name }@
-                        </span>
+                        <md-checkbox ng-checked="exists(attribute.name, selected[table.id])"
+                                     ng-click="toggle(attribute.name, selected[table.id])">
+                            <span ng-class="{'schema-underline': attribute.pkey}">
+                                @{ attribute.name }@
+                            </span>
+                        </md-checkbox>
                     </div>
 
                     <div ng-if="attribute.ref" ng-class="colors[attribute.refTableId]">

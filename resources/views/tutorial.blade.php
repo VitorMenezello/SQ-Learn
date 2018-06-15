@@ -30,7 +30,7 @@
 
             <div flex="60" layout="column">
 
-                <md-tabs md-border-bottom md-stretch-tabs="always" md-no-pagination="true" flex="80">
+                <md-tabs md-border-bottom md-stretch-tabs="always" md-no-pagination flex="80">
 
                     <md-tab>
 
