@@ -59,21 +59,44 @@ app.controller('SQLookController', function ($scope) {
         if ($scope.selected.length !== 0) {
 
             let selectedAttributes = "";
+            let fromTables = "";
             let asterisk = true;
             let showQuery = false;
+            let multipleTables = false;
+            let tableNum = 0;
+
+            for (let i = 0; i < $scope.selected.length; i++) {
+                if ($scope.selected[i].length > 0) {
+                    tableNum++;
+                }
+                if (tableNum > 1) {
+                    multipleTables = true;
+                }
+            }
 
             for (let i = 0; i < $scope.selected.length; i++) {
 
+                let tableName = $scope.schema.tables[i].title;
+
                 if ($scope.selected[i].length > 0){
+
+                    fromTables += (fromTables === "" ?
+                        tableName :
+                        ", " + tableName);
+
                     showQuery = true;
+
                     if ($scope.selected[i].length === $scope.schema.tables[i].attributes.length) {
                         asterisk = asterisk && true;
                     }
                     else {
                         asterisk = asterisk && false;
                     }
+
                     for (let j = 0; j < $scope.selected[i].length; j++){
-                        selectedAttributes += (selectedAttributes === "" ? $scope.selected[i][j] : ", " + $scope.selected[i][j]);
+                        selectedAttributes += (selectedAttributes === "" ?
+                            (multipleTables ? tableName + "." : "") + $scope.selected[i][j] :
+                            ", " + (multipleTables ? tableName + "." : "") +  $scope.selected[i][j]);
                     }
                 }
             }
@@ -83,13 +106,17 @@ app.controller('SQLookController', function ($scope) {
             }
 
             if (showQuery === true){
-                $scope.query = "SELECT " + selectedAttributes;
+                $scope.query = "SELECT " + selectedAttributes + " FROM " + fromTables;
             }
             else {
                 $scope.query = "";
             }
         }
     }, true);
+
+    $scope.filter = function(table) {
+
+    };
 
     /* CSS Classes */
 

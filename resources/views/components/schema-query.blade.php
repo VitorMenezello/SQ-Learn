@@ -28,6 +28,36 @@
                     </h3>
                 </md-checkbox>
 
+                <md-menu>
+
+                    <md-button aria-label="Options" class="md-icon-button options-button" ng-mouseenter="$mdMenu.open()">
+                        <md-icon md-svg-icon="dots-vertical" ng-click="filter(table.id)"></md-icon>
+                    </md-button>
+
+                    <md-menu-content width="2" ng-mouseleave="$mdMenu.close()">
+
+                        <md-menu-item ng-class="colors[table.id]">
+                            <md-button ng-click="filter(table.id)">
+                                <md-icon md-svg-icon="filter"></md-icon>
+                                <span>
+                                    Filtros
+                                </span>
+                            </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item ng-class="colors[table.id]">
+                            <md-button ng-click="label(table.id)">
+                                <md-icon md-svg-icon="label"></md-icon>
+                                <span>
+                                    Labels
+                                </span>
+                            </md-button>
+                        </md-menu-item>
+
+                    </md-menu-content>
+
+                </md-menu>
+
             </div>
 
             <ul>

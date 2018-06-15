@@ -20,7 +20,7 @@
 
             <div flex="80" layout="row">
 
-                <div id="schema-select" class="schema-select" flex="60" layout="column">
+                <div id="schema-select" class="schema-select" flex="70" layout="column">
                     @component('components.schema-select')
                     @endcomponent
 
@@ -30,7 +30,7 @@
                     </div>
                 </div>
 
-                <div flex="40">
+                <div flex="30">
                     @component('components.datatable')
                     @endcomponent
                 </div>
