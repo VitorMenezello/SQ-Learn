@@ -72,28 +72,54 @@
 
 /* Title and Icon Color */
 
-.color-1 h3, .color-1 md-icon {
+.color-1 h3, .color-1 md-icon, .color-1 md-checkbox.md-checked .md-ink-ripple {
     color: #FF88BB;
 }
 
-.color-2 h3, .color-2 md-icon {
+.color-2 h3, .color-2 md-icon, .color-2 md-checkbox.md-checked .md-ink-ripple {
     color: #63BAB9;
 }
 
-.color-3 h3, .color-3 md-icon {
+.color-3 h3, .color-3 md-icon, .color-3 md-checkbox.md-checked .md-ink-ripple {
     color: #F9B450;
 }
 
-.color-4 h3, .color-4 md-icon {
+.color-4 h3, .color-4 md-icon, .color-4 md-checkbox.md-checked .md-ink-ripple {
     color: #74BC62;
 }
 
-.color-5 h3, .color-5 md-icon {
+.color-5 h3, .color-5 md-icon, .color-5 md-checkbox.md-checked .md-ink-ripple {
     color: #F9835A;
 }
 
-.color-6 h3, .color-6 md-icon {
+.color-6 h3, .color-6 md-icon, .color-6 md-checkbox.md-checked .md-ink-ripple {
     color: #CC88FF;
+}
+
+/* Dialog Header and Checkbox */
+
+.color-1 .md-toolbar-tools, .color-1 md-checkbox.md-checked .md-ink-ripple .md-icon {
+    background-color: #FF88BB;
+}
+
+.color-2 .md-toolbar-tools, .color-2 md-checkbox.md-checked .md-ink-ripple .md-icon {
+    background-color: #63BAB9;
+}
+
+.color-3 .md-toolbar-tools, .color-3 md-checkbox.md-checked .md-ink-ripple .md-icon {
+    background-color: #F9B450;
+}
+
+.color-4 .md-toolbar-tools, .color-4 md-checkbox.md-checked .md-ink-ripple .md-icon {
+    background-color: #74BC62;
+}
+
+.color-5 .md-toolbar-tools, .color-5 md-checkbox.md-checked .md-ink-ripple .md-icon {
+    background-color: #F9835A;
+}
+
+.color-6 .md-toolbar-tools, .color-6 md-checkbox.md-checked .md-ink-ripple .md-icon {
+    background-color: #CC88FF;
 }
 
 /* Referred Attribute */

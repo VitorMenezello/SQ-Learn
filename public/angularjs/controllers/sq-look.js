@@ -1,4 +1,36 @@
-app.controller('SQLookController', function ($scope) {
+app.controller('SQLookController', function ($scope, $mdDialog) {
+    /* Dialog config */
+
+    $scope.closeIconUrl = closeIconUrl;
+
+    $scope.filtersDialogTemplate = filtersDialogTemplate;
+    let filtersConfig = {
+        templateUrl: $scope.filtersDialogTemplate,
+        controller: 'FiltersController',
+        scope: $scope,
+        preserveScope: true,
+        resolve: {}
+    };
+    $scope.showFiltersDialog = function(table) {
+        $scope.dialogTable = table;
+        $mdDialog.show(filtersConfig);
+    };
+
+    $scope.labelsDialogTemplate = labelsDialogTemplate;
+    let labelsConfig = {
+        templateUrl: $scope.labelsDialogTemplate,
+        controller: 'LabelsController',
+        scope: $scope,
+        preserveScope: true,
+        resolve: {}
+    };
+    $scope.showLabelsDialog = function(table) {
+        $scope.dialogTable = table;
+        $mdDialog.show(labelsConfig);
+    };
+
+    /* Schema Selector */
+
     $scope.schemas = SCHEMAS;
     $scope.schema = null;
     $scope.schemaIsSelected = false;
@@ -17,6 +49,7 @@ app.controller('SQLookController', function ($scope) {
     });
 
     /* Checkbox View */
+
     $scope.exists = function (item, list) {
         if ($scope.schemaIsSelected === true)
             return list.indexOf(item) > -1;
@@ -55,6 +88,8 @@ app.controller('SQLookController', function ($scope) {
         }
     };
 
+    /* Query Builder */
+
     $scope.$watch('selected', function () {
         if ($scope.selected.length !== 0) {
 
@@ -65,46 +100,63 @@ app.controller('SQLookController', function ($scope) {
             let multipleTables = false;
             let tableNum = 0;
 
+            // Find out if multiple tables are selected
             for (let i = 0; i < $scope.selected.length; i++) {
+
                 if ($scope.selected[i].length > 0) {
                     tableNum++;
                 }
                 if (tableNum > 1) {
                     multipleTables = true;
                 }
+
             }
 
+            // Collect selected attributes and table names
             for (let i = 0; i < $scope.selected.length; i++) {
 
                 let tableName = $scope.schema.tables[i].title;
 
+                // If there are any selected attributes in the table
                 if ($scope.selected[i].length > 0){
 
+                    showQuery = true;
+
+                    // Add table name to the query
                     fromTables += (fromTables === "" ?
                         tableName :
                         ", " + tableName);
 
-                    showQuery = true;
-
+                    // Check if all attributes from the table are selected
                     if ($scope.selected[i].length === $scope.schema.tables[i].attributes.length) {
-                        asterisk = asterisk && true;
-                    }
-                    else {
-                        asterisk = asterisk && false;
+
+                        // Attribute list becomes asterisk
+                        selectedAttributes += (selectedAttributes === "" ?
+                            (multipleTables ? tableName + "." : "") + "*" :
+                            ", " + (multipleTables ? tableName + "." : "") + "*");
                     }
 
-                    for (let j = 0; j < $scope.selected[i].length; j++){
-                        selectedAttributes += (selectedAttributes === "" ?
-                            (multipleTables ? tableName + "." : "") + $scope.selected[i][j] :
-                            ", " + (multipleTables ? tableName + "." : "") +  $scope.selected[i][j]);
+                    // Otherwise
+                    else {
+
+                        // All attributes selected are listed, separated by comma
+                        for (let j = 0; j < $scope.selected[i].length; j++){
+                            selectedAttributes += (selectedAttributes === "" ?
+                                (multipleTables ? tableName + "." : "") + $scope.selected[i][j] :
+                                ", " + (multipleTables ? tableName + "." : "") +  $scope.selected[i][j]);
+                        }
+
+                        asterisk = false;
                     }
                 }
             }
 
-            if (asterisk === true) {
+            // If all tables selected include all attributes, query becomes SELECT *
+            if (asterisk === true){
                 selectedAttributes = "*";
             }
 
+            // If query has any attributes selected, show query
             if (showQuery === true){
                 $scope.query = "SELECT " + selectedAttributes + " FROM " + fromTables;
             }
@@ -113,10 +165,6 @@ app.controller('SQLookController', function ($scope) {
             }
         }
     }, true);
-
-    $scope.filter = function(table) {
-
-    };
 
     /* CSS Classes */
 
@@ -128,4 +176,34 @@ app.controller('SQLookController', function ($scope) {
         "color-5",
         "color-6"
     ];
+})
+
+.controller('FiltersController', function ($scope, $mdDialog) {
+    $scope.adicionandoFiltro = false;
+
+    $scope.hide = function() {
+        $mdDialog.hide();
+    };
+
+    $scope.cancelar = function() {
+        $mdDialog.cancel();
+    };
+
+    $scope.novoFiltro = function () {
+        $scope.adicionandoFiltro = true;
+    };
+})
+
+.controller('LabelsController', function ($scope, $mdDialog) {
+    $scope.hide = function() {
+        $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+        $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+    };
 });

@@ -5,7 +5,7 @@
         <md-menu>
 
             <md-button aria-label="SQ-Look menu" class="md-icon-button menu-button" ng-mouseenter="$mdMenu.open()">
-                <md-icon md-svg-icon="menu"></md-icon>
+                <md-icon md-svg-src="{{ url('/icons/menu.svg') }}"></md-icon>
             </md-button>
 
             <md-menu-content width="3" ng-mouseleave="$mdMenu.close()">
@@ -13,7 +13,7 @@
                 <md-menu-item>
                     <md-button>
                         <a href="/tutorial" ng-class="{'current-page': currentPage === 'tutorial'}">
-                            <md-icon md-svg-icon="school"></md-icon>
+                            <md-icon md-svg-src="{{ url('/icons/school.svg') }}"></md-icon>
                             <span>
                                 Tutorial
                             </span>
@@ -24,7 +24,7 @@
                 <md-menu-item>
                     <md-button>
                         <a href="/praticando" ng-class="{'current-page': currentPage === 'praticando'}">
-                            <md-icon md-svg-icon="database"></md-icon>
+                            <md-icon md-svg-src="{{ url('/icons/database.svg') }}"></md-icon>
                             <span>
                                 Praticando
                             </span>
@@ -35,7 +35,7 @@
                 <md-menu-item>
                     <md-button>
                         <a href="/sq-look" ng-class="{'current-page': currentPage === 'sq-look'}">
-                            <md-icon md-svg-icon="magnify"></md-icon>
+                            <md-icon md-svg-src="{{ url('/icons/database-search.svg') }}"></md-icon>
                             <span>
                                 SQ-Look
                             </span>

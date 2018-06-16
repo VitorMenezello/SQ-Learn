@@ -1,0 +1,29 @@
+<md-dialog aria-label="Labels" ng-cloak>
+
+    <md-toolbar ng-class="colors[dialogTable.id]">
+        <div class="md-toolbar-tools">
+            <h2>Labels da tabela @{ dialogTable.title }@</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-src="@{ closeIconUrl }@" aria-label="Fechar"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <h2>Oi xuxu</h2>
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="answer('not useful')">
+            Besta
+        </md-button>
+        <md-button ng-click="answer('useful')">
+            Muito besta
+        </md-button>
+    </md-dialog-actions>
+
+</md-dialog>

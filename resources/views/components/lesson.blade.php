@@ -5,13 +5,13 @@
         <div layout="row" layout-align="center center">
 
             <md-button class="md-raised" ng-disabled="!lesson.previous" ng-click="previousLesson()">
-                <md-icon md-svg-icon="chevron-left"></md-icon>
+                <md-icon md-svg-src="{{ url('/icons/chevron-left.svg') }}"></md-icon>
             </md-button>
 
             <h3>Lição @{ currentLesson + 1 }@</h3>
 
             <md-button class="md-raised" ng-disabled="!lesson.next" ng-click="nextLesson()">
-                <md-icon md-svg-icon="chevron-right"></md-icon>
+                <md-icon md-svg-src="{{ url('/icons/chevron-right.svg') }}"></md-icon>
             </md-button>
 
         </div>

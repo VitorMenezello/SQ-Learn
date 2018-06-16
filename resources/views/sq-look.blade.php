@@ -5,6 +5,11 @@
 @section('scripts')
     <script src="{{ url('/angularjs/constants/schemas.js') }}"></script>
     <script src="{{ url('/angularjs/controllers/sq-look.js') }}"></script>
+    <script>
+        let closeIconUrl = '{{ url('/icons/close.svg') }}';
+        let filtersDialogTemplate = '{{ url('/dialogs/filters.html') }}';
+        let labelsDialogTemplate = '{{ url('/dialogs/labels.html') }}';
+    </script>
 @endsection
 
 @section('stylesheets')

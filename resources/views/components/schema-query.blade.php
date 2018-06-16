@@ -31,14 +31,14 @@
                 <md-menu>
 
                     <md-button aria-label="Options" class="md-icon-button options-button" ng-mouseenter="$mdMenu.open()">
-                        <md-icon md-svg-icon="dots-vertical" ng-click="filter(table.id)"></md-icon>
+                        <md-icon md-svg-src="{{ url('/icons/dots-vertical.svg') }}" ng-click="filter(table.id)"></md-icon>
                     </md-button>
 
                     <md-menu-content width="2" ng-mouseleave="$mdMenu.close()">
 
                         <md-menu-item ng-class="colors[table.id]">
-                            <md-button ng-click="filter(table.id)">
-                                <md-icon md-svg-icon="filter"></md-icon>
+                            <md-button ng-click="showFiltersDialog(table)">
+                                <md-icon md-svg-src="{{ url('/icons/filter.svg') }}"></md-icon>
                                 <span>
                                     Filtros
                                 </span>
@@ -46,8 +46,8 @@
                         </md-menu-item>
 
                         <md-menu-item ng-class="colors[table.id]">
-                            <md-button ng-click="label(table.id)">
-                                <md-icon md-svg-icon="label"></md-icon>
+                            <md-button ng-click="showLabelsDialog(table)">
+                                <md-icon md-svg-src="{{ url('/icons/label.svg') }}"></md-icon>
                                 <span>
                                     Labels
                                 </span>

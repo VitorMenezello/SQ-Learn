@@ -1,0 +1,35 @@
+<md-dialog aria-label="Filtros" ng-cloak>
+
+    <md-toolbar ng-class="colors[dialogTable.id]">
+        <div class="md-toolbar-tools">
+            <h2>Filtros da tabela @{ dialogTable.title }@</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancelar()">
+                <md-icon md-svg-src="@{ closeIconUrl }@" aria-label="Fechar"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <div ng-if="!adicionandoFiltro" class="md-dialog-content">
+            <md-button ng-click="novoFiltro()">
+                Novo Filtro
+            </md-button>
+            <div ng-if="!filtros[dialogTable.id]">
+                Nenhum filtro criado.
+            </div>
+            <div ng-if="filtros[dialogTable.id]">
+                <div ng-repeat="filtro in filtros[dialogTable.id]">
+                    @{ filtro }@
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="adicionandoFiltro" class="md-dialog-content">
+            <h2>Novo Filtro</h2>
+        </div>
+
+    </md-dialog-content>
+
+</md-dialog>
