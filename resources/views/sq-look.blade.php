@@ -7,6 +7,7 @@
     <script src="{{ url('/angularjs/controllers/sq-look.js') }}"></script>
     <script>
         let closeIconUrl = '{{ url('/icons/close.svg') }}';
+        let plusCircleIconUrl = '{{ url('/icons/plus-circle.svg') }}';
         let filtersDialogTemplate = '{{ url('/dialogs/filters.html') }}';
         let labelsDialogTemplate = '{{ url('/dialogs/labels.html') }}';
     </script>
@@ -15,6 +16,7 @@
 @section('stylesheets')
     <link rel="stylesheet" href="{{ url('/css/console.css') }}">
     <link rel="stylesheet" href="{{ url('/css/schema.css') }}">
+    <link rel="stylesheet" href="{{ url('/css/dialogs.css') }}">
 @endsection
 
 @section('body')

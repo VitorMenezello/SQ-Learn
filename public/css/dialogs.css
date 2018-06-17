@@ -1,0 +1,36 @@
+md-dialog .layout-row>.flex {
+    min-width: 150px;
+}
+
+section {
+    text-align: center;
+    position: relative !important;
+}
+
+.color-1 .md-toolbar-tools {
+    background-color: #FF88BB;
+}
+
+.color-2 .md-toolbar-tools {
+    background-color: #63BAB9;
+}
+
+.color-3 .md-toolbar-tools {
+    background-color: #F9B450;
+}
+
+.color-4 .md-toolbar-tools {
+    background-color: #74BC62;
+}
+
+.color-5 .md-toolbar-tools {
+    background-color: #F9835A;
+}
+
+.color-6 .md-toolbar-tools {
+    background-color: #CC88FF;
+}
+
+.layout-row>md-divider {
+    border-top-width: 1px;
+}

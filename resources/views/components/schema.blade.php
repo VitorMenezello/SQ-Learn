@@ -28,7 +28,7 @@
                 <li ng-repeat="attribute in table.attributes">
 
                     <div ng-class="colors[table.id]">
-                        <md-icon md-svg-icon="chevron-right"></md-icon>
+                        <md-icon md-svg-src="{{ url('/icons/chevron-right.svg') }}"></md-icon>
 
                         <span ng-class="{'schema-underline': attribute.pkey}">
                             @{ attribute.name }@

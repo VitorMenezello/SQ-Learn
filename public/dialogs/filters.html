@@ -1,10 +1,10 @@
-<md-dialog aria-label="Filtros" ng-cloak>
+<md-dialog aria-label="Filtros">
 
     <md-toolbar ng-class="colors[dialogTable.id]">
         <div class="md-toolbar-tools">
             <h2>Filtros da tabela @{ dialogTable.title }@</h2>
             <span flex></span>
-            <md-button class="md-icon-button" ng-click="cancelar()">
+            <md-button class="md-icon-button" ng-click="cancel()">
                 <md-icon md-svg-src="@{ closeIconUrl }@" aria-label="Fechar"></md-icon>
             </md-button>
         </div>
@@ -12,22 +12,67 @@
 
     <md-dialog-content>
 
-        <div ng-if="!adicionandoFiltro" class="md-dialog-content">
-            <md-button ng-click="novoFiltro()">
-                Novo Filtro
-            </md-button>
-            <div ng-if="!filtros[dialogTable.id]">
-                Nenhum filtro criado.
-            </div>
-            <div ng-if="filtros[dialogTable.id]">
-                <div ng-repeat="filtro in filtros[dialogTable.id]">
-                    @{ filtro }@
-                </div>
-            </div>
-        </div>
+        <div class="md-dialog-content">
 
-        <div ng-if="adicionandoFiltro" class="md-dialog-content">
-            <h2>Novo Filtro</h2>
+            <form name="form">
+
+                <md-list>
+
+                    <md-list-item ng-repeat="filter in filters[dialogTable.id]" layout="row">
+
+                        <md-input-container flex>
+                            <label>Operador</label>
+                            <md-select ng-model="filter.operator" name="operator" ng-required="!$first">
+                                <md-option ng-if="$first" ng-value=""><em>Nenhum</em></md-option>
+                                <md-option ng-repeat="operator in listOfOperators | operandFilter:$first" ng-value="operator">
+                                    @{ operator }@
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <md-input-container flex>
+                            <label>Atributo</label>
+                            <md-select ng-model="filter.attribute" name="attribute" required>
+                                <md-option ng-repeat="attribute in listOfAttributes" ng-value="attribute.name">
+                                    @{ attribute.name }@
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <md-input-container flex>
+                            <label>Condição</label>
+                            <md-select ng-model="filter.condition" name="condition" required>
+                                <md-option ng-repeat="condition in listOfConditions" ng-value="condition">
+                                    @{ condition }@
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <md-input-container flex class="md-block">
+                            <label>Valor</label>
+                            <input ng-model="filter.value" name="value" required>
+                        </md-input-container>
+
+                        <div flex="10">
+                            <md-button class="md-icon-button" ng-click="removeFilter($index)">
+                                <md-icon md-svg-src="@{ closeIconUrl }@" aria-label="Remover filtro"></md-icon>
+                            </md-button>
+                        </div>
+
+                        <md-divider></md-divider>
+
+                    </md-list-item>
+
+                    <section layout="row" layout-align="center center" layout-wrap ng-class="colors[dialogTable.id]">
+                        <md-button ng-click="addNewFilter(form)" class="md-icon-button">
+                            <md-icon md-svg-src="@{ plusCircleIconUrl }@" aria-label="Novo Filtro"></md-icon>
+                        </md-button>
+                    </section>
+
+                </md-list>
+
+            </form>
+
         </div>
 
     </md-dialog-content>

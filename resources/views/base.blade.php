@@ -15,27 +15,6 @@
 
     <link rel="stylesheet" href="{{ url('/css/base.css') }}">
 
-    <style>
-        .card {
-            margin: 50px;
-        }
-
-        md-card {
-            border-radius: 15px;
-            background-color: #EEEEEE;
-        }
-
-        .right {
-            text-align: right;
-        }
-
-        .learn ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-
     @yield('stylesheets')
 
 </head>
