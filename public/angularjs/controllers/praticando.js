@@ -1,5 +1,6 @@
 app.controller('PraticandoController', function ($scope) {
     $scope.schemas = SCHEMAS;
+    $scope.result = MOVIE_GENRE;
 
     /* CSS Classes */
     $scope.colors = [

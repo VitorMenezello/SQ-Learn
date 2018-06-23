@@ -1,0 +1,66 @@
+<md-dialog aria-label="Functions">
+
+    <md-toolbar ng-class="colors[dialogTable.id]">
+        <div class="md-toolbar-tools">
+            <h2>Funções da tabela @{ dialogTable.title }@</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-src="@{ closeIconUrl }@" aria-label="Fechar"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <div class="md-dialog-content">
+
+            <form name="form">
+
+                <md-list>
+
+                    <md-list-item ng-repeat="functionColumn in functionColumns[dialogTable.id].attributes">
+
+                        <md-input-container flex>
+                            <label>Função</label>
+                            <md-select ng-model="functionColumn.method" name="operator" ng-required="!$first">
+                                <md-option ng-if="$first" ng-value=""><em>Nenhum</em></md-option>
+                                <md-option ng-repeat="function in listOfFunctions" ng-value="function">
+                                    @{ function }@
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <md-input-container flex>
+                            <label>Distintos</label>
+                            <md-select ng-model="function.attribute" name="attribute" required>
+                                <md-option ng-repeat="attribute in listOfAttributes" ng-value="attribute.name">
+                                    @{ attribute.name }@
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <div flex="10">
+                            <md-button class="md-icon-button" ng-click="removeFilter($index)">
+                                <md-icon md-svg-src="@{ closeIconUrl }@" aria-label="Remover filtro"></md-icon>
+                            </md-button>
+                        </div>
+
+                        <md-divider></md-divider>
+
+                    </md-list-item>
+
+                    <section layout="row" layout-align="center center" layout-wrap ng-class="colors[dialogTable.id]">
+                        <md-button ng-click="addNewFilter(form)" class="md-icon-button">
+                            <md-icon md-svg-src="@{ plusCircleIconUrl }@" aria-label="Novo Filtro"></md-icon>
+                        </md-button>
+                    </section>
+
+                </md-list>
+
+            </form>
+
+        </div>
+
+    </md-dialog-content>
+
+</md-dialog>

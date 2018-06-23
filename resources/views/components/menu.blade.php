@@ -1,4 +1,4 @@
-<div id="lesson" layout="row" layout-align="space-between center" class="header-container">
+<div id="menu" layout="row" layout-align="space-between center" class="header-container">
 
     <div ng-controller="MenuController">
 

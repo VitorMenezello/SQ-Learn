@@ -1,10 +1,17 @@
+//region Main Page Controller
 app.controller('SQLookController', function ($scope, $mdDialog) {
-    //region Filters Dialog Config
+    //region General Dialog Config
 
     $scope.closeIconUrl = closeIconUrl;
+
+    //endregion
+
+    //region Filters Dialog Config
+
     $scope.plusCircleIconUrl = plusCircleIconUrl;
 
     $scope.filtersDialogTemplate = filtersDialogTemplate;
+
     let filtersConfig = {
         templateUrl: $scope.filtersDialogTemplate,
         controller: 'FiltersController',
@@ -13,7 +20,7 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
         preserveScope: true,
         resolve: {},
         onRemoving: function () {
-            $scope.cleanFilters($scope.dialogTable.id);
+            $scope.cleanIncompleteFilters($scope.dialogTable.id);
             $scope.buildQuery();
         }
     };
@@ -23,7 +30,8 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
     ];
 
     $scope.listOfOperators = [
-        'AND', 'OR', 'AND NOT', 'OR NOT'
+        ['AND', 'OR', 'AND NOT', 'OR NOT'],
+        ['NOT']
     ];
 
     $scope.showFiltersDialog = function(table) {
@@ -37,7 +45,7 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
         $mdDialog.show(filtersConfig);
     };
 
-    $scope.cleanFilters = function(table) {
+    $scope.cleanIncompleteFilters = function(table) {
         for (let i = 0; i < $scope.filters[table].length; i++) {
             if (!$scope.filters[table][i].hasOwnProperty('attribute') ||
                 !$scope.filters[table][i].hasOwnProperty('condition') ||
@@ -53,6 +61,7 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
     //region Labels Dialog Config
 
     $scope.labelsDialogTemplate = labelsDialogTemplate;
+
     let labelsConfig = {
         templateUrl: $scope.labelsDialogTemplate,
         controller: 'LabelsController',
@@ -68,6 +77,7 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 
     $scope.showLabelsDialog = function(table) {
         $scope.dialogTable = table;
+
         $mdDialog.show(labelsConfig);
     };
 
@@ -77,6 +87,46 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
             if ($scope.labels[table].attributes[i].hasOwnProperty('as') && $scope.labels[table].attributes[i].as !== ""){
                 $scope.labels[table].labeledAttributes = true;
             }
+        }
+    };
+
+    //endregion
+
+    //region Functions Dialog Config
+
+    $scope.functionsDialogTemplate = functionsDialogTemplate;
+
+    let functionsConfig = {
+        templateUrl: $scope.functionsDialogTemplate,
+        controller: 'FunctionsController',
+        clickOutsideToClose: true,
+        scope: $scope,
+        preserveScope: true,
+        resolve: {},
+        onRemoving: function () {
+            $scope.buildQuery();
+        }
+    };
+
+    $scope.listOfFunctions = [
+        'MAX', 'MIN', 'COUNT', 'AVG', 'SUM'
+    ];
+
+    //endregion
+
+    //region Joins Dialog Config
+
+    $scope.joinsDialogTemplate = joinsDialogTemplate;
+
+    let joinsConfig = {
+        templateUrl: $scope.joinsDialogTemplate,
+        controller: 'JoinsController',
+        clickOutsideToClose: true,
+        scope: $scope,
+        preserveScope: true,
+        resolve: {},
+        onRemoving: function () {
+            $scope.buildQuery();
         }
     };
 
@@ -94,12 +144,26 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
     $scope.query = "";
 
     $scope.$watch('schema', function () {
-        if ($scope.schema !== null){
+        if ($scope.schema !== null) {
             $scope.schemaIsSelected = true;
+
+            // SELECT
             $scope.selected = [];
+
+            // WHERE
             $scope.filters = [];
+
+            // AS
             $scope.labels = [];
-            for (let i = 0; i < $scope.schema.tables.length; i++){
+
+            // FUNCTIONS
+            $scope.functions = [];
+
+            // JOINS
+            $scope.joins = [];
+
+            // For each table, a list
+            for (let i = 0; i < $scope.schema.tables.length; i++) {
                 $scope.selected.push([]);
                 $scope.filters.push([]);
                 let label = {
@@ -121,9 +185,9 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 
     //region Checkbox View
 
-    $scope.exists = function (item, list) {
+    $scope.exists = function (attribute, selectedAttributes) {
         if ($scope.schemaIsSelected === true)
-            return list.indexOf(item) > -1;
+            return selectedAttributes.indexOf(attribute) > -1;
     };
 
     $scope.isIndeterminate = function(table) {
@@ -139,20 +203,21 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 
     //region Checkbox Click
 
-    $scope.toggle = function (item, list) {
-        let idx = list.indexOf(item);
+    $scope.toggle = function (attribute, selectedAttributes) {
+        let idx = selectedAttributes.indexOf(attribute);
         if (idx > -1) {
-            list.splice(idx, 1);
+            selectedAttributes.splice(idx, 1);
         }
         else {
-            list.push(item);
+            selectedAttributes.push(attribute);
         }
     };
 
     $scope.toggleAll = function(table) {
         if ($scope.selected[table].length === $scope.schema.tables[table].attributes.length) {
             $scope.selected[table] = [];
-        } else if ($scope.selected[table].length === 0 || $scope.selected[table].length > 0) {
+        }
+        else if ($scope.selected[table].length === 0 || $scope.selected[table].length > 0) {
             for (let i = 0; i < $scope.schema.tables[table].attributes.length; i++){
                 if ($scope.selected[table].indexOf($scope.schema.tables[table].attributes[i].name) === -1){
                     $scope.selected[table].push($scope.schema.tables[table].attributes[i].name);
@@ -312,7 +377,9 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 
     //endregion
 })
+//endregion
 
+//region Filters Dialog
 .controller('FiltersController', function ($scope, $mdDialog) {
     $scope.addingFilter = false;
 
@@ -339,14 +406,17 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 .filter('operandFilter', function () {
     return function(input, first){
         if (first){
-            return ['NOT'];
+            return input[1];
         }
         else {
-            return input;
+            return input[0];
         }
     }
 })
 
+//endregion
+
+//region Labels Dialog
 .controller('LabelsController', function ($scope, $mdDialog) {
     $scope.hide = function() {
         $mdDialog.hide();
@@ -355,4 +425,30 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
     $scope.cancel = function() {
         $mdDialog.cancel();
     };
+})
+//endregion
+
+//region Functions Dialog
+.controller('FunctionsController', function ($scope, $mdDialog) {
+    $scope.hide = function() {
+        $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+        $mdDialog.cancel();
+    };
+})
+//endregion
+
+//region Joins Dialog
+.controller('JoinsController', function ($scope, $mdDialog) {
+    $scope.hide = function() {
+        $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+        $mdDialog.cancel();
+    };
 });
+//endregion
+

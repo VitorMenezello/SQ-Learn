@@ -18,17 +18,7 @@
 
                 <md-list>
 
-                    <md-list-item>
-
-                        <md-input-container class="md-block">
-                            <label>Label de @{ labels[dialogTable.id].title }@</label>
-                            <input ng-model="labels[dialogTable.id].as" name="label">
-                        </md-input-container>
-                        <md-divider></md-divider>
-
-                    </md-list-item>
-
-                    <md-list-item ng-repeat="label in labels[dialogTable.id].attributes">
+                    <md-list-item ng-repeat="label in labels[dialogTable.id]">
 
                         <md-input-container class="md-block">
                             <label>Label de @{ label.name }@</label>

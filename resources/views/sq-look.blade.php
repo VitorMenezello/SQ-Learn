@@ -10,6 +10,8 @@
         let plusCircleIconUrl = '{{ url('/icons/plus-circle.svg') }}';
         let filtersDialogTemplate = '{{ url('/dialogs/filters.html') }}';
         let labelsDialogTemplate = '{{ url('/dialogs/labels.html') }}';
+        let functionsDialogTemplate = '{{ url('/dialogs/functions.html') }}';
+        let joinsDialogTemplate = '{{ url('/dialogs/joins.html') }}'
     </script>
 @endsection
 
@@ -17,6 +19,7 @@
     <link rel="stylesheet" href="{{ url('/css/console.css') }}">
     <link rel="stylesheet" href="{{ url('/css/schema.css') }}">
     <link rel="stylesheet" href="{{ url('/css/dialogs.css') }}">
+    <link rel="stylesheet" href="{{ url('/css/run-query.css') }}">
 @endsection
 
 @section('body')
@@ -45,7 +48,8 @@
             </div>
 
             <div flex="20">
-                @{ query }@
+                @component('components.run-query')
+                @endcomponent
             </div>
 
         </md-content>

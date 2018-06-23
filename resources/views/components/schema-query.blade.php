@@ -31,7 +31,7 @@
                 <md-menu>
 
                     <md-button aria-label="Options" class="md-icon-button options-button" ng-mouseenter="$mdMenu.open()">
-                        <md-icon md-svg-src="{{ url('/icons/dots-vertical.svg') }}" ng-click="filter(table.id)"></md-icon>
+                        <md-icon md-svg-src="{{ url('/icons/dots-vertical.svg') }}"></md-icon>
                     </md-button>
 
                     <md-menu-content width="2" ng-mouseleave="$mdMenu.close()">
@@ -54,6 +54,24 @@
                             </md-button>
                         </md-menu-item>
 
+                        <md-menu-item ng-class="colors[table.id]">
+                            <md-button ng-click="showFunctionsDialog(table)">
+                                <md-icon md-svg-src="{{ url('/icons/add-column.svg') }}"></md-icon>
+                                <span>
+                                    Funções
+                                </span>
+                            </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item ng-class="colors[table.id]">
+                            <md-button ng-click="showJoinsDialog(table)">
+                                <md-icon md-svg-src="{{ url('/icons/join.svg') }}"></md-icon>
+                                <span>
+                                    Junções
+                                </span>
+                            </md-button>
+                        </md-menu-item>
+
                     </md-menu-content>
 
                 </md-menu>
@@ -66,7 +84,7 @@
 
                     <div ng-class="colors[table.id]">
                         <md-checkbox ng-checked="exists(attribute.name, selected[table.id])"
-                                     ng-click="toggle(attribute.name, selected[table.id])">
+                                     ng-click="toggle(attribute.name, selected[table.id], labels[table.id])">
                             <span ng-class="{'schema-underline': attribute.pkey}">
                                 @{ attribute.name }@
                             </span>
