@@ -23,7 +23,7 @@
                         <md-input-container flex>
                             <label>Operador</label>
                             <md-select ng-model="filter.operator" name="operator" ng-required="!$first">
-                                <md-option ng-if="$first" ng-value=""><em>Nenhum</em></md-option>
+                                <md-option ng-if="$first" value=""><em>Nenhum</em></md-option>
                                 <md-option ng-repeat="operator in listOfOperators | operandFilter:$first" ng-value="operator">
                                     @{ operator }@
                                 </md-option>

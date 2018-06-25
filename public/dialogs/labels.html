@@ -18,6 +18,12 @@
 
                 <md-list>
 
+                    <md-list-item ng-show="labels[dialogTable.id].length === 0">
+
+                        Selecione algum item da tabela ou adicione alguma função.
+
+                    </md-list-item>
+
                     <md-list-item ng-repeat="label in labels[dialogTable.id]">
 
                         <md-input-container class="md-block">

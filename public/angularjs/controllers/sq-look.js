@@ -82,9 +82,10 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
     };
 
     $scope.markLabelList = function(table) {
+        let tableLabelIndex = $scope.labels[table].findIndex(el => el.name === $scope.schema.tables[table].title);
         $scope.labels[table].labeledAttributes = false;
-        for (let i = 0; i < $scope.labels[table].attributes.length; i++){
-            if ($scope.labels[table].attributes[i].hasOwnProperty('as') && $scope.labels[table].attributes[i].as !== ""){
+        for (let i = 0; i < $scope.labels[table].length; i++){
+            if (i !== tableLabelIndex && $scope.labels[table][i].hasOwnProperty('as') && $scope.labels[table][i].as !== ""){
                 $scope.labels[table].labeledAttributes = true;
             }
         }
@@ -104,13 +105,49 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
         preserveScope: true,
         resolve: {},
         onRemoving: function () {
+            $scope.cleanIncompleteFunctions($scope.dialogTable.id);
+            $scope.addTableToLabels($scope.dialogTable.id);
             $scope.buildQuery();
         }
     };
 
-    $scope.listOfFunctions = [
+    $scope.listOfMethods = [
         'MAX', 'MIN', 'COUNT', 'AVG', 'SUM'
     ];
+
+    $scope.showFunctionsDialog = function(table) {
+        $scope.dialogTable = table;
+        $scope.listOfAttributes = [];
+
+        for (let i = 0; i < $scope.dialogTable.attributes.length; i++){
+            $scope.listOfAttributes.push($scope.dialogTable.attributes[i]);
+        }
+
+        $mdDialog.show(functionsConfig);
+    };
+
+    $scope.cleanIncompleteFunctions = function(table) {
+        for (let i = 0; i < $scope.functions[table].length; i++) {
+            if (!$scope.functions[table][i].hasOwnProperty('method') ||
+                !$scope.functions[table][i].hasOwnProperty('attribute')){
+                $scope.functions[table].splice(i, 1);
+            }
+        }
+    };
+
+    $scope.addTableToLabels = function(table) {
+        let tableLabelIndex = $scope.labels[table].findIndex(el => el.name === $scope.schema.tables[table].title);
+        if ($scope.functions[table].length > 0){
+            if (tableLabelIndex === -1){
+                $scope.labels[table].push({name: $scope.schema.tables[table].title});
+            }
+        }
+        else {
+            if (tableLabelIndex > -1){
+                $scope.labels[table].splice(tableLabelIndex, 1);
+            }
+        }
+    };
 
     //endregion
 
@@ -130,6 +167,15 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
         }
     };
 
+    $scope.listOfJoins = [
+        'INNER JOIN', 'RIGHT JOIN', 'LEFT JOIN', 'FULL OUTER JOIN'
+    ];
+
+    $scope.showJoinsDialog = function(table) {
+        $scope.dialogTable = table;
+        $mdDialog.show(joinsConfig);
+    };
+
     //endregion
 
     //region Schema Selector
@@ -140,6 +186,8 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
     $scope.selected = [];
     $scope.filters = [];
     $scope.labels = [];
+    $scope.functions = [];
+    $scope.joins = [];
 
     $scope.query = "";
 
@@ -162,20 +210,34 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
             // JOINS
             $scope.joins = [];
 
-            // For each table, a list
+            // For each table, a list for possible attributes
             for (let i = 0; i < $scope.schema.tables.length; i++) {
                 $scope.selected.push([]);
                 $scope.filters.push([]);
-                let label = {
-                    title: $scope.schema.tables[i].title,
-                    attributes: []
-                };
-                $scope.labels.push(label);
-                for (let j = 0; j < $scope.schema.tables[i].attributes.length; j++){
-                    label = {
-                        name: $scope.schema.tables[i].attributes[j].name
-                    };
-                    $scope.labels[i].attributes.push(label);
+                $scope.labels.push([]);
+                $scope.functions.push([]);
+                $scope.joins.push([]);
+            }
+
+            // For each foreign key, add to join list
+            for (let i = 0; i < $scope.schema.tables.length; i++) {
+                for (let j = 0; j < $scope.schema.tables[i].attributes.length; j++) {
+                    if ($scope.schema.tables[i].attributes[j].ref) {
+                        let join_1 = {
+                            refTableId: $scope.schema.tables[i].attributes[j].refTableId,
+                            refAttribute: $scope.schema.tables[i].attributes[j].refAttribute,
+                            isJoined: false,
+                            joinType: null
+                        };
+                        let join_2 = {
+                            refTableId: i,
+                            refAttribute: $scope.schema.tables[i].attributes[j].name,
+                            isJoined: false,
+                            joinType: null
+                        };
+                        $scope.joins[i].push(join_1);
+                        $scope.joins[$scope.schema.tables[i].attributes[j].refTableId].push(join_2);
+                    }
                 }
             }
         }
@@ -185,9 +247,9 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 
     //region Checkbox View
 
-    $scope.exists = function (attribute, selectedAttributes) {
+    $scope.exists = function (attribute, table) {
         if ($scope.schemaIsSelected === true)
-            return selectedAttributes.indexOf(attribute) > -1;
+            return $scope.selected[table].indexOf(attribute) > -1;
     };
 
     $scope.isIndeterminate = function(table) {
@@ -203,24 +265,48 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 
     //region Checkbox Click
 
-    $scope.toggle = function (attribute, selectedAttributes) {
-        let idx = selectedAttributes.indexOf(attribute);
-        if (idx > -1) {
-            selectedAttributes.splice(idx, 1);
+    $scope.toggle = function (attribute, table) {
+        // SELECT
+        let selectIndex = $scope.selected[table].indexOf(attribute);
+        if (selectIndex > -1) {
+            $scope.selected[table].splice(selectIndex, 1);
         }
         else {
-            selectedAttributes.push(attribute);
+            $scope.selected[table].push(attribute);
+        }
+
+        // AS
+        let labelIndex = $scope.labels[table].findIndex(el => el.name === attribute);
+        if (labelIndex > -1) {
+            $scope.labels[table].splice(labelIndex, 1);
+            if ($scope.labels[table].length === 1 && $scope.functions[table].length === 0){
+                $scope.labels[table].splice(0, 1);
+            }
+        }
+        else {
+            if ($scope.labels[table].length === 0){
+                $scope.labels[table].push({name: $scope.schema.tables[table].title});
+            }
+            $scope.labels[table].push({name: attribute});
         }
     };
 
     $scope.toggleAll = function(table) {
         if ($scope.selected[table].length === $scope.schema.tables[table].attributes.length) {
             $scope.selected[table] = [];
+            $scope.labels[table] = [];
+            $scope.addTableToLabels(table);
         }
-        else if ($scope.selected[table].length === 0 || $scope.selected[table].length > 0) {
+        else if ($scope.selected[table].length >= 0) {
+            if ($scope.labels[table].findIndex(el => el.name === $scope.schema.tables[table].title) === -1){
+                $scope.labels[table].push({name: $scope.schema.tables[table].title});
+            }
             for (let i = 0; i < $scope.schema.tables[table].attributes.length; i++){
                 if ($scope.selected[table].indexOf($scope.schema.tables[table].attributes[i].name) === -1){
                     $scope.selected[table].push($scope.schema.tables[table].attributes[i].name);
+                }
+                if ($scope.labels[table].findIndex(el => el.name === $scope.schema.tables[table].attributes[i].name) === -1){
+                    $scope.labels[table].push({name: $scope.schema.tables[table].attributes[i].name});
                 }
             }
         }
@@ -228,11 +314,15 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 
     //endregion
 
-    //region Query Builder
+    //region Sentinels
 
     $scope.$watch('selected', function () {
         $scope.buildQuery();
     }, true);
+
+    //endregion
+
+    //region Query Builder
 
     $scope.buildQuery = function () {
         if ($scope.selected.length !== 0) {
@@ -247,10 +337,10 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 
             // Find out if multiple tables are selected and conditions for those which are
             let tableNum = 0;
-            for (let i = 0; i < $scope.selected.length; i++) {
+            for (let i = 0; i < $scope.schema.tables.length; i++) {
 
                 // If any attribute from table has been selected
-                if ($scope.selected[i].length > 0) {
+                if ($scope.selected[i].length > 0 || $scope.functions[i].length > 0) {
                     tableNum++;
                 }
                 if (tableNum > 1) {
@@ -259,19 +349,25 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 
             }
 
-            // Collect selected attributes and table names
-            for (let i = 0; i < $scope.selected.length; i++) {
+            // Collect selected attributes, functions and table names
+            for (let i = 0; i < $scope.schema.tables.length; i++) {
 
                 // Get table label, if it has one
                 let tableName = $scope.schema.tables[i].title;
+                let tableLabelIndex = $scope.labels[i].findIndex(el => el.name === tableName);
                 let isTableLabeled = (
-                    $scope.labels[i].hasOwnProperty('as') &&
-                    $scope.labels[i].as !== ""
+                    tableLabelIndex > -1 &&
+                    $scope.labels[i][tableLabelIndex].hasOwnProperty('as') &&
+                    $scope.labels[i][tableLabelIndex].as !== ""
                 );
-                let tableLabel = (isTableLabeled ? $scope.labels[i].as.normalize('NFD').replace(/[\u0300-\u036f]/g, "").split(' ').join('_') : "");
+                let tableLabel = (isTableLabeled ?
+                    ($scope.labels[i][tableLabelIndex].as.indexOf(' ') > -1 ?
+                        "'" + $scope.labels[i][tableLabelIndex].as + "'" :
+                        $scope.labels[i][tableLabelIndex].as) :
+                    "");
 
                 // If there are any selected attributes in the table
-                if ($scope.selected[i].length > 0){
+                if ($scope.selected[i].length > 0 || $scope.functions[i].length > 0){
 
                     // Query is true
                     showQuery = true;
@@ -304,13 +400,16 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 
                             // Get attribute label, if it has one
                             let attributeName = $scope.selected[i][j];
-                            let labelIndex = $scope.labels[i].attributes.findIndex(el => el.name === attributeName);
+                            let attributeLabelIndex = $scope.labels[i].findIndex(el => el.name === attributeName);
                             let isAttributeLabeled = (
-                                $scope.labels[i].attributes[labelIndex].hasOwnProperty('as') &&
-                                $scope.labels[i].attributes[labelIndex].as !== ""
+                                attributeLabelIndex > -1 &&
+                                $scope.labels[i][attributeLabelIndex].hasOwnProperty('as') &&
+                                $scope.labels[i][attributeLabelIndex].as !== ""
                             );
                             let attributeLabel = (isAttributeLabeled ?
-                                $scope.labels[i].attributes[labelIndex].as.normalize('NFD').replace(/[\u0300-\u036f]/g, "").split(' ').join('_') :
+                                ($scope.labels[i][attributeLabelIndex].as.indexOf(' ') > -1 ?
+                                    "'" + $scope.labels[i][attributeLabelIndex].as + "'" :
+                                    $scope.labels[i][attributeLabelIndex].as) :
                                 "");
 
                             // Attribute name with label for SELECT statement
@@ -320,6 +419,39 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
                                 (multipleTables ? table + "." : "") + attributeAsLabel :
                                 ", " + (multipleTables ? table + "." : "") +  attributeAsLabel);
                         }
+
+                        asterisk = false;
+                    }
+
+                    // Add functions to the Select statement
+                    for (let j = 0; j < $scope.functions[i].length; j++) {
+
+                        let isFunctionDistinct = (
+                            $scope.functions[i][j].hasOwnProperty('distinct') &&
+                            $scope.functions[i][j].distinct !== ""
+                        );
+                        let isFunctionLabeled = (
+                            $scope.functions[i][j].hasOwnProperty('as') &&
+                            $scope.functions[i][j].as !== ""
+                        );
+                        let functionName = $scope.functions[i][j].method +
+                            "(" +
+                            (isFunctionDistinct ? "DISTINCT " : "") +
+                            (multipleTables ? table + "." : "") +
+                            $scope.functions[i][j].attribute +
+                            ")";
+                        let functionLabel = (isFunctionLabeled ?
+                            ($scope.functions[i][j].as.indexOf(' ') > -1 ?
+                                "'" + $scope.functions[i][j].as + "'" :
+                                $scope.functions[i][j].as)
+                            : "");
+
+                        // Function name with label for SELECT statement
+                        let functionAsLabel = functionName + (isFunctionLabeled ? " AS " + functionLabel : "");
+
+                        selectedAttributes += (selectedAttributes === "" ?
+                            functionAsLabel :
+                            ", " +  functionAsLabel);
 
                         asterisk = false;
                     }
@@ -341,7 +473,6 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
                     }
                 }
             }
-
 
             // If all tables selected include all attributes, query becomes SELECT *
             if (asterisk === true){
@@ -437,6 +568,17 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
     $scope.cancel = function() {
         $mdDialog.cancel();
     };
+
+    $scope.addNewFunction = function (form) {
+        if (form.$valid){
+            $scope.newFunction = {};
+            $scope.functions[$scope.dialogTable.id].push($scope.newFunction);
+        }
+    };
+
+    $scope.removeFunction = function (funct) {
+        $scope.functions[$scope.dialogTable.id].splice(funct, 1);
+    }
 })
 //endregion
 

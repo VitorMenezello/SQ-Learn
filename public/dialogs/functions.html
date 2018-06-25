@@ -18,20 +18,27 @@
 
                 <md-list>
 
-                    <md-list-item ng-repeat="functionColumn in functionColumns[dialogTable.id].attributes">
+                    <md-list-item ng-repeat="function in functions[dialogTable.id]" layout="row">
 
                         <md-input-container flex>
                             <label>Função</label>
-                            <md-select ng-model="functionColumn.method" name="operator" ng-required="!$first">
-                                <md-option ng-if="$first" ng-value=""><em>Nenhum</em></md-option>
-                                <md-option ng-repeat="function in listOfFunctions" ng-value="function">
-                                    @{ function }@
+                            <md-select ng-model="function.method" name="operator" required>
+                                <md-option ng-repeat="method in listOfMethods" ng-value="method">
+                                    @{ method }@
                                 </md-option>
                             </md-select>
                         </md-input-container>
 
                         <md-input-container flex>
-                            <label>Distintos</label>
+                            <label>Distinto</label>
+                            <md-select ng-model="function.distinct" name="distinct">
+                                <md-option value=""><em>Todos</em></md-option>
+                                <md-option value="true">DISTINCT</md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <md-input-container flex>
+                            <label>Atributo</label>
                             <md-select ng-model="function.attribute" name="attribute" required>
                                 <md-option ng-repeat="attribute in listOfAttributes" ng-value="attribute.name">
                                     @{ attribute.name }@
@@ -39,9 +46,14 @@
                             </md-select>
                         </md-input-container>
 
+                        <md-input-container flex class="md-block">
+                            <label>Label</label>
+                            <input ng-model="function.as" name="alias">
+                        </md-input-container>
+
                         <div flex="10">
-                            <md-button class="md-icon-button" ng-click="removeFilter($index)">
-                                <md-icon md-svg-src="@{ closeIconUrl }@" aria-label="Remover filtro"></md-icon>
+                            <md-button class="md-icon-button" ng-click="removeFunction($index)">
+                                <md-icon md-svg-src="@{ closeIconUrl }@" aria-label="Remover função"></md-icon>
                             </md-button>
                         </div>
 
@@ -50,8 +62,8 @@
                     </md-list-item>
 
                     <section layout="row" layout-align="center center" layout-wrap ng-class="colors[dialogTable.id]">
-                        <md-button ng-click="addNewFilter(form)" class="md-icon-button">
-                            <md-icon md-svg-src="@{ plusCircleIconUrl }@" aria-label="Novo Filtro"></md-icon>
+                        <md-button ng-click="addNewFunction(form)" class="md-icon-button">
+                            <md-icon md-svg-src="@{ plusCircleIconUrl }@" aria-label="Nova Função"></md-icon>
                         </md-button>
                     </section>
 
