@@ -12,7 +12,7 @@
 
                 <md-menu-item>
                     <md-button>
-                        <a href="/tutorial" ng-class="{'current-page': currentPage === 'tutorial'}">
+                        <a href="tutorial" ng-class="{'current-page': currentPage === 'tutorial'}">
                             <md-icon md-svg-src="{{ url('/icons/school.svg') }}"></md-icon>
                             <span>
                                 Tutorial
@@ -23,7 +23,7 @@
 
                 <md-menu-item>
                     <md-button>
-                        <a href="/praticando" ng-class="{'current-page': currentPage === 'praticando'}">
+                        <a href="praticando" ng-class="{'current-page': currentPage === 'praticando'}">
                             <md-icon md-svg-src="{{ url('/icons/database.svg') }}"></md-icon>
                             <span>
                                 Praticando
@@ -34,7 +34,7 @@
 
                 <md-menu-item>
                     <md-button>
-                        <a href="/sq-look" ng-class="{'current-page': currentPage === 'sq-look'}">
+                        <a href="sq-look" ng-class="{'current-page': currentPage === 'sq-look'}">
                             <md-icon md-svg-src="{{ url('/icons/database-search.svg') }}"></md-icon>
                             <span>
                                 SQ-Look
