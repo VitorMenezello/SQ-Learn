@@ -51,7 +51,7 @@
 
     <div flex="20" class="logo" layout="column" layout-align="center center">
 
-        <md-button class="logo-button" href="/" layout="row" layout-align="center center">
+        <md-button class="logo-button" href="." layout="row" layout-align="center center">
             <img src="{{ url('/images/sq-learn-logo.png') }}" href="/">
             <span class="logo-text">
                 SQ-Learn
