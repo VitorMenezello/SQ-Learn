@@ -24,10 +24,6 @@ $router->get('/tutorial', function (){
     return view('tutorial');
 });
 
-$router->get('/praticando', function (){
-    return view('praticando');
-});
+$router->get('/praticando', 'SchemaController@praticandoView');
 
-$router->get('/sq-look', function (){
-    return view('sq-look');
-});
+$router->get('/sq-look', 'SchemaController@sqlookView');

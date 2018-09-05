@@ -12,6 +12,7 @@
         let labelsDialogTemplate = '{{ url('/dialogs/labels.html') }}';
         let functionsDialogTemplate = '{{ url('/dialogs/functions.html') }}';
         let joinsDialogTemplate = '{{ url('/dialogs/joins.html') }}'
+        let schemas = <?php echo json_encode($schemas); ?>;
     </script>
 @endsection
 

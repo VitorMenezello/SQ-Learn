@@ -32,6 +32,7 @@
             </div>
 
             <div flex="30" class="card learn">
+
                 <md-card>
 
                     <md-card-title>

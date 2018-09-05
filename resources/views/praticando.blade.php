@@ -6,6 +6,9 @@
     <script src="{{ url('/angularjs/constants/schemas.js') }}"></script>
     <script src="{{ url('/angularjs/constants/datatable.js') }}"></script>
     <script src="{{ url('/angularjs/controllers/praticando.js') }}"></script>
+    <script>
+        let schemas = <?php echo json_encode($schemas); ?>;
+    </script>
 @endsection
 
 @section('stylesheets')
