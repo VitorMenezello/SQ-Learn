@@ -5,12 +5,49 @@ body {
 }
 
 .header-container {
-    background-color: #C83232;
+    background-color: #26ACF5;
     color: #FEFEFE;
     height: 80px;
     padding-left: 20px;
     padding-right: 20px;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 4px -7px 40px 8px rgba(38, 172, 245, 0.29);
 }
+
+.navbar {
+    display: inline-flex;
+    height: 100%;
+}
+
+a.navitem {
+    padding: 0 20px;
+    color: #FEFEFE;
+    font-size: 22px;
+    text-decoration: none;
+    text-transform: none !important;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
+}
+
+a.navitem:visited {
+    background-color: #26ACF5 !important;
+    color: #FEFEFE;
+    text-decoration: none;
+}
+
+a.navitem:hover {
+    background-color: #26ACF5 !important;
+    color: #FEFEFE;
+    text-decoration: none;
+}
+
+a.navitem.current-page {
+    font-weight: 600;
+    border-bottom-color: white;
+}
+
 
 .logo {
     min-width: 240px;
@@ -27,25 +64,6 @@ body {
     margin: 10px;
 }
 
-.menu-button md-icon {
-    color: #FEFEFE;
-}
-
-md-menu-content a {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.54);
-}
-
-.menu ul {
-    list-style-type: none;
-}
-
-.menu ul li {
-    padding-left: 20px;
-    padding-right: 20px;
-    display: inline-block;
-}
-
 .content-container {
     padding: 0;
     height: 700px;
@@ -53,9 +71,9 @@ md-menu-content a {
 
 .current-page span {
     font-weight: bold;
-    color: #C83232;
+    color: #26ACF5;
 }
 
 .current-page md-icon {
-    color: #C83232;
+    color: #26ACF5;
 }

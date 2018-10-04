@@ -1,51 +1,22 @@
 <div id="menu" layout="row" layout-align="space-between center" class="header-container">
 
-    <div ng-controller="MenuController">
+    <div ng-controller="MenuController" class="navbar">
 
-        <md-menu>
+        <a class="navitem" href="." ng-class="{'current-page': currentPage === ''}">
+            Home
+        </a>
 
-            <md-button aria-label="SQ-Look menu" class="md-icon-button menu-button" ng-mouseenter="$mdMenu.open()">
-                <md-icon md-svg-src="{{ url('/icons/menu.svg') }}"></md-icon>
-            </md-button>
+        <a class="navitem" href="tutorial" ng-class="{'current-page': currentPage === 'tutorial'}">
+            Tutorial
+        </a>
 
-            <md-menu-content width="3" ng-mouseleave="$mdMenu.close()">
+        <a class="navitem" href="praticando" ng-class="{'current-page': currentPage === 'praticando'}">
+            Praticando
+        </a>
 
-                <md-menu-item>
-                    <md-button>
-                        <a href="tutorial" ng-class="{'current-page': currentPage === 'tutorial'}">
-                            <md-icon md-svg-src="{{ url('/icons/school.svg') }}"></md-icon>
-                            <span>
-                                Tutorial
-                            </span>
-                        </a>
-                    </md-button>
-                </md-menu-item>
-
-                <md-menu-item>
-                    <md-button>
-                        <a href="praticando" ng-class="{'current-page': currentPage === 'praticando'}">
-                            <md-icon md-svg-src="{{ url('/icons/database.svg') }}"></md-icon>
-                            <span>
-                                Praticando
-                            </span>
-                        </a>
-                    </md-button>
-                </md-menu-item>
-
-                <md-menu-item>
-                    <md-button>
-                        <a href="sq-look" ng-class="{'current-page': currentPage === 'sq-look'}">
-                            <md-icon md-svg-src="{{ url('/icons/database-search.svg') }}"></md-icon>
-                            <span>
-                                SQ-Look
-                            </span>
-                        </a>
-                    </md-button>
-                </md-menu-item>
-
-            </md-menu-content>
-
-        </md-menu>
+        <a class="navitem" href="sq-look" ng-class="{'current-page': currentPage === 'sq-look'}">
+            SQ-Look
+        </a>
 
     </div>
 

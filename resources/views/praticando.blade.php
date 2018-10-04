@@ -7,7 +7,7 @@
     <script src="{{ url('/angularjs/constants/datatable.js') }}"></script>
     <script src="{{ url('/angularjs/controllers/praticando.js') }}"></script>
     <script>
-        let schemas = <?php echo json_encode($schemas); ?>;
+        let schemas = @json($schemas);
     </script>
 @endsection
 
