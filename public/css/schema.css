@@ -1,4 +1,7 @@
 .schema, .schema-query  {
+}
+
+.schema-background {
     background-color: #FFFFFF;
     height: 100%;
 }

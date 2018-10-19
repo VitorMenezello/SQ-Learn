@@ -38,6 +38,36 @@ class SchemaController extends Controller
     }
 
     /**
+     * Formats a schema mapping for rendering.
+     *
+     * @param $schema
+     * @return stdClass
+     */
+    function formatSchema($schema)
+    {
+        $formattedSchema = new stdClass();
+
+        foreach ($schema as $attribute)
+        {
+            if (!property_exists($formattedSchema, $attribute->table_name))
+            {
+                $table = new stdClass();
+                $table->name = $attribute->table_name;
+                $table->columns = [];
+                $formattedSchema->{$attribute->table_name} = $table;
+            }
+            else
+                $table = $formattedSchema->{$attribute->table_name};
+
+            $column = $attribute;
+            unset($column->table_name);
+
+            array_push($table->columns, $column);
+        }
+        return $formattedSchema;
+    }
+
+    /**
      * Lists all schemas currently listed in this class.
      * To add more, after inserting the data in the database,
      * include the description both in the config/database.php file and here.
@@ -46,45 +76,35 @@ class SchemaController extends Controller
      */
     public function getSchemas()
     {
-        /**
-         * Formats a schema mapping for rendering.
-         *
-         * @param $schema
-         * @return stdClass
-         */
-        function formatSchema($schema)
-        {
-            $formattedSchema = new stdClass();
-
-            foreach ($schema as $attribute)
-            {
-                if (!property_exists($formattedSchema, $attribute->table_name))
-                {
-                    $table = new stdClass();
-                    $table->name = $attribute->table_name;
-                    $table->columns = [];
-                    $formattedSchema->{$attribute->table_name} = $table;
-                }
-                else
-                    $table = $formattedSchema->{$attribute->table_name};
-
-                $column = $attribute;
-                unset($column->table_name);
-
-                array_push($table->columns, $column);
-            }
-            return $formattedSchema;
-        }
-
         $schemas = [];
         foreach ($this->databases as $name => $label){
-            $schema = DB::select(DB::raw("SELECT * FROM GetScheme(:database)"), ['database' => $name]);
+            $tables = DB::select(DB::raw("SELECT * FROM GetScheme(:database)"), ['database' => $name]);
             $schemas[$name] = new stdClass();
             $schemas[$name]->label = $label;
-            $schemas[$name]->tables = formatSchema($schema);
+            $schemas[$name]->tables = $this->formatSchema($tables);
         }
 
         return $schemas;
+    }
+
+    public function getSchema($schemaName){
+        $tables = DB::select(DB::raw("SELECT * FROM GetScheme(:database)"), ['database' => $schemaName]);
+        $schema = new stdClass();
+        $schema->label = $this->databases[$schemaName];
+        $schema->tables = $this->formatSchema($tables);
+
+        return $schema;
+    }
+
+    /**
+     * Render the 'tutorial' view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function tutorialView(){
+        return view('tutorial', [
+            'schema' => $this->getSchema("imdb")
+        ]);
     }
 
     /**

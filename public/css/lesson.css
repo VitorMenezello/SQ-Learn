@@ -1,6 +1,6 @@
 .lesson {
-    background-color: #C85050;
-    color: #FEFEFE;
+    background-color: #F2F4F5;
+    color: #808080;
     height: 100%;
     overflow: auto;
 }
@@ -24,8 +24,11 @@
 
 .lesson-content-text .lesson-code {
     margin: 5px;
-    padding: 5px;
-    background-color: #C89696;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50px;
+    border: solid 1px #C4D3DB;
+    color: #26ACF5;
 }
 
 .lesson-content-text .lesson-code p {
@@ -37,17 +40,15 @@
 }
 
 .question textarea {
-    background-color: #D76464;
-    color: #FEFEFE;
+    background-color: #FFFFFF;
+    // color: #C4CFD5;
     height: 100px;
     max-height: 100px;
-    border: solid;
-    border-color: #FEFEFE;
-    border-width: 1px;
+    border: 1px solid #26ACF5;
+    border-radius: 2px;
 }
 
 #answer md-input-container:not(.md-input-invalid).md-input-focused .md-input{
-    border: solid;
-    border-color: #FEFEFE;
-    border-width: 1px;
+    border: 1px solid #26ACF5;
+    border-radius: 2px;
 }

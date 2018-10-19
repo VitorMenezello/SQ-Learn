@@ -4,8 +4,10 @@
 
 @section('scripts')
     <script src="{{ url('/angularjs/constants/lessons.js') }}"></script>
-    <script src="{{ url('/angularjs/constants/schemas.js') }}"></script>
     <script src="{{ url('/angularjs/controllers/tutorial.js') }}"></script>
+    <script>
+        let schema = @json($schema);
+    </script>
 @endsection
 
 @section('stylesheets')
@@ -17,57 +19,60 @@
 
 @section('body')
 
-    <div ng-controller="TutorialController">
+    <div ng-controller="TutorialController" class="full-height">
 
         <md-content class="content-container" layout="row">
 
-            <div flex="40">
+            <div flex="33" class="full-height">
 
                 @component('components.lesson')
                 @endcomponent
 
             </div>
 
-            <div flex="60" layout="column">
+            <div flex="66" class="full-height">
 
-                <md-tabs md-border-bottom md-stretch-tabs="always" md-no-pagination flex="80">
+                {{--<md-tabs md-border-bottom md-stretch-tabs="always" md-no-pagination flex="80">--}}
 
-                    <md-tab>
+                    {{--<md-tab>--}}
 
-                        <md-tab-label>
-                            Esquema Relacional
-                        </md-tab-label>
+                        {{--<md-tab-label>--}}
+                            {{--Esquema Relacional--}}
+                        {{--</md-tab-label>--}}
 
-                        <md-tab-body>
-                            @component('components.schema')
-                            @endcomponent
-                        </md-tab-body>
+                        {{--<md-tab-body>--}}
+                            {{--@component('components.schema')--}}
+                            {{--@endcomponent--}}
+                        {{--</md-tab-body>--}}
 
-                    </md-tab>
+                    {{--</md-tab>--}}
 
-                    <md-tab>
+                    {{--<md-tab>--}}
 
-                        <md-tab-label>
-                            Resultados
-                        </md-tab-label>
+                        {{--<md-tab-label>--}}
+                            {{--Resultados--}}
+                        {{--</md-tab-label>--}}
 
-                        <md-tab-body>
-                            @component('components.datatable')
-                            @endcomponent
-                        </md-tab-body>
+                        {{--<md-tab-body>--}}
+                            {{--@component('components.datatable')--}}
+                            {{--@endcomponent--}}
+                        {{--</md-tab-body>--}}
 
-                    </md-tab>
+                    {{--</md-tab>--}}
 
-                </md-tabs>
+                {{--</md-tabs>--}}
 
-                <div flex="20">
-                    @component('components.console')
-                    @endcomponent
-                </div>
+                @component('components.schema')
+                @endcomponent
 
             </div>
 
         </md-content>
+
+        <div>
+            @component('components.console')
+            @endcomponent
+        </div>
 
     </div>
 

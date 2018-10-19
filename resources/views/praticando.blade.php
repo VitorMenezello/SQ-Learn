@@ -3,8 +3,6 @@
 @section('title', 'Praticando SQL')
 
 @section('scripts')
-    <script src="{{ url('/angularjs/constants/schemas.js') }}"></script>
-    <script src="{{ url('/angularjs/constants/datatable.js') }}"></script>
     <script src="{{ url('/angularjs/controllers/praticando.js') }}"></script>
     <script>
         let schemas = @json($schemas);
@@ -18,7 +16,7 @@
 
 @section('body')
 
-    <div ng-controller="PraticandoController">
+    <div ng-controller="PraticandoController" class="full-height">
 
         <md-content class="content-container" layout="column">
 

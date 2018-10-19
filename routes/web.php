@@ -20,9 +20,7 @@ $router->get('/', function (){
     return view('index');
 });
 
-$router->get('/tutorial', function (){
-    return view('tutorial');
-});
+$router->get('/tutorial', 'SchemaController@tutorialView');
 
 $router->get('/praticando', 'SchemaController@praticandoView');
 

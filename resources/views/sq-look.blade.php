@@ -3,7 +3,6 @@
 @section('title', 'Praticando SQL')
 
 @section('scripts')
-    <script src="{{ url('/angularjs/constants/schemas.js') }}"></script>
     <script src="{{ url('/angularjs/controllers/sq-look.js') }}"></script>
     <script>
         let closeIconUrl = '{{ url('/icons/close.svg') }}';
@@ -25,7 +24,7 @@
 
 @section('body')
 
-    <div ng-controller="SQLookController">
+    <div ng-controller="SQLookController" class="full-height">
 
         <md-content class="content-container" layout="column">
 

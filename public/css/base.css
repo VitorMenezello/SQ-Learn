@@ -4,13 +4,18 @@ body {
     min-height: 100%;
 }
 
+.full-height {
+    height: 100%;
+}
+
 .header-container {
     background-color: #26ACF5;
     color: #FEFEFE;
     height: 80px;
     padding-left: 20px;
     padding-right: 20px;
-    position: relative;
+    position: fixed;
+    width: 100%;
     z-index: 1000;
     box-shadow: 4px -7px 40px 8px rgba(38, 172, 245, 0.29);
 }
@@ -65,8 +70,9 @@ a.navitem.current-page {
 }
 
 .content-container {
-    padding: 0;
-    height: 700px;
+    padding-top: 80px;
+    height: 100%;
+    padding-bottom: 40px;
 }
 
 .current-page span {

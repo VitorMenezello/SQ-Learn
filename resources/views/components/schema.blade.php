@@ -1,50 +1,54 @@
-<div id="schema" class="schema" layout="column">
+<div id="schema" class="schema-background">
 
-    <div flex="15" class="schema-title" layout="row" layout-align="center start">
+    <div class="schema" layout="column">
 
-        <h3>
+        <div flex="15" class="schema-title" layout="row" layout-align="center start">
+
+            <h3>
             <span ng-if="schema">
                 Esquema do banco de dados @{ schema.label }@
             </span>
-            <span ng-if="!schema">
+                <span ng-if="!schema">
                 Selecione um banco de dados
             </span>
-        </h3>
+            </h3>
 
-    </div>
+        </div>
 
-    <div flex="85" layout="row" layout-wrap>
+        <div flex="85" layout="row" layout-wrap>
 
-        <div ng-repeat="table in schema.tables" flex="33" class="schema-table">
+            <div ng-repeat="table in schema.tables" flex="33" class="schema-table">
 
-            <div ng-class="colors[table.name]">
+                <div ng-class="colors[table.name]">
 
-                <h3>@{ table.name }@</h3>
+                    <h3>@{ table.name }@</h3>
 
-            </div>
+                </div>
 
-            <ul>
+                <ul>
 
-                <li ng-repeat="column in table.columns">
+                    <li ng-repeat="column in table.columns">
 
-                    <div ng-class="colors[table.name]">
-                        <md-icon md-svg-src="{{ url('/icons/chevron-right.svg') }}"></md-icon>
+                        <div ng-class="colors[table.name]">
+                            <md-icon md-svg-src="{{ url('/icons/chevron-right.svg') }}"></md-icon>
 
-                        <span ng-class="{'schema-underline': column.primary_key}">
+                            <span ng-class="{'schema-underline': column.primary_key}">
                             @{ column.column_name }@
                         </span>
-                    </div>
+                        </div>
 
-                    <div ng-if="column.foreign_key" ng-class="colors[column.foreign_table_name]">
+                        <div ng-if="column.foreign_key" ng-class="colors[column.foreign_table_name]">
                         <span class="referred-attribute">
                             @{ column.foreign_column_name }@
                             <md-tooltip> @{ column.foreign_table_name }@ </md-tooltip>
                         </span>
-                    </div>
+                        </div>
 
-                </li>
+                    </li>
 
-            </ul>
+                </ul>
+
+            </div>
 
         </div>
 
