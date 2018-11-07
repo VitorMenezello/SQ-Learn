@@ -1,24 +1,20 @@
 <div id="lesson" class="lesson">
 
-    <div flex class="lesson-content">
+    <div layout="row" layout-align="center center" class="lesson-header">
 
-        <div layout="row" layout-align="center center">
+        <h4>LIÇÃO @{ currentLesson < 10 ? '0' : '' }@@{ currentLesson + 1 }@</h4>
 
-            <md-button class="md-raised" ng-disabled="!lesson.previous" ng-click="previousLesson()" aria-label="Previous Lesson">
-                <md-icon md-svg-src="{{ url('/icons/chevron-left.svg') }}"></md-icon>
-            </md-button>
+    </div>
 
-            <h3>Lição @{ currentLesson + 1 }@</h3>
+    <div layout="row" layout-align="center center" class="lesson-title">
+        <md-icon md-svg-src="{{ url('/icons/chevron-left.svg') }}" ng-class="{'disabled': !lesson.previous}" ng-click="previousLesson()" aria-label="Previous Lesson"></md-icon>
 
-            <md-button class="md-raised" ng-disabled="!lesson.next" ng-click="nextLesson()" aria-label="Next Lesson">
-                <md-icon md-svg-src="{{ url('/icons/chevron-right.svg') }}"></md-icon>
-            </md-button>
+        <h3>@{ lesson.title }@</h3>
 
-        </div>
+        <md-icon md-svg-src="{{ url('/icons/chevron-right.svg') }}"ng-class="{'disabled': !lesson.next}" ng-click="nextLesson()" aria-label="Next Lesson"></md-icon>
+    </div>
 
-        <div layout="row" layout-align="center center">
-            <h3>@{ lesson.title }@</h3>
-        </div>
+    <div class="lesson-content">
 
         <div ng-repeat="element in lesson.content" layout="row" class="lesson-content-text" layout-align="center center">
 

@@ -6,13 +6,17 @@ app.controller('TutorialController', function ($scope) {
     $scope.lesson = $scope.lessons[$scope.currentLesson];
 
     $scope.nextLesson = function () {
-        $scope.currentLesson++;
-        $scope.lesson = $scope.lessons[$scope.currentLesson];
+        if ($scope.lesson.next){
+            $scope.currentLesson++;
+            $scope.lesson = $scope.lessons[$scope.currentLesson];
+        }
     };
 
     $scope.previousLesson = function () {
-        $scope.currentLesson--;
-        $scope.lesson = $scope.lessons[$scope.currentLesson];
+        if ($scope.lesson.previous){
+            $scope.currentLesson--;
+            $scope.lesson = $scope.lessons[$scope.currentLesson];
+        }
     };
 
     /* Cartoons Schema */

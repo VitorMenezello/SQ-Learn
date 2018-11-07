@@ -3,9 +3,31 @@
     color: #808080;
     height: 100%;
     overflow: auto;
+    border-right: solid 1px #DFE7ED;
+}
+
+.lesson-header h4 {
+    color: #26ACF5;
+    margin: 20px 0 10px;
+}
+
+.lesson-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lesson-title md-icon {
+    color: #26ACF5;
+    margin: 0 50px;
+    cursor: pointer;
+}
+
+.lesson-title md-icon.disabled {
+    color: #808080;
 }
 
 .lesson-content {
+    padding: 10px;
 }
 
 .lesson-content-text p {
