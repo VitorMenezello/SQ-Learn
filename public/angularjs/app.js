@@ -10,10 +10,14 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons'])
 })
 
 .controller('ConsoleController', function ($scope) {
+    $scope.consoleQuery = '';
     $scope.consoleOculto = true;
 
     $scope.triggerConsole = function () {
-        console.log('teste', $scope.consoleOculto);
         $scope.consoleOculto = !$scope.consoleOculto;
+    };
+
+    $scope.query = function () {
+        console.log('query', $scope.consoleQuery);
     }
 });
