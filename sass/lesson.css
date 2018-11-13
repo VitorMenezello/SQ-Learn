@@ -1,0 +1,50 @@
+.lesson {
+  background-color: #F2F4F5;
+  color: #808080;
+  height: 100%;
+  overflow: auto;
+  border-right: solid 1px #DFE7ED; }
+  .lesson .lesson-header h4 {
+    color: #26ACF5;
+    margin: 20px 0 10px; }
+  .lesson .lesson-title {
+    display: flex;
+    justify-content: space-between; }
+    .lesson .lesson-title md-icon {
+      color: #26ACF5;
+      margin: 0 50px;
+      cursor: pointer; }
+      .lesson .lesson-title md-icon.disabled {
+        color: #808080; }
+  .lesson .lesson-content {
+    padding: 10px; }
+    .lesson .lesson-content .lesson-content-text p {
+      margin: 0;
+      padding: 0; }
+    .lesson .lesson-content .lesson-content-text .lesson-text {
+      margin: 0;
+      padding: 10px; }
+      .lesson .lesson-content .lesson-content-text .lesson-text p {
+        text-align: justify; }
+    .lesson .lesson-content .lesson-content-text .lesson-code {
+      margin: 5px;
+      padding: 10px;
+      background-color: #FFFFFF;
+      border-radius: 50px;
+      border: solid 1px #C4D3DB;
+      color: #26ACF5; }
+      .lesson .lesson-content .lesson-content-text .lesson-code p {
+        text-align: center; }
+    .lesson .lesson-content .lesson-content-text .question {
+      margin: 10px; }
+      .lesson .lesson-content .lesson-content-text .question textarea {
+        background-color: #FFFFFF;
+        height: 100px;
+        max-height: 100px;
+        border: 1px solid #26ACF5;
+        border-radius: 2px; }
+      .lesson .lesson-content .lesson-content-text .question #answer md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+        border: 1px solid #26ACF5;
+        border-radius: 2px; }
+
+/*# sourceMappingURL=lesson.css.map */

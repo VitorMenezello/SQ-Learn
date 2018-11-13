@@ -1,0 +1,81 @@
+@import "color";
+
+.lesson {
+  background-color: $sidenav-bg-color;
+  color: $sidenav-color;
+  height: 100%;
+  overflow: auto;
+  border-right: solid 1px $sidenav-border-color;
+
+  .lesson-header h4 {
+    color: $primary-color;
+    margin: 20px 0 10px;
+  }
+
+  .lesson-title {
+    display: flex;
+    justify-content: space-between;
+
+    md-icon {
+      color: $primary-color;
+      margin: 0 50px;
+      cursor: pointer;
+
+      &.disabled {
+        color: $sidenav-color;
+      }
+    }
+  }
+
+  .lesson-content {
+    padding: 10px;
+
+    .lesson-content-text {
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .lesson-text {
+        margin: 0;
+        padding: 10px;
+
+        p {
+          text-align: justify;
+        }
+      }
+
+      .lesson-code {
+        margin: 5px;
+        padding: 10px;
+        background-color: $secondary-color;
+        border-radius: 50px;
+        border: solid 1px #C4D3DB;
+        color: $primary-color;
+
+        p {
+          text-align: center;
+        }
+      }
+
+
+      .question {
+        margin: 10px;
+
+        textarea {
+          background-color: $secondary-color;
+          // color: #C4CFD5;
+          height: 100px;
+          max-height: 100px;
+          border: 1px solid $primary-color;
+          border-radius: 2px;
+        }
+
+        #answer md-input-container:not(.md-input-invalid).md-input-focused .md-input{
+          border: 1px solid $primary-color;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}

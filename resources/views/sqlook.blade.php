@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="{{ url('/css/console.css') }}">
     <link rel="stylesheet" href="{{ url('/css/schema.css') }}">
     <link rel="stylesheet" href="{{ url('/css/dialogs.css') }}">
-    <link rel="stylesheet" href="{{ url('/css/run-query.css') }}">
 @endsection
 
 @section('body')

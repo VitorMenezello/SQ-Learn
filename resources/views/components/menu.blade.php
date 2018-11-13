@@ -14,20 +14,17 @@
             Praticando
         </a>
 
-        <a class="navitem" href="sq-look" ng-class="{'current-page': currentPage === 'sq-look'}">
-            SQ-Look
+        <a class="navitem" href="sqlook" ng-class="{'current-page': currentPage === 'sqlook'}">
+            SQLook
         </a>
 
     </div>
 
     <div flex="20" class="logo" layout="column" layout-align="center center">
 
-        <md-button class="logo-button" href="." layout="row" layout-align="center center">
-            <img src="{{ url('/images/sq-learn-logo.png') }}" href="/">
-            <span class="logo-text">
-                SQ-Learn
-            </span>
-        </md-button>
+        <a class="logo-button" href="." layout="row" layout-align="center center">
+            <img src="{{ url('/images/sqlearn-logo-branco.png') }}" href=".">
+        </a>
 
     </div>
 

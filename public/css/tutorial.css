@@ -1,8 +1,241 @@
-md-tabs .md-tab.md-active {
-    color: #C83232;
-}
+/* line 4, ../../sass/schema.scss */
+.schema .schema-background, .schema-query .schema-background {
+  background-color: #FFFFFF;
+  height: 100%; }
+/* line 9, ../../sass/schema.scss */
+.schema .schema-select, .schema-query .schema-select {
+  background-color: #F2F4F5;
+  overflow: auto; }
+/* line 13, ../../sass/schema.scss */
+.schema .schema-select md-select, .schema-query .schema-select md-select {
+  background-color: #F2F4F5;
+  margin: 0;
+  padding: 5px;
+  max-height: 60px; }
+/* line 21, ../../sass/schema.scss */
+.schema .schema-title, .schema-query .schema-title {
+  color: #808080;
+  padding: 10px;
+  border-bottom: solid 1px #DFE7ED; }
+/* line 26, ../../sass/schema.scss */
+.schema .schema-title h3, .schema-query .schema-title h3 {
+  font-weight: normal;
+  font-size: 20px;
+  margin: 10px; }
+/* line 33, ../../sass/schema.scss */
+.schema .schema-tables, .schema-query .schema-tables {
+  padding: 5px 50px; }
+/* line 36, ../../sass/schema.scss */
+.schema .schema-tables .schema-table, .schema-query .schema-tables .schema-table {
+  padding: 10px; }
+/* line 39, ../../sass/schema.scss */
+.schema .schema-tables .schema-table ul, .schema-query .schema-tables .schema-table ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+/* line 44, ../../sass/schema.scss */
+.schema .schema-tables .schema-table ul li, .schema-query .schema-tables .schema-table ul li {
+  font-size: 14px; }
+/* line 47, ../../sass/schema.scss */
+.schema .schema-tables .schema-table ul li div, .schema-query .schema-tables .schema-table ul li div {
+  display: inline-block;
+  color: #808080; }
+/* line 54, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .schema-underline, .schema-query .schema-tables .schema-table .schema-underline {
+  text-decoration: underline;
+  text-underline-position: under; }
+/* line 59, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .referred-attribute, .schema-query .schema-tables .schema-table .referred-attribute {
+  color: #FFFFFF;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 6px; }
+/* line 67, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-1 .schema-underline, .schema-query .schema-tables .schema-table .color-1 .schema-underline {
+  text-decoration-color: #FF88BB; }
+/* line 71, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-1 h3, .schema .schema-tables .schema-table .color-1 md-icon, .schema .schema-tables .schema-table .color-1 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-1 h3, .schema-query .schema-tables .schema-table .color-1 md-icon, .schema-query .schema-tables .schema-table .color-1 md-checkbox.md-checked .md-ink-ripple {
+  color: #FF88BB; }
+/* line 75, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-1 .referred-attribute, .schema .schema-tables .schema-table .color-1 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-1 .referred-attribute, .schema-query .schema-tables .schema-table .color-1 md-checkbox.md-checked .md-ink-ripple md-icon {
+  background-color: #FF88BB; }
+/* line 81, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-2 .schema-underline, .schema-query .schema-tables .schema-table .color-2 .schema-underline {
+  text-decoration-color: #63BAB9; }
+/* line 85, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-2 h3, .schema .schema-tables .schema-table .color-2 md-icon, .schema .schema-tables .schema-table .color-2 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-2 h3, .schema-query .schema-tables .schema-table .color-2 md-icon, .schema-query .schema-tables .schema-table .color-2 md-checkbox.md-checked .md-ink-ripple {
+  color: #63BAB9; }
+/* line 89, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-2 .referred-attribute, .schema .schema-tables .schema-table .color-2 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-2 .referred-attribute, .schema-query .schema-tables .schema-table .color-2 md-checkbox.md-checked .md-ink-ripple md-icon {
+  background-color: #63BAB9; }
+/* line 95, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-3 .schema-underline, .schema-query .schema-tables .schema-table .color-3 .schema-underline {
+  text-decoration-color: #F9B450; }
+/* line 99, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-3 h3, .schema .schema-tables .schema-table .color-3 md-icon, .schema .schema-tables .schema-table .color-3 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-3 h3, .schema-query .schema-tables .schema-table .color-3 md-icon, .schema-query .schema-tables .schema-table .color-3 md-checkbox.md-checked .md-ink-ripple {
+  color: #F9B450; }
+/* line 103, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-3 .referred-attribute, .schema .schema-tables .schema-table .color-3 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-3 .referred-attribute, .schema-query .schema-tables .schema-table .color-3 md-checkbox.md-checked .md-ink-ripple md-icon {
+  background-color: #F9B450; }
+/* line 109, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-4 .schema-underline, .schema-query .schema-tables .schema-table .color-4 .schema-underline {
+  text-decoration-color: #74BC62; }
+/* line 113, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-4 h3, .schema .schema-tables .schema-table .color-4 md-icon, .schema .schema-tables .schema-table .color-4 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-4 h3, .schema-query .schema-tables .schema-table .color-4 md-icon, .schema-query .schema-tables .schema-table .color-4 md-checkbox.md-checked .md-ink-ripple {
+  color: #74BC62; }
+/* line 117, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-4 .referred-attribute, .schema .schema-tables .schema-table .color-4 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-4 .referred-attribute, .schema-query .schema-tables .schema-table .color-4 md-checkbox.md-checked .md-ink-ripple md-icon {
+  background-color: #74BC62; }
+/* line 123, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-5 .schema-underline, .schema-query .schema-tables .schema-table .color-5 .schema-underline {
+  text-decoration-color: #F9835A; }
+/* line 127, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-5 h3, .schema .schema-tables .schema-table .color-5 md-icon, .schema .schema-tables .schema-table .color-5 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-5 h3, .schema-query .schema-tables .schema-table .color-5 md-icon, .schema-query .schema-tables .schema-table .color-5 md-checkbox.md-checked .md-ink-ripple {
+  color: #F9835A; }
+/* line 131, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-5 .referred-attribute, .schema .schema-tables .schema-table .color-5 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-5 .referred-attribute, .schema-query .schema-tables .schema-table .color-5 md-checkbox.md-checked .md-ink-ripple md-icon {
+  background-color: #F9835A; }
+/* line 137, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-6 .schema-underline, .schema-query .schema-tables .schema-table .color-6 .schema-underline {
+  text-decoration-color: #CC88FF; }
+/* line 141, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-6 h3, .schema .schema-tables .schema-table .color-6 md-icon, .schema .schema-tables .schema-table .color-6 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-6 h3, .schema-query .schema-tables .schema-table .color-6 md-icon, .schema-query .schema-tables .schema-table .color-6 md-checkbox.md-checked .md-ink-ripple {
+  color: #CC88FF; }
+/* line 145, ../../sass/schema.scss */
+.schema .schema-tables .schema-table .color-6 .referred-attribute, .schema .schema-tables .schema-table .color-6 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-6 .referred-attribute, .schema-query .schema-tables .schema-table .color-6 md-checkbox.md-checked .md-ink-ripple md-icon {
+  background-color: #CC88FF; }
+/* line 152, ../../sass/schema.scss */
+.schema h3, .schema-query h3 {
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
-md-tabs md-ink-bar {
-    color: #C83232;
-    background-color: #C83232;
-}
+/* line 3, ../../sass/console.scss */
+.console {
+  height: 140px;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s; }
+/* line 13, ../../sass/console.scss */
+.console.hidden {
+  height: 40px; }
+/* line 17, ../../sass/console.scss */
+.console .console-label {
+  background-color: #1D2126;
+  color: white;
+  height: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; }
+/* line 25, ../../sass/console.scss */
+.console .console-label md-icon {
+  color: white;
+  margin: 0;
+  position: relative;
+  bottom: 1px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s; }
+/* line 34, ../../sass/console.scss */
+.console .console-label md-icon.hidden {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
+/* line 41, ../../sass/console.scss */
+.console md-input-container.console-text {
+  width: 100%;
+  height: 100px;
+  -webkit-transition: height 0.1s;
+  transition: height 0.1s;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #333639;
+  border: none; }
+/* line 52, ../../sass/console.scss */
+.console md-input-container.console-text.hidden {
+  height: 0;
+  -webkit-transition: height 0.9s;
+  transition: height 0.9s; }
+/* line 58, ../../sass/console.scss */
+.console md-input-container.console-text textarea {
+  height: 100% !important;
+  max-height: 100%;
+  color: white; }
+/* line 63, ../../sass/console.scss */
+.console md-input-container.console-text textarea .md-input {
+  overflow: auto;
+  border: none; }
+/* line 69, ../../sass/console.scss */
+.console md-input-container.console-text:not(.md-input-invalid).md-input-focused .md-input {
+  border: none; }
+/* line 73, ../../sass/console.scss */
+.console md-input-container.console-text .md-errors-spacer {
+  display: none; }
+
+/* line 3, ../../sass/lesson.scss */
+.lesson {
+  background-color: #F2F4F5;
+  color: #808080;
+  height: 100%;
+  overflow: auto;
+  border-right: solid 1px #DFE7ED; }
+/* line 10, ../../sass/lesson.scss */
+.lesson .lesson-header h4 {
+  color: #26ACF5;
+  margin: 20px 0 10px; }
+/* line 15, ../../sass/lesson.scss */
+.lesson .lesson-title {
+  display: flex;
+  justify-content: space-between; }
+/* line 19, ../../sass/lesson.scss */
+.lesson .lesson-title md-icon {
+  color: #26ACF5;
+  margin: 0 50px;
+  cursor: pointer; }
+/* line 24, ../../sass/lesson.scss */
+.lesson .lesson-title md-icon.disabled {
+  color: #808080; }
+/* line 30, ../../sass/lesson.scss */
+.lesson .lesson-content {
+  padding: 10px; }
+/* line 34, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-content-text p {
+  margin: 0;
+  padding: 0; }
+/* line 39, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-content-text .lesson-text {
+  margin: 0;
+  padding: 10px; }
+/* line 43, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-content-text .lesson-text p {
+  text-align: justify; }
+/* line 48, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-content-text .lesson-code {
+  margin: 5px;
+  padding: 10px;
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  border: solid 1px #C4D3DB;
+  color: #26ACF5; }
+/* line 56, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-content-text .lesson-code p {
+  text-align: center; }
+/* line 62, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-content-text .question {
+  margin: 10px; }
+/* line 65, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-content-text .question textarea {
+  background-color: #FFFFFF;
+  height: 100px;
+  max-height: 100px;
+  border: 1px solid #26ACF5;
+  border-radius: 2px; }
+/* line 74, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-content-text .question #answer md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+  border: 1px solid #26ACF5;
+  border-radius: 2px; }

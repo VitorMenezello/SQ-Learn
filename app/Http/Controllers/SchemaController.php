@@ -87,6 +87,12 @@ class SchemaController extends Controller
         return $schemas;
     }
 
+    /**
+     * Return a schema by name.
+     *
+     * @param $schemaName
+     * @return stdClass
+     */
     public function getSchema($schemaName){
         $tables = DB::select(DB::raw("SELECT * FROM GetScheme(:database)"), ['database' => $schemaName]);
         $schema = new stdClass();
@@ -119,12 +125,12 @@ class SchemaController extends Controller
     }
 
     /**
-     * Render the 'sq-look' view.
+     * Render the 'sqlook' view.
      *
      * @return \Illuminate\View\View
      */
     public function sqlookView(){
-        return view('sq-look', [
+        return view('sqlook', [
             'schemas' => $this->getSchemas()
         ]);
     }

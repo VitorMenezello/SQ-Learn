@@ -1,0 +1,77 @@
+@import "color";
+
+.console {
+  height: 140px;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+
+  &.hidden {
+    height: 40px;
+  }
+
+  .console-label {
+    background-color: $console-label-color;
+    color: white;
+    height: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    md-icon {
+      color: white;
+      margin: 0;
+      position: relative;
+      bottom: 1px;
+      cursor: pointer;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: transform 0.5s;
+
+      &.hidden {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  md-input-container.console-text {
+    width: 100%;
+    height: 100px;
+    -webkit-transition: height 0.1s;
+    transition: height 0.1s;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: $console-bg-color;
+    border: none;
+
+    &.hidden {
+      height: 0;
+      -webkit-transition: height 0.9s;
+      transition: height 0.9s;
+    }
+
+    textarea {
+      height: 100% !important;
+      max-height: 100%;
+      color: white;
+
+      .md-input {
+        overflow: auto;
+        border: none;
+      }
+    }
+
+    &:not(.md-input-invalid).md-input-focused .md-input{
+      border: none;
+    }
+
+    .md-errors-spacer {
+      display: none;
+    }
+  }
+}

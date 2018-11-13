@@ -12,9 +12,6 @@
 
 @section('stylesheets')
     <link rel="stylesheet" href="{{ url('/css/tutorial.css') }}">
-    <link rel="stylesheet" href="{{ url('/css/console.css') }}">
-    <link rel="stylesheet" href="{{ url('/css/lesson.css') }}">
-    <link rel="stylesheet" href="{{ url('/css/schema.css') }}">
 @endsection
 
 @section('body')

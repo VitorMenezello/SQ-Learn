@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>SQ-Learn - @yield('title')</title>
+    <title>SQLearn - @yield('title')</title>
 
     @component('components.javascripts')
     @endcomponent

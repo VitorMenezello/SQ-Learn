@@ -1,80 +1,65 @@
+/* line 3, ../../sass/console.scss */
 .console {
-    height: 140px;
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1;
-    -webkit-transition: height 0.5s;
-    transition: height 0.5s;
-}
-
+  height: 140px;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s; }
+/* line 13, ../../sass/console.scss */
 .console.hidden {
-    height: 40px;
-}
-
-.console-label {
-    background-color: #1D2126;
-    color: #FFFFFF;
-    height: 20px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.console-label md-icon {
-    color: white;
-    margin: 0;
-    position: relative;
-    bottom: 1px;
-    cursor: pointer;
-    -webkit-transition: -webkit-transform 0.5s;
-    transition: transform 0.5s;
-}
-.console-label md-icon.hidden {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
-.console-text {
-    width: 100%;
-    height: 100px;
-    -webkit-transition: height 0.1s;
-    transition: height 0.1s;
-    overflow: hidden;
-}
-
-.console-text.hidden {
-    height: 0;
-    -webkit-transition: height 0.9s;
-    transition: height 0.9s;
-}
-
-.console textarea {
-    height: 100% !important;
-    max-height: 100%;
-    color: #FEFEFE;
-}
-
-.console textarea .md-input {
-    overflow: auto;
-}
-
-#console md-input-container {
-    margin: 0;
-    padding: 0;
-    background-color: #333639;
-    border: none;
-}
-
-#console md-input-container .md-input{
-    border: none;
-}
-
-#console md-input-container:not(.md-input-invalid).md-input-focused .md-input{
-    border: none;
-}
-
-.md-errors-spacer {
-    display: none;
-}
+  height: 40px; }
+/* line 17, ../../sass/console.scss */
+.console .console-label {
+  background-color: #1D2126;
+  color: white;
+  height: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; }
+/* line 25, ../../sass/console.scss */
+.console .console-label md-icon {
+  color: white;
+  margin: 0;
+  position: relative;
+  bottom: 1px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s; }
+/* line 34, ../../sass/console.scss */
+.console .console-label md-icon.hidden {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
+/* line 41, ../../sass/console.scss */
+.console md-input-container.console-text {
+  width: 100%;
+  height: 100px;
+  -webkit-transition: height 0.1s;
+  transition: height 0.1s;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #333639;
+  border: none; }
+/* line 52, ../../sass/console.scss */
+.console md-input-container.console-text.hidden {
+  height: 0;
+  -webkit-transition: height 0.9s;
+  transition: height 0.9s; }
+/* line 58, ../../sass/console.scss */
+.console md-input-container.console-text textarea {
+  height: 100% !important;
+  max-height: 100%;
+  color: white; }
+/* line 63, ../../sass/console.scss */
+.console md-input-container.console-text textarea .md-input {
+  overflow: auto;
+  border: none; }
+/* line 69, ../../sass/console.scss */
+.console md-input-container.console-text:not(.md-input-invalid).md-input-focused .md-input {
+  border: none; }
+/* line 73, ../../sass/console.scss */
+.console md-input-container.console-text .md-errors-spacer {
+  display: none; }

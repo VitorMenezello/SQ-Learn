@@ -24,4 +24,4 @@ $router->get('/tutorial', 'SchemaController@tutorialView');
 
 $router->get('/praticando', 'SchemaController@praticandoView');
 
-$router->get('/sq-look', 'SchemaController@sqlookView');
+$router->get('/sqlook', 'SchemaController@sqlookView');
