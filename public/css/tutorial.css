@@ -131,14 +131,14 @@
   height: 20px;
   padding: 10px;
   display: flex;
-  justify-content: space-between; }
-/* line 25, ../../sass/console.scss */
+  justify-content: space-between;
+  cursor: pointer; }
+/* line 26, ../../sass/console.scss */
 .console .console-label md-icon {
   color: white;
   margin: 0;
   position: relative;
   bottom: 1px;
-  cursor: pointer;
   -webkit-transition: -webkit-transform 0.5s;
   transition: transform 0.5s; }
 /* line 34, ../../sass/console.scss */
@@ -146,9 +146,24 @@
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg); }
 /* line 41, ../../sass/console.scss */
+.console .query-history {
+  background-color: #333639;
+  color: white;
+  width: 100%;
+  height: 66px;
+  max-height: 66px;
+  overflow-y: scroll;
+  padding: 2px;
+  display: flex;
+  flex-direction: column-reverse;
+  cursor: text; }
+/* line 53, ../../sass/console.scss */
+.console .query-history span {
+  padding: 2px 0; }
+/* line 58, ../../sass/console.scss */
 .console md-input-container.console-text {
   width: 100%;
-  height: 100px;
+  height: 30px;
   -webkit-transition: height 0.1s;
   transition: height 0.1s;
   overflow: hidden;
@@ -156,24 +171,23 @@
   padding: 0;
   background-color: #333639;
   border: none; }
-/* line 52, ../../sass/console.scss */
+/* line 69, ../../sass/console.scss */
 .console md-input-container.console-text.hidden {
   height: 0;
   -webkit-transition: height 0.9s;
   transition: height 0.9s; }
-/* line 58, ../../sass/console.scss */
-.console md-input-container.console-text textarea {
-  height: 100% !important;
+/* line 75, ../../sass/console.scss */
+.console md-input-container.console-text input {
   max-height: 100%;
   color: white; }
-/* line 63, ../../sass/console.scss */
-.console md-input-container.console-text textarea .md-input {
+/* line 79, ../../sass/console.scss */
+.console md-input-container.console-text input.md-input {
   overflow: auto;
   border: none; }
-/* line 69, ../../sass/console.scss */
+/* line 85, ../../sass/console.scss */
 .console md-input-container.console-text:not(.md-input-invalid).md-input-focused .md-input {
   border: none; }
-/* line 73, ../../sass/console.scss */
+/* line 89, ../../sass/console.scss */
 .console md-input-container.console-text .md-errors-spacer {
   display: none; }
 
@@ -203,39 +217,31 @@
 /* line 30, ../../sass/lesson.scss */
 .lesson .lesson-content {
   padding: 10px; }
-/* line 34, ../../sass/lesson.scss */
-.lesson .lesson-content .lesson-content-text p {
-  margin: 0;
-  padding: 0; }
-/* line 39, ../../sass/lesson.scss */
+/* line 35, ../../sass/lesson.scss */
 .lesson .lesson-content .lesson-content-text .lesson-text {
   margin: 0;
-  padding: 10px; }
-/* line 43, ../../sass/lesson.scss */
-.lesson .lesson-content .lesson-content-text .lesson-text p {
+  padding: 10px;
   text-align: justify; }
-/* line 48, ../../sass/lesson.scss */
+/* line 41, ../../sass/lesson.scss */
 .lesson .lesson-content .lesson-content-text .lesson-code {
   margin: 5px;
   padding: 10px;
   background-color: #FFFFFF;
   border-radius: 50px;
   border: solid 1px #C4D3DB;
-  color: #26ACF5; }
-/* line 56, ../../sass/lesson.scss */
-.lesson .lesson-content .lesson-content-text .lesson-code p {
+  color: #26ACF5;
   text-align: center; }
-/* line 62, ../../sass/lesson.scss */
-.lesson .lesson-content .lesson-content-text .question {
+/* line 52, ../../sass/lesson.scss */
+.lesson .lesson-content md-input-container.question {
   margin: 10px; }
-/* line 65, ../../sass/lesson.scss */
-.lesson .lesson-content .lesson-content-text .question textarea {
+/* line 55, ../../sass/lesson.scss */
+.lesson .lesson-content md-input-container.question textarea {
   background-color: #FFFFFF;
   height: 100px;
   max-height: 100px;
   border: 1px solid #26ACF5;
   border-radius: 2px; }
-/* line 74, ../../sass/lesson.scss */
-.lesson .lesson-content .lesson-content-text .question #answer md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+/* line 64, ../../sass/lesson.scss */
+.lesson .lesson-content md-input-container.question:not(.md-input-invalid).md-input-focused .md-input {
   border: 1px solid #26ACF5;
   border-radius: 2px; }

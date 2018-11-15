@@ -3,10 +3,10 @@
 @section('title', 'Tutorial')
 
 @section('scripts')
-    <script src="{{ url('/angularjs/constants/lessons.js') }}"></script>
     <script src="{{ url('/angularjs/controllers/tutorial.js') }}"></script>
     <script>
         let schema = @json($schema);
+        let lessons = @json($lessons);
     </script>
 @endsection
 

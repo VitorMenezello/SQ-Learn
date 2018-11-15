@@ -25,3 +25,9 @@ $router->get('/tutorial', 'SchemaController@tutorialView');
 $router->get('/praticando', 'SchemaController@praticandoView');
 
 $router->get('/sqlook', 'SchemaController@sqlookView');
+
+$router->get('/sql-format', function (){
+    return view('sql-format');
+});
+
+$router->post('/post-query', 'SchemaController@postQueryAjax');

@@ -8,7 +8,7 @@ body {
   .header-container {
     background-color: $primary-color;
     color: $secondary-color;
-    height: 80px;
+    height: 70px;
     padding: 0 20px;
     position: fixed;
     width: 100%;
@@ -47,7 +47,7 @@ body {
     .logo .logo-button img {
       width: 300px;
       height: auto;
-      margin: 10px;
+      padding: 0 20px;
     }
   }
 
@@ -55,7 +55,7 @@ body {
     height: 100%;
 
     .content-container {
-      padding-top: 80px;
+      padding-top: 70px;
       padding-bottom: 40px;
       height: 100%;
     }

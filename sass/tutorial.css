@@ -97,21 +97,34 @@
     height: 20px;
     padding: 10px;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    cursor: pointer; }
     .console .console-label md-icon {
       color: white;
       margin: 0;
       position: relative;
       bottom: 1px;
-      cursor: pointer;
       -webkit-transition: -webkit-transform 0.5s;
       transition: transform 0.5s; }
       .console .console-label md-icon.hidden {
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg); }
+  .console .query-history {
+    background-color: #333639;
+    color: white;
+    width: 100%;
+    height: 66px;
+    max-height: 66px;
+    overflow-y: scroll;
+    padding: 2px;
+    display: flex;
+    flex-direction: column-reverse;
+    cursor: text; }
+    .console .query-history span {
+      padding: 2px 0; }
   .console md-input-container.console-text {
     width: 100%;
-    height: 100px;
+    height: 30px;
     -webkit-transition: height 0.1s;
     transition: height 0.1s;
     overflow: hidden;
@@ -123,11 +136,10 @@
       height: 0;
       -webkit-transition: height 0.9s;
       transition: height 0.9s; }
-    .console md-input-container.console-text textarea {
-      height: 100% !important;
+    .console md-input-container.console-text input {
       max-height: 100%;
       color: white; }
-      .console md-input-container.console-text textarea .md-input {
+      .console md-input-container.console-text input.md-input {
         overflow: auto;
         border: none; }
     .console md-input-container.console-text:not(.md-input-invalid).md-input-focused .md-input {
@@ -155,32 +167,27 @@
         color: #808080; }
   .lesson .lesson-content {
     padding: 10px; }
-    .lesson .lesson-content .lesson-content-text p {
-      margin: 0;
-      padding: 0; }
     .lesson .lesson-content .lesson-content-text .lesson-text {
       margin: 0;
-      padding: 10px; }
-      .lesson .lesson-content .lesson-content-text .lesson-text p {
-        text-align: justify; }
+      padding: 10px;
+      text-align: justify; }
     .lesson .lesson-content .lesson-content-text .lesson-code {
       margin: 5px;
       padding: 10px;
       background-color: #FFFFFF;
       border-radius: 50px;
       border: solid 1px #C4D3DB;
-      color: #26ACF5; }
-      .lesson .lesson-content .lesson-content-text .lesson-code p {
-        text-align: center; }
-    .lesson .lesson-content .lesson-content-text .question {
+      color: #26ACF5;
+      text-align: center; }
+    .lesson .lesson-content md-input-container.question {
       margin: 10px; }
-      .lesson .lesson-content .lesson-content-text .question textarea {
+      .lesson .lesson-content md-input-container.question textarea {
         background-color: #FFFFFF;
         height: 100px;
         max-height: 100px;
         border: 1px solid #26ACF5;
         border-radius: 2px; }
-      .lesson .lesson-content .lesson-content-text .question #answer md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+      .lesson .lesson-content md-input-container.question:not(.md-input-invalid).md-input-focused .md-input {
         border: 1px solid #26ACF5;
         border-radius: 2px; }
 

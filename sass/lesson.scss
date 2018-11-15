@@ -31,18 +31,11 @@
     padding: 10px;
 
     .lesson-content-text {
-      p {
-        margin: 0;
-        padding: 0;
-      }
 
       .lesson-text {
         margin: 0;
         padding: 10px;
-
-        p {
-          text-align: justify;
-        }
+        text-align: justify;
       }
 
       .lesson-code {
@@ -52,29 +45,25 @@
         border-radius: 50px;
         border: solid 1px #C4D3DB;
         color: $primary-color;
+        text-align: center;
+      }
+    }
 
-        p {
-          text-align: center;
-        }
+    md-input-container.question {
+      margin: 10px;
+
+      textarea {
+        background-color: $secondary-color;
+        // color: #C4CFD5;
+        height: 100px;
+        max-height: 100px;
+        border: 1px solid $primary-color;
+        border-radius: 2px;
       }
 
-
-      .question {
-        margin: 10px;
-
-        textarea {
-          background-color: $secondary-color;
-          // color: #C4CFD5;
-          height: 100px;
-          max-height: 100px;
-          border: 1px solid $primary-color;
-          border-radius: 2px;
-        }
-
-        #answer md-input-container:not(.md-input-invalid).md-input-focused .md-input{
-          border: 1px solid $primary-color;
-          border-radius: 2px;
-        }
+      &:not(.md-input-invalid).md-input-focused .md-input{
+        border: 1px solid $primary-color;
+        border-radius: 2px;
       }
     }
   }

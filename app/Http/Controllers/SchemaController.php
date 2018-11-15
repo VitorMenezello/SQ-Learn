@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
+use Illuminate\Database\QueryException;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use stdClass;
 
@@ -18,6 +21,11 @@ class SchemaController extends Controller
      */
     public const SCHEMA_COMPANY = "company";
     public const LABEL_COMPANY = "COMPANY (Elmasri e Navathe)";
+
+    /**
+     * Schema used for the tutorial.
+     */
+    public const TUTORIAL_SCHEMA = self::SCHEMA_IMDB;
 
     /**
      * Array with the list of schemas.
@@ -77,9 +85,11 @@ class SchemaController extends Controller
     public function getSchemas()
     {
         $schemas = [];
-        foreach ($this->databases as $name => $label){
+        foreach ($this->databases as $name => $label)
+        {
             $tables = DB::select(DB::raw("SELECT * FROM GetScheme(:database)"), ['database' => $name]);
             $schemas[$name] = new stdClass();
+            $schemas[$name]->name = $name;
             $schemas[$name]->label = $label;
             $schemas[$name]->tables = $this->formatSchema($tables);
         }
@@ -93,9 +103,11 @@ class SchemaController extends Controller
      * @param $schemaName
      * @return stdClass
      */
-    public function getSchema($schemaName){
+    public function getSchema($schemaName)
+    {
         $tables = DB::select(DB::raw("SELECT * FROM GetScheme(:database)"), ['database' => $schemaName]);
         $schema = new stdClass();
+        $schema->name = $schemaName;
         $schema->label = $this->databases[$schemaName];
         $schema->tables = $this->formatSchema($tables);
 
@@ -103,13 +115,49 @@ class SchemaController extends Controller
     }
 
     /**
+     * Retrieves all lessons for the tutorial in the database.
+     *
+     * @return array
+     */
+    public function getLessons()
+    {
+        $lessons = DB::select(DB::raw("SELECT * FROM lessons"));
+        return $lessons;
+    }
+
+    /**
+     * Execute query on a specific schema.
+     *
+     * @param $query
+     * @param $schema
+     * @return array
+     */
+    public function executeQuery($query, $schema)
+    {
+        try {
+            $result = DB::connection($schema)->select(DB::raw($query));
+        } catch (Exception $e) {
+            return [
+                'success' => false,
+                'error' => $e->getMessage()
+            ];
+        }
+        return [
+            'success' => true,
+            'result' => $result
+        ];
+    }
+
+    /**
      * Render the 'tutorial' view.
      *
      * @return \Illuminate\View\View
      */
-    public function tutorialView(){
+    public function tutorialView()
+    {
         return view('tutorial', [
-            'schema' => $this->getSchema("imdb")
+            'schema' => $this->getSchema(self::TUTORIAL_SCHEMA),
+            'lessons' => $this->getLessons()
         ]);
     }
 
@@ -118,7 +166,8 @@ class SchemaController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function praticandoView(){
+    public function praticandoView()
+    {
         return view('praticando', [
             'schemas' => $this->getSchemas()
         ]);
@@ -129,9 +178,26 @@ class SchemaController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function sqlookView(){
+    public function sqlookView()
+    {
         return view('sqlook', [
             'schemas' => $this->getSchemas()
         ]);
+    }
+
+    /**
+     * Return a response with the results of a query on a selected schema.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function postQueryAjax(Request $request)
+    {
+        $query = $request->input('query');
+        $schema = $request->input('schema');
+
+        $response = $this->executeQuery($query, $schema);
+
+        return response()->json($response);
     }
 }
