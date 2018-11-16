@@ -1,0 +1,43 @@
+/* line 3, ../../sass/datatable.scss */
+.datatable {
+  background-color: #F2F4F5;
+  color: #808080;
+  height: 100%;
+  overflow: auto;
+  border-left: solid 1px #DFE7ED; }
+/* line 10, ../../sass/datatable.scss */
+.datatable .datatable-title h3 {
+  font-size: 20px;
+  font-weight: normal;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+  width: 250px;
+  text-align: center; }
+/* line 20, ../../sass/datatable.scss */
+.datatable .datatable-content {
+  padding: 15px;
+  margin-top: 20px; }
+/* line 24, ../../sass/datatable.scss */
+.datatable .datatable-content .datatable-messages, .datatable .datatable-content .datatable-stats {
+  text-align: center;
+  margin-bottom: 20px; }
+/* line 28, ../../sass/datatable.scss */
+.datatable .datatable-content .datatable-messages .error, .datatable .datatable-content .datatable-stats .error {
+  color: #F44336; }
+/* line 32, ../../sass/datatable.scss */
+.datatable .datatable-content .datatable-messages .number, .datatable .datatable-content .datatable-stats .number {
+  color: #26ACF5;
+  font-weight: 500; }
+/* line 36, ../../sass/datatable.scss */
+.datatable .datatable-content .datatable-messages .number.first, .datatable .datatable-content .datatable-stats .number.first {
+  margin-right: 20px; }
+/* line 42, ../../sass/datatable.scss */
+.datatable .datatable-content table {
+  margin: auto; }
+/* line 45, ../../sass/datatable.scss */
+.datatable .datatable-content table .table-header {
+  color: #26ACF5; }
+/* line 49, ../../sass/datatable.scss */
+.datatable .datatable-content table td, .datatable .datatable-content table th {
+  padding: 8px; }

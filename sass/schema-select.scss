@@ -1,0 +1,20 @@
+@import "color";
+
+.schema-select {
+  color: rgba(0, 0, 0, 0.4);
+  background-color: $sidenav-bg-color;
+  border-bottom: solid 1px $sidenav-border-color;
+  overflow: auto;
+  text-align: center;
+
+  md-select {
+    background-color: $sidenav-bg-color;
+    margin: 0;
+    padding: 10px;
+    max-height: 60px;
+
+    &.md-default-theme:not([disabled]):focus .md-select-value, &:not([disabled]):focus .md-select-value {
+      color: $primary-color;
+    }
+  }
+}

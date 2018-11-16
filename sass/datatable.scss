@@ -1,0 +1,54 @@
+@import "color";
+
+.datatable {
+  background-color: $sidenav-bg-color;
+  color: $sidenav-color;
+  height: 100%;
+  overflow: auto;
+  border-left: solid 1px $sidenav-border-color;
+
+  .datatable-title h3 {
+    font-size: 20px;
+    font-weight: normal;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    width: 250px;
+    text-align: center;
+  }
+
+  .datatable-content {
+    padding: 15px;
+    margin-top: 20px;
+
+    .datatable-messages, .datatable-stats {
+      text-align: center;
+      margin-bottom: 20px;
+
+      .error {
+        color: $error-color;
+      }
+
+      .number {
+        color: $primary-color;
+        font-weight: 500;
+
+        &.first {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    table {
+      margin: auto;
+
+      .table-header {
+        color: $primary-color;
+      }
+
+      td, th {
+        padding: 8px;
+      }
+    }
+  }
+}

@@ -72,6 +72,19 @@
   overflow: hidden;
   text-overflow: ellipsis; }
 
+.schema-select {
+  background-color: #F2F4F5;
+  border-bottom: solid 1px #DFE7ED;
+  overflow: auto;
+  text-align: center; }
+  .schema-select md-select {
+    background-color: #F2F4F5;
+    margin: 0;
+    padding: 10px;
+    max-height: 60px; }
+    .schema-select md-select.md-default-theme:not([disabled]):focus .md-select-value, .schema-select md-select:not([disabled]):focus .md-select-value {
+      color: #26ACF5; }
+
 .console {
   height: 140px;
   overflow: hidden;
@@ -139,48 +152,38 @@
     .console md-input-container.console-text .md-errors-spacer {
       display: none; }
 
-.lesson {
+.datatable {
   background-color: #F2F4F5;
   color: #808080;
   height: 100%;
   overflow: auto;
-  border-right: solid 1px #DFE7ED; }
-  .lesson .lesson-header h4 {
-    color: #26ACF5;
-    margin: 20px 0 10px; }
-  .lesson .lesson-title {
-    display: flex;
-    justify-content: space-between; }
-    .lesson .lesson-title md-icon {
-      color: #26ACF5;
-      margin: 0 50px;
-      cursor: pointer; }
-      .lesson .lesson-title md-icon.disabled {
-        color: #808080; }
-  .lesson .lesson-content {
-    padding: 10px; }
-    .lesson .lesson-content .lesson-content-text .lesson-text {
-      margin: 0;
-      padding: 10px;
-      text-align: justify; }
-    .lesson .lesson-content .lesson-content-text .lesson-code {
-      margin: 5px;
-      padding: 10px;
-      background-color: #FFFFFF;
-      border-radius: 50px;
-      border: solid 1px #C4D3DB;
-      color: #26ACF5;
-      text-align: center; }
-    .lesson .lesson-content md-input-container.question {
-      margin: 10px; }
-      .lesson .lesson-content md-input-container.question textarea {
-        background-color: #FFFFFF;
-        height: 100px;
-        max-height: 100px;
-        border: 1px solid #26ACF5;
-        border-radius: 2px; }
-      .lesson .lesson-content md-input-container.question:not(.md-input-invalid).md-input-focused .md-input {
-        border: 1px solid #26ACF5;
-        border-radius: 2px; }
+  border-left: solid 1px #DFE7ED; }
+  .datatable .datatable-title h3 {
+    font-size: 20px;
+    font-weight: normal;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    width: 250px;
+    text-align: center; }
+  .datatable .datatable-content {
+    padding: 15px;
+    margin-top: 20px; }
+    .datatable .datatable-content .datatable-messages, .datatable .datatable-content .datatable-stats {
+      text-align: center;
+      margin-bottom: 20px; }
+      .datatable .datatable-content .datatable-messages .error, .datatable .datatable-content .datatable-stats .error {
+        color: #F44336; }
+      .datatable .datatable-content .datatable-messages .number, .datatable .datatable-content .datatable-stats .number {
+        color: #26ACF5;
+        font-weight: 500; }
+        .datatable .datatable-content .datatable-messages .number.first, .datatable .datatable-content .datatable-stats .number.first {
+          margin-right: 20px; }
+    .datatable .datatable-content table {
+      margin: auto; }
+      .datatable .datatable-content table .table-header {
+        color: #26ACF5; }
+      .datatable .datatable-content table td, .datatable .datatable-content table th {
+        padding: 8px; }
 
-/*# sourceMappingURL=tutorial.css.map */
+/*# sourceMappingURL=praticando.css.map */

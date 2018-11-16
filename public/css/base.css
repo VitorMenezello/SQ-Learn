@@ -51,3 +51,12 @@ body .full-height .content-container {
   padding-top: 70px;
   padding-bottom: 40px;
   height: 100%; }
+/* line 64, ../../sass/base.scss */
+body .md-select-menu-container {
+  top: 80px !important; }
+/* line 67, ../../sass/base.scss */
+body .md-select-menu-container md-select-menu md-content md-option {
+  color: #808080 !important; }
+/* line 70, ../../sass/base.scss */
+body .md-select-menu-container md-select-menu md-content md-option[selected] {
+  color: #26ACF5 !important; }

@@ -42,11 +42,13 @@ app.controller('TutorialController', function ($scope, $http) {
     $scope.setColors($scope.schema);
 
     /* Query Handler */
+    $scope.$on('queryEvent', function(event, data) {
+        $scope.runQuery(data);
+    });
 
-    $scope.$on('queryEvent', function(event, data)
+    $scope.runQuery = function (query)
     {
-        console.log('data', data);
-        $http.post('/post-query', { query: data, schema: $scope.schema['name'] })
+        $http.post('/post-query', { query: query, schema: $scope.schema['name'] })
             .then(
                 function (response)
                 {
@@ -57,6 +59,5 @@ app.controller('TutorialController', function ($scope, $http) {
                         console.log('error', response.data.error);
                     }
                 });
-        //$scope.runQuery(data.query);
-    })
+    }
 });

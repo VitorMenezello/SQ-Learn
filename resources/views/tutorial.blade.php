@@ -29,36 +29,6 @@
 
             <div flex="66" class="full-height">
 
-                {{--<md-tabs md-border-bottom md-stretch-tabs="always" md-no-pagination flex="80">--}}
-
-                    {{--<md-tab>--}}
-
-                        {{--<md-tab-label>--}}
-                            {{--Esquema Relacional--}}
-                        {{--</md-tab-label>--}}
-
-                        {{--<md-tab-body>--}}
-                            {{--@component('components.schema')--}}
-                            {{--@endcomponent--}}
-                        {{--</md-tab-body>--}}
-
-                    {{--</md-tab>--}}
-
-                    {{--<md-tab>--}}
-
-                        {{--<md-tab-label>--}}
-                            {{--Resultados--}}
-                        {{--</md-tab-label>--}}
-
-                        {{--<md-tab-body>--}}
-                            {{--@component('components.datatable')--}}
-                            {{--@endcomponent--}}
-                        {{--</md-tab-body>--}}
-
-                    {{--</md-tab>--}}
-
-                {{--</md-tabs>--}}
-
                 @component('components.schema')
                 @endcomponent
 

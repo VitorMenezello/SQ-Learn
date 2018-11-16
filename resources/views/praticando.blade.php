@@ -10,41 +10,36 @@
 @endsection
 
 @section('stylesheets')
-    <link rel="stylesheet" href="{{ url('/css/console.css') }}">
-    <link rel="stylesheet" href="{{ url('/css/schema.css') }}">
+    <link rel="stylesheet" href="{{ url('/css/praticando.css') }}">
 @endsection
 
 @section('body')
 
     <div ng-controller="PraticandoController" class="full-height">
 
-        <md-content class="content-container" layout="column">
+        <md-content class="content-container" layout="row">
 
-            <div flex="80" layout="row">
+            <div flex="66" layout="column" class="full-height">
+                @component('components.schema-select')
+                @endcomponent
 
-                <div id="schema-select" class="schema-select" flex="60" layout="column">
-                    @component('components.schema-select')
-                    @endcomponent
-
-                    <div flex>
-                        @component('components.schema')
-                        @endcomponent
-                    </div>
-                </div>
-
-                <div flex="40">
-                    @component('components.datatable')
+                <div flex>
+                    @component('components.schema')
                     @endcomponent
                 </div>
-
             </div>
 
-            <div flex="20">
-                @component('components.console')
+            <div flex="33" class="full-height">
+                @component('components.datatable')
                 @endcomponent
             </div>
 
         </md-content>
+
+        <div>
+            @component('components.console')
+            @endcomponent
+        </div>
 
     </div>
 

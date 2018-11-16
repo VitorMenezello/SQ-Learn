@@ -1,7 +1,7 @@
-<div id="schema-select">
+<div id="schema-select" class="schema-select">
 
     <md-select ng-model="schema"
-               placeholder="Banco de Dados"
+               placeholder="Esquemas"
                class="md-no-underline"
                aria-label="Schema Select"
                ng-change="setColors(schema)">

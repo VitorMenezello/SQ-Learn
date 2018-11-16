@@ -42,5 +42,11 @@ body {
       padding-top: 70px;
       padding-bottom: 40px;
       height: 100%; }
+  body .md-select-menu-container {
+    top: 80px !important; }
+    body .md-select-menu-container md-select-menu md-content md-option {
+      color: #808080 !important; }
+      body .md-select-menu-container md-select-menu md-content md-option[selected] {
+        color: #26ACF5 !important; }
 
 /*# sourceMappingURL=base.css.map */

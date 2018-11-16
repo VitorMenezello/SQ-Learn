@@ -60,4 +60,16 @@ body {
       height: 100%;
     }
   }
+
+  .md-select-menu-container {
+    top: 80px !important;
+
+    md-select-menu md-content md-option {
+      color: $sidenav-color !important;
+
+      &[selected] {
+        color: $primary-color !important;
+      }
+    }
+  }
 }

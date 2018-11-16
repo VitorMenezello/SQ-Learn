@@ -1,6 +1,6 @@
-<div id="datatable" class="datatable" layout="column">
+<div id="datatable" class="datatable" ng-controller="DatatableController">
 
-    <div flex="15" class="schema-title" layout="row" layout-align="center center">
+    <div class="datatable-title" layout="row" layout-align="center center">
 
         <h3>
             Resultados
@@ -8,21 +8,42 @@
 
     </div>
 
-    <div flex layout="row" layout-align="center center">
+    <div class="datatable-content">
 
-        <span ng-if="!result" class="no-results">
-            Nenhuma query computada.
-        </span>
+        <div class="datatable-messages" ng-if="!result">
+            <span ng-if="error === ''" class="no-results">
+                Nenhuma query computada.
+            </span>
 
-        <table>
+            <span ng-if="error !== ''" class="error">
+                Ocorreu um erro: @{ error }@
+            </span>
+        </div>
 
-            <tr>
-                <th ng-repeat="attName in result.attNames">
+        <div class="datatable-stats" ng-if="result">
+            <span>
+                Número de resultados:
+            </span>
+            <span class="number first">
+                @{ rows }@
+            </span>
+            <span>
+                Número de colunas:
+            </span>
+            <span class="number">
+                @{ columns }@
+            </span>
+        </div>
+
+        <table ng-if="result">
+
+            <tr class="table-header">
+                <th ng-repeat="attName in attNames">
                     @{ attName }@
                 </th>
             </tr>
 
-            <tr ng-repeat="attValues in result.attValues">
+            <tr class="table-content" ng-repeat="attValues in attValues">
                 <td ng-repeat="attValue in attValues">
                     @{ attValue }@
                 </td>

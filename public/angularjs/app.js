@@ -75,6 +75,38 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
     };
 })
 
+.controller('DatatableController', function ($scope)
+{
+    $scope.result = false;
+    $scope.error = '';
+    $scope.attNames = [];
+    $scope.attValues = [];
+    $scope.rows = 0;
+    $scope.columns = 0;
+
+    $scope.$on('datatableEvent', function (event, data)
+    {
+        $scope.result = data.success;
+        if ($scope.result) {
+            $scope.extractAttributes(data.data);
+        }
+        else {
+            $scope.error = data.error;
+        }
+    });
+
+    $scope.extractAttributes = function (data)
+    {
+        if (data.length > 0){
+            let object = data.pop();
+            $scope.attNames = Object.keys(object);
+            $scope.columns = $scope.attNames.length;
+        }
+        $scope.attValues = data;
+        $scope.rows = data.length;
+    };
+})
+
 .filter('reverse', function()
 {
     return function(items) {
