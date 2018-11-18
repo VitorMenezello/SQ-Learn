@@ -5,7 +5,7 @@
 /* line 9, ../../sass/schema.scss */
 .schema .schema-title, .schema-query .schema-title {
   color: #808080;
-  padding: 10px;
+  padding: 15px;
   border-bottom: solid 1px #DFE7ED; }
 /* line 14, ../../sass/schema.scss */
 .schema .schema-title h3, .schema-query .schema-title h3 {
@@ -235,3 +235,90 @@
 .lesson .lesson-content md-input-container.question:not(.md-input-invalid).md-input-focused .md-input {
   border: 1px solid #26ACF5;
   border-radius: 2px; }
+
+/* line 3, ../../sass/datatable.scss */
+.datatable {
+  background-color: #F2F4F5;
+  color: #808080;
+  height: 100%;
+  overflow: auto;
+  border-left: solid 1px #DFE7ED; }
+/* line 10, ../../sass/datatable.scss */
+.datatable .datatable-title h3 {
+  font-size: 20px;
+  font-weight: normal;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+  width: 250px;
+  text-align: center; }
+/* line 20, ../../sass/datatable.scss */
+.datatable .datatable-content {
+  padding: 15px;
+  margin-top: 20px; }
+/* line 24, ../../sass/datatable.scss */
+.datatable .datatable-content .datatable-messages, .datatable .datatable-content .datatable-stats {
+  text-align: center;
+  margin-bottom: 20px; }
+/* line 28, ../../sass/datatable.scss */
+.datatable .datatable-content .datatable-messages .error, .datatable .datatable-content .datatable-stats .error {
+  color: #F44336; }
+/* line 32, ../../sass/datatable.scss */
+.datatable .datatable-content .datatable-messages .number, .datatable .datatable-content .datatable-stats .number {
+  color: #26ACF5;
+  font-weight: 500; }
+/* line 36, ../../sass/datatable.scss */
+.datatable .datatable-content .datatable-messages .number.first, .datatable .datatable-content .datatable-stats .number.first {
+  margin-right: 20px; }
+/* line 42, ../../sass/datatable.scss */
+.datatable .datatable-content table {
+  margin: auto; }
+/* line 45, ../../sass/datatable.scss */
+.datatable .datatable-content table .table-header {
+  color: #26ACF5; }
+/* line 49, ../../sass/datatable.scss */
+.datatable .datatable-content table td, .datatable .datatable-content table th {
+  padding: 8px; }
+
+/* line 7, ../../sass/tutorial.scss */
+#tutorial .toggle-sidenav {
+  transition: margin 0.5s; }
+/* line 11, ../../sass/tutorial.scss */
+#tutorial .left {
+  margin-left: -33.333333%; }
+/* line 15, ../../sass/tutorial.scss */
+#tutorial .right {
+  margin-right: -33.333333%; }
+/* line 19, ../../sass/tutorial.scss */
+#tutorial .anchor {
+  position: relative; }
+/* line 22, ../../sass/tutorial.scss */
+#tutorial .anchor .toggle {
+  background-color: #26ACF5;
+  border: none;
+  position: absolute;
+  top: 12px;
+  cursor: pointer; }
+/* line 29, ../../sass/tutorial.scss */
+#tutorial .anchor .toggle md-icon {
+  color: #FFFFFF; }
+/* line 33, ../../sass/tutorial.scss */
+#tutorial .anchor .toggle.disabled {
+  background-color: #F2F4F5;
+  border: solid 1px #DFE7ED;
+  cursor: default; }
+/* line 38, ../../sass/tutorial.scss */
+#tutorial .anchor .toggle.disabled md-icon {
+  color: #26ACF5; }
+/* line 43, ../../sass/tutorial.scss */
+#tutorial .anchor .toggle.lesson-button {
+  padding: 12px 13px 12px 12px;
+  left: 0;
+  border-radius: 0 20px 20px 0;
+  border-left: none; }
+/* line 50, ../../sass/tutorial.scss */
+#tutorial .anchor .toggle.datatable-button {
+  padding: 13px;
+  right: 0;
+  border-radius: 20px 0 0 20px;
+  border-right: none; }

@@ -84,6 +84,7 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
     $scope.rows = 0;
     $scope.columns = 0;
 
+    // Query result
     $scope.$on('datatableEvent', function (event, data)
     {
         $scope.result = data.success;
@@ -95,8 +96,10 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
         }
     });
 
+    // Extract attribute names and values
     $scope.extractAttributes = function (data)
     {
+        console.log('teste', data, data.length);
         if (data.length > 0){
             let object = data.pop();
             $scope.attNames = Object.keys(object);

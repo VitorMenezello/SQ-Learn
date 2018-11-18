@@ -23,6 +23,14 @@ app.controller('TutorialController', function ($scope, $http) {
         }
     };
 
+    /* Switch between Lesson and Datatable */
+    $scope.toggle = false;
+
+    $scope.toggleSidenav = function (toggle)
+    {
+        $scope.toggle = toggle;
+    };
+
     /* IMBD Schema */
     $scope.schema = schema;
 
@@ -53,10 +61,12 @@ app.controller('TutorialController', function ($scope, $http) {
                 function (response)
                 {
                     if (response.data.success){
-                        console.log('success', response.data.result);
+                        let data = response.data.result;
+                        $scope.$broadcast('datatableEvent', { success: true, data: data });
                     }
                     else {
-                        console.log('error', response.data.error);
+                        let error = response.data.error;
+                        $scope.$broadcast('datatableEvent', { success: false, error: error });
                     }
                 });
     }

@@ -11,7 +11,7 @@
 
 @section('body')
 
-    <div ng-controller="IndexController">
+    <div ng-controller="IndexController" id="index">
 
         <md-content class="content-container" layout="row">
 

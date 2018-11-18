@@ -1,3 +1,58 @@
 @import "schema";
 @import "console";
 @import "lesson";
+@import "datatable";
+
+#tutorial {
+  .toggle-sidenav {
+    transition: margin 0.5s;
+  }
+
+  .left {
+    margin-left: -33.333333%;
+  }
+
+  .right {
+    margin-right: -33.333333%;
+  }
+
+  .anchor {
+    position: relative;
+
+    .toggle {
+      background-color: $primary-color;
+      border: none;
+      position: absolute;
+      top: 12px;
+      cursor: pointer;
+
+      md-icon {
+        color: $secondary-color;
+      }
+
+      &.disabled {
+        background-color: $sidenav-bg-color;
+        border: solid 1px $sidenav-border-color;
+        cursor: default;
+
+        md-icon {
+          color: $primary-color;
+        }
+      }
+
+      &.lesson-button {
+        padding: 12px 13px 12px 12px;
+        left: 0;
+        border-radius: 0 20px 20px 0;
+        border-left: none;
+      }
+
+      &.datatable-button {
+        padding: 13px;
+        right: 0;
+        border-radius: 20px 0 0 20px;
+        border-right: none;
+      }
+    }
+  }
+}

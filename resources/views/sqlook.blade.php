@@ -23,7 +23,7 @@
 
 @section('body')
 
-    <div ng-controller="SQLookController" class="full-height">
+    <div ng-controller="SQLookController" id="sqlook" class="full-height">
 
         <md-content class="content-container" layout="column">
 

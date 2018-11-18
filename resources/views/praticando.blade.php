@@ -15,23 +15,29 @@
 
 @section('body')
 
-    <div ng-controller="PraticandoController" class="full-height">
+    <div ng-controller="PraticandoController" id="praticando" class="full-height">
 
         <md-content class="content-container" layout="row">
 
             <div flex="66" layout="column" class="full-height">
+
                 @component('components.schema-select')
                 @endcomponent
 
                 <div flex>
+
                     @component('components.schema')
                     @endcomponent
+
                 </div>
+
             </div>
 
             <div flex="33" class="full-height">
+
                 @component('components.datatable')
                 @endcomponent
+
             </div>
 
         </md-content>
