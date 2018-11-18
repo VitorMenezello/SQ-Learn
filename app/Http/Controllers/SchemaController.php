@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Exception;
-use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use stdClass;

@@ -99,9 +99,8 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
     // Extract attribute names and values
     $scope.extractAttributes = function (data)
     {
-        console.log('teste', data, data.length);
         if (data.length > 0){
-            let object = data.pop();
+            let object = data[0];
             $scope.attNames = Object.keys(object);
             $scope.columns = $scope.attNames.length;
         }
