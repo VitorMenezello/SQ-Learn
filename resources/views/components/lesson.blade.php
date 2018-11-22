@@ -7,11 +7,17 @@
     </div>
 
     <div layout="row" layout-align="center center" class="lesson-title">
-        <md-icon md-svg-src="{{ url('/icons/chevron-left.svg') }}" ng-class="{'disabled': lesson.prev_lesson_id === null}" ng-click="previousLesson()" aria-label="Previous Lesson"></md-icon>
+        <md-icon md-svg-src="{{ url('/icons/chevron-left.svg') }}"
+                 ng-class="{'disabled': lesson.prev_lesson_id === null}"
+                 ng-click="previousLesson()"
+                 aria-label="Previous Lesson"></md-icon>
 
         <h3>@{ lesson.title }@</h3>
 
-        <md-icon md-svg-src="{{ url('/icons/chevron-right.svg') }}" ng-class="{'disabled': lesson.next_lesson_id === null}" ng-click="nextLesson()" aria-label="Next Lesson"></md-icon>
+        <md-icon md-svg-src="{{ url('/icons/chevron-right.svg') }}"
+                 ng-class="{'disabled': lesson.next_lesson_id === null}"
+                 ng-click="nextLesson()"
+                 aria-label="Next Lesson"></md-icon>
     </div>
 
     <div class="lesson-content">

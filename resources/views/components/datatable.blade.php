@@ -35,21 +35,65 @@
             </span>
         </div>
 
-        <table ng-if="result">
+        <table ng-show="result">
 
-            <tr class="table-header">
-                <th ng-repeat="attName in attNames">
-                    @{ attName }@
-                </th>
-            </tr>
+            <thead>
+                <tr class="table-header">
+                    <th ng-repeat="attName in attNames">
+                        @{ attName }@
+                    </th>
+                </tr>
+            </thead>
 
-            <tr class="table-content" ng-repeat="attValues in attValues">
-                <td ng-repeat="attValue in attValues">
-                    @{ attValue }@
-                </td>
-            </tr>
+            <tbody>
+                <tr class="table-content" ng-repeat="attValues in attValues">
+                    <td ng-repeat="attValue in attValues">
+                        @{ attValue }@
+                    </td>
+                </tr>
+            </tbody>
 
         </table>
+
+        <div ng-show="result" class="pagination">
+
+            <md-input-container class="items">
+                <label>Itens por página</label>
+                <md-select ng-model="items"
+                           class="md-no-underline"
+                           aria-label="Item limit"
+                           ng-change="selectLimit()"
+                           ng-disabled="loading">
+                    <md-option ng-repeat="value in itemsOptions" ng-value="value">
+                        @{ value }@
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-icon md-svg-src="{{ url('/icons/chevron-left.svg') }}"
+                     ng-class="{'disabled': page === 1 || loading}"
+                     ng-click="prevPage()"
+                     aria-label="Previous Page"></md-icon>
+
+            <md-input-container>
+                <label>Página</label>
+                <md-select ng-model="page"
+                           class="md-no-underline"
+                           aria-label="Page"
+                           ng-change="postQuery()"
+                           ng-disabled="loading">
+                    <md-option ng-repeat="n in pageRange()" ng-value="n">
+                        @{ n }@
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-icon md-svg-src="{{ url('/icons/chevron-right.svg') }}"
+                     ng-class="{'disabled': page === pages || loading}"
+                     ng-click="nextPage()"
+                     aria-label="Next Page"></md-icon>
+
+        </div>
 
     </div>
 

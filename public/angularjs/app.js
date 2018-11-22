@@ -75,29 +75,71 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
     };
 })
 
-.controller('DatatableController', function ($scope)
+.controller('DatatableController', function ($scope, $http)
 {
+    $scope.loading = false;
     $scope.result = false;
     $scope.error = '';
     $scope.attNames = [];
     $scope.attValues = [];
+
+    $scope.schema = null;
+    $scope.query = null;
+
     $scope.rows = 0;
     $scope.columns = 0;
 
-    // Query result
+    $scope.pages = 0;
+    $scope.page = 1;
+    $scope.itemsOptions = [10, 25, 50, 100];
+    $scope.items = $scope.itemsOptions[0];
+
+    // Datatable event
     $scope.$on('datatableEvent', function (event, data)
     {
-        $scope.result = data.success;
-        if ($scope.result) {
-            $scope.extractAttributes(data.data);
-        }
-        else {
-            $scope.error = data.error;
-        }
+        $scope.schema = data.schema;
+        $scope.query = data.query;
+        $scope.postQuery();
     });
 
+    // Get query result
+    $scope.postQuery = function ()
+    {
+        if ($scope.schema){
+            $scope.loading = true;
+            $http.post('/post-query',
+                {
+                    query: $scope.query,
+                    schema: $scope.schema,
+                    limit: $scope.items,
+                    page: $scope.page
+                })
+                .then(
+                    function (response)
+                    {
+                        $scope.loading = false;
+                        $scope.result = response.data.success;
+                        if ($scope.result){
+                            let data = response.data.result;
+                            let count = response.data.count;
+                            $scope.extractAttributes(data, count);
+                        }
+                        else if (response.data.error){
+                            $scope.error = response.data.error;
+                        }
+                        else {
+                            $scope.error = 'Erro desconhecido.';
+                        }
+                    });
+        }
+        else {
+            $scope.result = false;
+            $scope.error = 'Escolha um esquema de dados primeiro!';
+        }
+    };
+
     // Extract attribute names and values
-    $scope.extractAttributes = function (data)
+    $scope.extractAttributes = function (data, count)
     {
         if (data.length > 0){
             let object = data[0];
@@ -105,13 +147,57 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
             $scope.columns = $scope.attNames.length;
         }
         $scope.attValues = data;
-        $scope.rows = data.length;
+        $scope.rows = count;
+
+        $scope.calculatePage();
+    };
+
+    $scope.selectLimit = function ()
+    {
+        $scope.calculatePage();
+        $scope.postQuery();
+    };
+
+    $scope.calculatePage = function ()
+    {
+        $scope.pages = Math.ceil($scope.rows / $scope.items);
+        if ($scope.page > $scope.pages){
+            $scope.page = 1;
+        }
+    };
+
+    $scope.nextPage = function ()
+    {
+        if ($scope.page < $scope.pages && !$scope.loading)
+        {
+            $scope.page++;
+            $scope.postQuery();
+        }
+    };
+
+    $scope.prevPage = function ()
+    {
+        if ($scope.page > 1 && !$scope.loading)
+        {
+            $scope.page--;
+            $scope.postQuery();
+        }
+    };
+
+    $scope.pageRange = function ()
+    {
+        let pageRange = [];
+        for (let i = 1; i <= $scope.pages; i ++) {
+            pageRange.push(i);
+        }
+        return pageRange;
     };
 })
 
 .filter('reverse', function()
 {
-    return function(items) {
+    return function(items)
+    {
         return items.slice().reverse();
     };
 });

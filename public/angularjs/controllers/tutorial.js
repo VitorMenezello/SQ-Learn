@@ -1,4 +1,4 @@
-app.controller('TutorialController', function ($scope, $http) {
+app.controller('TutorialController', function ($scope) {
     /* Lesson */
     $scope.lessons = lessons;
     $scope.currentLesson = 0;
@@ -50,24 +50,8 @@ app.controller('TutorialController', function ($scope, $http) {
     $scope.setColors($scope.schema);
 
     /* Query Handler */
-    $scope.$on('queryEvent', function(event, data) {
-        $scope.runQuery(data);
-    });
-
-    $scope.runQuery = function (query)
+    $scope.$on('queryEvent', function(event, data)
     {
-        $http.post('/post-query', { query: query, schema: $scope.schema['name'] })
-            .then(
-                function (response)
-                {
-                    if (response.data.success){
-                        let data = response.data.result;
-                        $scope.$broadcast('datatableEvent', { success: true, data: data });
-                    }
-                    else {
-                        let error = response.data.error;
-                        $scope.$broadcast('datatableEvent', { success: false, error: error });
-                    }
-                });
-    }
+        $scope.$broadcast('datatableEvent', { query: data.query, schema: $scope.schema['name'] });
+    });
 });

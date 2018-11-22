@@ -23,6 +23,7 @@
 
       &.disabled {
         color: $sidenav-color;
+        cursor: default;
       }
     }
   }

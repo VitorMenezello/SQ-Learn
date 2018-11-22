@@ -1,10 +1,11 @@
-app.controller('PraticandoController', function ($scope, $http) {
+app.controller('PraticandoController', function ($scope) {
     $scope.schemas = schemas;
 
     /* CSS Classes */
     $scope.colors = [];
 
-    $scope.setColors = function (schema) {
+    $scope.setColors = function (schema)
+    {
         let i = 1;
         for (let table in schema.tables){
             $scope.colors[table] = "color-" + i;
@@ -13,29 +14,13 @@ app.controller('PraticandoController', function ($scope, $http) {
     };
 
     /* Query Handler */
-    $scope.$on('queryEvent', function(event, data) {
-        if ($scope.schema){
-            $scope.runQuery(data);
+    $scope.$on('queryEvent', function(event, data)
+    {
+        if ($scope.schema) {
+            $scope.$broadcast('datatableEvent', { query: data, schema: $scope.schema['name'] });
         }
         else {
-            $scope.$broadcast('datatableEvent', { success: false, error: 'Escolha um esquema de dados primeiro!' });
+            $scope.$broadcast('datatableEvent', { query: data, schema: null });
         }
     });
-
-    $scope.runQuery = function (query)
-    {
-        $http.post('/post-query', { query: query, schema: $scope.schema['name'] })
-            .then(
-                function (response)
-                {
-                    if (response.data.success){
-                        let data = response.data.result;
-                        $scope.$broadcast('datatableEvent', { success: true, data: data });
-                    }
-                    else {
-                        let error = response.data.error;
-                        $scope.$broadcast('datatableEvent', { success: false, error: error });
-                    }
-                });
-    }
 });

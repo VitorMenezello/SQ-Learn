@@ -241,3 +241,19 @@
 /* line 49, ../../sass/datatable.scss */
 .datatable .datatable-content table td, .datatable .datatable-content table th {
   padding: 8px; }
+/* line 54, ../../sass/datatable.scss */
+.datatable .datatable-content .pagination {
+  padding-top: 30px;
+  text-align: center; }
+/* line 58, ../../sass/datatable.scss */
+.datatable .datatable-content .pagination .items {
+  width: 115px;
+  margin-right: 50px; }
+/* line 63, ../../sass/datatable.scss */
+.datatable .datatable-content .pagination md-icon {
+  color: #26ACF5;
+  cursor: pointer; }
+/* line 67, ../../sass/datatable.scss */
+.datatable .datatable-content .pagination md-icon.disabled {
+  color: #808080;
+  cursor: default; }

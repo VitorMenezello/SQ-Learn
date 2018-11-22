@@ -156,7 +156,8 @@
       margin: 0 50px;
       cursor: pointer; }
       .lesson .lesson-title md-icon.disabled {
-        color: #808080; }
+        color: #808080;
+        cursor: default; }
   .lesson .lesson-content {
     padding: 10px; }
     .lesson .lesson-content .lesson-content-text .lesson-text {
@@ -216,6 +217,18 @@
         color: #26ACF5; }
       .datatable .datatable-content table td, .datatable .datatable-content table th {
         padding: 8px; }
+    .datatable .datatable-content .pagination {
+      padding-top: 30px;
+      text-align: center; }
+      .datatable .datatable-content .pagination .items {
+        width: 115px;
+        margin-right: 50px; }
+      .datatable .datatable-content .pagination md-icon {
+        color: #26ACF5;
+        cursor: pointer; }
+        .datatable .datatable-content .pagination md-icon.disabled {
+          color: #808080;
+          cursor: default; }
 
 #tutorial .toggle-sidenav {
   transition: margin 0.5s; }

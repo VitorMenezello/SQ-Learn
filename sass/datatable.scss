@@ -50,5 +50,25 @@
         padding: 8px;
       }
     }
+
+    .pagination {
+      padding-top: 30px;
+      text-align: center;
+
+      .items {
+        width: 115px;
+        margin-right: 50px;
+      }
+
+      md-icon {
+        color: $primary-color;
+        cursor: pointer;
+
+        &.disabled {
+          color: $sidenav-color;
+          cursor: default;
+        }
+      }
+    }
   }
 }

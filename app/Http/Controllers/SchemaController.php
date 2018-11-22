@@ -129,12 +129,17 @@ class SchemaController extends Controller
      *
      * @param $query
      * @param $schema
+     * @param $limit
+     * @param $offset
      * @return array
      */
-    public function executeQuery($query, $schema)
+    public function executeQuery($query, $schema, $limit, $offset)
     {
+
         try {
             $result = DB::connection($schema)->select(DB::raw($query));
+            $count = count($result);
+            $result = array_slice($result, $offset, $limit);
         } catch (Exception $e) {
             return [
                 'success' => false,
@@ -143,7 +148,8 @@ class SchemaController extends Controller
         }
         return [
             'success' => true,
-            'result' => $result
+            'result' => $result,
+            'count' => $count
         ];
     }
 
@@ -194,8 +200,12 @@ class SchemaController extends Controller
     {
         $query = $request->input('query');
         $schema = $request->input('schema');
+        $limit = $request->input('limit');
+        $page = $request->input('page');
 
-        $response = $this->executeQuery($query, $schema);
+        $offset = $limit * ($page - 1);
+
+        $response = $this->executeQuery($query, $schema, $limit, $offset);
 
         return response()->json($response);
     }

@@ -12,7 +12,7 @@ body {
     padding: 0 20px;
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 1;
     box-shadow: 4px -7px 40px 8px rgba(38, 172, 245, 0.29);
 
     .navbar {
@@ -61,15 +61,15 @@ body {
     }
   }
 
-  .md-select-menu-container {
-    top: 80px !important;
+  md-input-container.md-input-focused label {
+    color: $primary-color !important;
+  }
 
-    md-select-menu md-content md-option {
-      color: $sidenav-color !important;
+  .md-select-menu-container md-select-menu md-content md-option {
+    color: $sidenav-color !important;
 
-      &[selected] {
-        color: $primary-color !important;
-      }
+    &[selected] {
+      color: $primary-color !important;
     }
   }
 }
