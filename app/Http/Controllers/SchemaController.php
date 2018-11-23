@@ -120,12 +120,13 @@ class SchemaController extends Controller
      */
     public function getLessons()
     {
-        $lessons = DB::select(DB::raw("SELECT * FROM lessons"));
+        $lessons = DB::select(DB::raw("SELECT * FROM lessons ORDER BY id"));
         return $lessons;
     }
 
     /**
-     * Execute query on a specific schema.
+     * Execute query on a specific schema. Return only a page
+     * defined by limit and offset to reduce load on client side.
      *
      * @param $query
      * @param $schema

@@ -1,13 +1,21 @@
-app.controller('PraticandoController', function ($scope) {
+app.controller('PraticandoController', function ($scope)
+{
+    /* Schema Selector */
     $scope.schemas = schemas;
+
+    $scope.onSchemaSelect = function ()
+    {
+        $scope.setColors();
+        $scope.$broadcast('clearEvent');
+    };
 
     /* CSS Classes */
     $scope.colors = [];
 
-    $scope.setColors = function (schema)
+    $scope.setColors = function ()
     {
         let i = 1;
-        for (let table in schema.tables){
+        for (let table in $scope.schema.tables){
             $scope.colors[table] = "color-" + i;
             i++;
         }

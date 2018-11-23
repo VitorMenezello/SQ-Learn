@@ -1,4 +1,5 @@
-app.controller('TutorialController', function ($scope) {
+app.controller('TutorialController', function ($scope)
+{
     /* Lesson */
     $scope.lessons = lessons;
     $scope.currentLesson = 0;
@@ -52,6 +53,7 @@ app.controller('TutorialController', function ($scope) {
     /* Query Handler */
     $scope.$on('queryEvent', function(event, data)
     {
-        $scope.$broadcast('datatableEvent', { query: data.query, schema: $scope.schema['name'] });
+        $scope.toggleSidenav(true);
+        $scope.$broadcast('datatableEvent', { query: data, schema: $scope.schema['name'] });
     });
 });

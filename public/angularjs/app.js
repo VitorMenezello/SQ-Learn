@@ -77,22 +77,33 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
 
 .controller('DatatableController', function ($scope, $http)
 {
-    $scope.loading = false;
-    $scope.result = false;
-    $scope.error = '';
-    $scope.attNames = [];
-    $scope.attValues = [];
+    $scope.initialize = function ()
+    {
+        $scope.loading = false;
+        $scope.result = false;
+        $scope.error = '';
+        $scope.attNames = [];
+        $scope.attValues = [];
 
-    $scope.schema = null;
-    $scope.query = null;
+        $scope.schema = null;
+        $scope.query = null;
 
-    $scope.rows = 0;
-    $scope.columns = 0;
+        $scope.rows = 0;
+        $scope.columns = 0;
 
-    $scope.pages = 0;
-    $scope.page = 1;
-    $scope.itemsOptions = [10, 25, 50, 100];
-    $scope.items = $scope.itemsOptions[0];
+        $scope.pages = 0;
+        $scope.page = 1;
+        $scope.itemsOptions = [10, 25, 50, 100];
+        $scope.items = $scope.itemsOptions[0];
+    };
+
+    $scope.initialize();
+
+    // Clear datatable event
+    $scope.$on('clearEvent', function (event, data)
+    {
+        $scope.initialize();
+    });
 
     // Datatable event
     $scope.$on('datatableEvent', function (event, data)
@@ -152,12 +163,14 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
         $scope.calculatePage();
     };
 
+    // On selection of items per page
     $scope.selectLimit = function ()
     {
         $scope.calculatePage();
         $scope.postQuery();
     };
 
+    // Calculate the number of pages
     $scope.calculatePage = function ()
     {
         $scope.pages = Math.ceil($scope.rows / $scope.items);
@@ -166,6 +179,7 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
         }
     };
 
+    // Go to next page
     $scope.nextPage = function ()
     {
         if ($scope.page < $scope.pages && !$scope.loading)
@@ -175,6 +189,7 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
         }
     };
 
+    // Go to previous page
     $scope.prevPage = function ()
     {
         if ($scope.page > 1 && !$scope.loading)
@@ -184,6 +199,7 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
         }
     };
 
+    // Calculate pagination range
     $scope.pageRange = function ()
     {
         let pageRange = [];
