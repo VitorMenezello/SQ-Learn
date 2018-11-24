@@ -49,14 +49,17 @@ body .full-height {
 /* line 57, ../../sass/base.scss */
 body .full-height .content-container {
   padding-top: 70px;
-  padding-bottom: 40px;
+  padding-bottom: 23px;
   height: 100%; }
 /* line 64, ../../sass/base.scss */
 body md-input-container.md-input-focused label {
   color: #26ACF5 !important; }
 /* line 68, ../../sass/base.scss */
+body md-select.md-default-theme:not([disabled]):focus .md-select-value, body md-select:not([disabled]):focus .md-select-value {
+  color: #808080 !important; }
+/* line 72, ../../sass/base.scss */
 body .md-select-menu-container md-select-menu md-content md-option {
   color: #808080 !important; }
-/* line 71, ../../sass/base.scss */
+/* line 75, ../../sass/base.scss */
 body .md-select-menu-container md-select-menu md-content md-option[selected] {
   color: #26ACF5 !important; }

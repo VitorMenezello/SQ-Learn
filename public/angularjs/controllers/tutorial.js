@@ -3,8 +3,16 @@ app.controller('TutorialController', function ($scope)
     /* Lesson */
     $scope.lessons = lessons;
     $scope.currentLesson = 0;
+    $scope.question = '';
+    $scope.correctAnswer = false;
+    $scope.form = null;
 
     $scope.lesson = $scope.lessons[$scope.currentLesson];
+
+    $scope.setForm = function (form)
+    {
+        $scope.form = form;
+    };
 
     $scope.nextLesson = function ()
     {
@@ -12,6 +20,11 @@ app.controller('TutorialController', function ($scope)
         {
             $scope.currentLesson++;
             $scope.lesson = $scope.lessons[$scope.currentLesson];
+
+            if ($scope.form)
+            {
+                $scope.clearLesson();
+            }
         }
     };
 
@@ -21,6 +34,54 @@ app.controller('TutorialController', function ($scope)
         {
             $scope.currentLesson--;
             $scope.lesson = $scope.lessons[$scope.currentLesson];
+
+            if ($scope.form)
+            {
+                $scope.clearLesson();
+            }
+        }
+    };
+
+    $scope.onLessonSelect = function ()
+    {
+        $scope.currentLesson = $scope.lessons.indexOf($scope.lesson);
+
+        if ($scope.form)
+        {
+            $scope.clearLesson();
+        }
+    };
+
+    $scope.clearLesson = function ()
+    {
+        $scope.question = '';
+        $scope.correctAnswer = false;
+        $scope.form.question.$setValidity('empty', true);
+        $scope.form.question.$setValidity('correct', true);
+        $scope.form.question.$setValidity('hint', true);
+    };
+
+    $scope.answer = function (form)
+    {
+        $scope.setForm(form);
+
+        let question = $scope.question.toLowerCase();
+
+        $scope.form.question.$setValidity('empty', question !== '');
+
+        if (question === $scope.lesson.answer ||
+            ((question.substr(0, question.length - 1) === $scope.lesson.answer) && (question[question.length - 1] === ';'))
+        ) {
+            $scope.correctAnswer = true;
+            $scope.form.question.$setValidity('correct', true);
+            $scope.form.question.$setValidity('hint', true);
+        }
+        else {
+            $scope.form.question.$setValidity('correct', false);
+
+            if ($scope.lesson.hasOwnProperty('hint') && $scope.lesson.hint !== null){
+                $scope.form.question.$setValidity('hint', false);
+            }
         }
     };
 

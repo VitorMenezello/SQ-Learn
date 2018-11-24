@@ -39,17 +39,35 @@
   border: solid 1px #C4D3DB;
   color: #26ACF5;
   text-align: center; }
-/* line 53, ../../sass/lesson.scss */
-.lesson .lesson-content md-input-container.question {
+/* line 54, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-form md-input-container.question {
   margin: 10px; }
-/* line 56, ../../sass/lesson.scss */
-.lesson .lesson-content md-input-container.question textarea {
+/* line 57, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-form md-input-container.question label:not(.md-no-float):not(.md-container-ignore) {
+  left: 5px; }
+/* line 61, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-form md-input-container.question textarea {
   background-color: #FFFFFF;
   height: 100px;
   max-height: 100px;
   border: 1px solid #26ACF5;
   border-radius: 2px; }
-/* line 65, ../../sass/lesson.scss */
-.lesson .lesson-content md-input-container.question:not(.md-input-invalid).md-input-focused .md-input {
+/* line 69, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-form md-input-container.question:not(.md-input-invalid).md-input-focused .md-input {
   border: 1px solid #26ACF5;
   border-radius: 2px; }
+/* line 75, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-form .lesson-footer {
+  text-align: right; }
+/* line 78, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-form .lesson-footer .md-button {
+  background-color: #26ACF5;
+  color: #FFFFFF;
+  margin: 0 10px; }
+/* line 84, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-form .lesson-footer span {
+  margin: 0 10px; }
+/* line 88, ../../sass/lesson.scss */
+.lesson .lesson-content .lesson-form .lesson-footer .md-icon {
+  bottom: 2px;
+  position: relative; }

@@ -40,10 +40,12 @@ body {
     height: 100%; }
     body .full-height .content-container {
       padding-top: 70px;
-      padding-bottom: 40px;
+      padding-bottom: 23px;
       height: 100%; }
   body md-input-container.md-input-focused label {
     color: #26ACF5 !important; }
+  body md-select.md-default-theme:not([disabled]):focus .md-select-value, body md-select:not([disabled]):focus .md-select-value {
+    color: #808080 !important; }
   body .md-select-menu-container md-select-menu md-content md-option {
     color: #808080 !important; }
     body .md-select-menu-container md-select-menu md-content md-option[selected] {

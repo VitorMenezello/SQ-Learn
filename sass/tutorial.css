@@ -172,17 +172,30 @@
       border: solid 1px #C4D3DB;
       color: #26ACF5;
       text-align: center; }
-    .lesson .lesson-content md-input-container.question {
+    .lesson .lesson-content .lesson-form md-input-container.question {
       margin: 10px; }
-      .lesson .lesson-content md-input-container.question textarea {
+      .lesson .lesson-content .lesson-form md-input-container.question label:not(.md-no-float):not(.md-container-ignore) {
+        left: 5px; }
+      .lesson .lesson-content .lesson-form md-input-container.question textarea {
         background-color: #FFFFFF;
         height: 100px;
         max-height: 100px;
         border: 1px solid #26ACF5;
         border-radius: 2px; }
-      .lesson .lesson-content md-input-container.question:not(.md-input-invalid).md-input-focused .md-input {
+      .lesson .lesson-content .lesson-form md-input-container.question:not(.md-input-invalid).md-input-focused .md-input {
         border: 1px solid #26ACF5;
         border-radius: 2px; }
+    .lesson .lesson-content .lesson-form .lesson-footer {
+      text-align: right; }
+      .lesson .lesson-content .lesson-form .lesson-footer .md-button {
+        background-color: #26ACF5;
+        color: #FFFFFF;
+        margin: 0 10px; }
+      .lesson .lesson-content .lesson-form .lesson-footer span {
+        margin: 0 10px; }
+      .lesson .lesson-content .lesson-form .lesson-footer .md-icon {
+        bottom: 2px;
+        position: relative; }
 
 .datatable {
   background-color: #F2F4F5;

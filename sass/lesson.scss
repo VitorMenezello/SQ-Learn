@@ -50,21 +50,45 @@
       }
     }
 
-    md-input-container.question {
-      margin: 10px;
+    .lesson-form {
+      md-input-container.question {
+        margin: 10px;
 
-      textarea {
-        background-color: $secondary-color;
-        // color: #C4CFD5;
-        height: 100px;
-        max-height: 100px;
-        border: 1px solid $primary-color;
-        border-radius: 2px;
+        label:not(.md-no-float):not(.md-container-ignore) {
+          left: 5px;
+        }
+
+        textarea {
+          background-color: $secondary-color;
+          height: 100px;
+          max-height: 100px;
+          border: 1px solid $primary-color;
+          border-radius: 2px;
+        }
+
+        &:not(.md-input-invalid).md-input-focused .md-input{
+          border: 1px solid $primary-color;
+          border-radius: 2px;
+        }
       }
 
-      &:not(.md-input-invalid).md-input-focused .md-input{
-        border: 1px solid $primary-color;
-        border-radius: 2px;
+      .lesson-footer {
+        text-align: right;
+
+        .md-button {
+          background-color: $primary-color;
+          color: $secondary-color;
+          margin: 0 10px;
+        }
+
+        span {
+          margin: 0 10px;
+        }
+
+        .md-icon {
+          bottom: 2px;
+          position: relative;
+        }
       }
     }
   }
