@@ -1,0 +1,15 @@
+.footer-container {
+  background-color: #1D2126;
+  color: #FFFFFF;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1; }
+  .footer-container md-icon {
+    color: #26ACF5;
+    margin: 0;
+    position: relative;
+    bottom: 1px; }
+
+/*# sourceMappingURL=footer.css.map */

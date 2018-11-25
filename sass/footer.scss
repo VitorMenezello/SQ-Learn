@@ -1,0 +1,28 @@
+@import "color";
+
+.footer-container {
+  background-color: $console-label-color;
+  color: $secondary-color;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+
+  .logo img {
+    height: 30px;
+  }
+
+  .text {
+
+    a, a:hover, a:visited {
+      text-decoration: none;
+      color: $secondary-color;
+    }
+
+    md-icon {
+      color: $primary-color;
+      margin: 0 8px 0;
+    }
+  }
+}

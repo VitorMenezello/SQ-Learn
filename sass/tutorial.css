@@ -85,14 +85,14 @@
     height: 40px; }
   .console .console-label {
     background-color: #1D2126;
-    color: white;
+    color: #FFFFFF;
     height: 20px;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     cursor: pointer; }
     .console .console-label md-icon {
-      color: white;
+      color: #FFFFFF;
       margin: 0;
       position: relative;
       bottom: 1px;
@@ -103,7 +103,7 @@
         transform: rotate(180deg); }
   .console .query-history {
     background-color: #333639;
-    color: white;
+    color: #FFFFFF;
     width: 100%;
     height: 66px;
     max-height: 66px;
@@ -130,7 +130,7 @@
       transition: height 0.9s; }
     .console md-input-container.console-text input {
       max-height: 100%;
-      color: white; }
+      color: #FFFFFF; }
       .console md-input-container.console-text input.md-input {
         overflow: auto;
         border: none; }

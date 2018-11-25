@@ -1,0 +1,42 @@
+@import "_color";
+@import "footer";
+
+.index-container {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  height: 100%;
+
+  .section {
+    padding: 50px;
+
+    &.s-1, &.s-3 {
+      background-color: $secondary-color;
+    }
+
+    &.s-2 {
+      background-color: $sidenav-bg-color;
+    }
+
+    img {
+      height: 350px;
+      width: auto;
+    }
+
+    .section-text {
+      padding: 50px 150px;
+
+      h3 {
+        color: $primary-color;
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 30px;
+      }
+
+      p {
+        color: $sidenav-color;
+        text-align: left;
+        line-height: 1.5;
+      }
+    }
+  }
+}

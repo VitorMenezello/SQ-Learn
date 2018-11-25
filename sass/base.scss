@@ -65,7 +65,7 @@ body {
     color: $primary-color !important;
   }
 
-  md-select.md-default-theme:not([disabled]):focus .md-select-value, md-select:not([disabled]):focus .md-select-value {
+  md-select:not([disabled]):focus .md-select-value {
     color: $sidenav-color !important;
   }
 

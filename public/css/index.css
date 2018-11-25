@@ -1,0 +1,53 @@
+/* line 3, ../../sass/footer.scss */
+.footer-container {
+  background-color: #1D2126;
+  color: #FFFFFF;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1; }
+/* line 12, ../../sass/footer.scss */
+.footer-container .logo img {
+  height: 30px; }
+/* line 18, ../../sass/footer.scss */
+.footer-container .text a, .footer-container .text a:hover, .footer-container .text a:visited {
+  text-decoration: none;
+  color: #FFFFFF; }
+/* line 23, ../../sass/footer.scss */
+.footer-container .text md-icon {
+  color: #26ACF5;
+  margin: 0 8px 0; }
+
+/* line 4, ../../sass/index.scss */
+.index-container {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  height: 100%; }
+/* line 9, ../../sass/index.scss */
+.index-container .section {
+  padding: 50px; }
+/* line 12, ../../sass/index.scss */
+.index-container .section.s-1, .index-container .section.s-3 {
+  background-color: #FFFFFF; }
+/* line 16, ../../sass/index.scss */
+.index-container .section.s-2 {
+  background-color: #F2F4F5; }
+/* line 20, ../../sass/index.scss */
+.index-container .section img {
+  height: 350px;
+  width: auto; }
+/* line 25, ../../sass/index.scss */
+.index-container .section .section-text {
+  padding: 50px 150px; }
+/* line 28, ../../sass/index.scss */
+.index-container .section .section-text h3 {
+  color: #26ACF5;
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 30px; }
+/* line 35, ../../sass/index.scss */
+.index-container .section .section-text p {
+  color: #808080;
+  text-align: left;
+  line-height: 1.5; }

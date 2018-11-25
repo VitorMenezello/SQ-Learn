@@ -55,7 +55,7 @@ body .full-height .content-container {
 body md-input-container.md-input-focused label {
   color: #26ACF5 !important; }
 /* line 68, ../../sass/base.scss */
-body md-select.md-default-theme:not([disabled]):focus .md-select-value, body md-select:not([disabled]):focus .md-select-value {
+body md-select:not([disabled]):focus .md-select-value {
   color: #808080 !important; }
 /* line 72, ../../sass/base.scss */
 body .md-select-menu-container md-select-menu md-content md-option {

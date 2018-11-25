@@ -16,7 +16,7 @@
 
   .console-label {
     background-color: $console-label-color;
-    color: white;
+    color: $secondary-color;
     height: 20px;
     padding: 10px;
     display: flex;
@@ -24,7 +24,7 @@
     cursor: pointer;
 
     md-icon {
-      color: white;
+      color: $secondary-color;
       margin: 0;
       position: relative;
       bottom: 1px;
@@ -40,7 +40,7 @@
 
   .query-history {
     background-color: $console-bg-color;
-    color: white;
+    color: $secondary-color;
     width: 100%;
     height: 66px;
     max-height: 66px;
@@ -74,7 +74,7 @@
 
     input {
       max-height: 100%;
-      color: white;
+      color: $secondary-color;
 
       &.md-input {
         overflow: auto;
