@@ -11,7 +11,7 @@ body .header-container {
   padding: 0 20px;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   box-shadow: 4px -7px 40px 8px rgba(38, 172, 245, 0.29); }
 /* line 18, ../../sass/base.scss */
 body .header-container .navbar {

@@ -180,7 +180,7 @@ app.controller('SQLookController', function ($scope, $mdDialog) {
 
     //region Schema Selector
 
-    $scope.schemas = SCHEMAS;
+    $scope.schemas = schemas;
     $scope.schema = null;
     $scope.schemaIsSelected = false;
     $scope.selected = [];

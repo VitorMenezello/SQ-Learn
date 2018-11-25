@@ -1,0 +1,202 @@
+.schema .schema-background, .schema-query .schema-background {
+  background-color: #FFFFFF;
+  height: 100%; }
+.schema .schema-title, .schema-query .schema-title {
+  color: #808080;
+  padding: 15px;
+  border-bottom: solid 1px #DFE7ED; }
+  .schema .schema-title h3, .schema-query .schema-title h3 {
+    font-weight: normal;
+    font-size: 20px;
+    margin: 10px; }
+.schema .schema-tables, .schema-query .schema-tables {
+  padding: 5px 50px; }
+  .schema .schema-tables .schema-table, .schema-query .schema-tables .schema-table {
+    padding: 10px; }
+    .schema .schema-tables .schema-table ul, .schema-query .schema-tables .schema-table ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0; }
+      .schema .schema-tables .schema-table ul li, .schema-query .schema-tables .schema-table ul li {
+        font-size: 14px; }
+        .schema .schema-tables .schema-table ul li div, .schema-query .schema-tables .schema-table ul li div {
+          display: inline-block;
+          color: #808080; }
+    .schema .schema-tables .schema-table .schema-underline, .schema-query .schema-tables .schema-table .schema-underline {
+      text-decoration: underline;
+      text-underline-position: under; }
+    .schema .schema-tables .schema-table .referred-attribute, .schema-query .schema-tables .schema-table .referred-attribute {
+      color: #FFFFFF;
+      font-size: 12px;
+      padding: 2px 4px;
+      border-radius: 6px; }
+    .schema .schema-tables .schema-table .color-1 .schema-underline, .schema-query .schema-tables .schema-table .color-1 .schema-underline {
+      text-decoration-color: #FF88BB; }
+    .schema .schema-tables .schema-table .color-1 h3, .schema .schema-tables .schema-table .color-1 md-icon, .schema .schema-tables .schema-table .color-1 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-1 h3, .schema-query .schema-tables .schema-table .color-1 md-icon, .schema-query .schema-tables .schema-table .color-1 md-checkbox.md-checked .md-ink-ripple {
+      color: #FF88BB; }
+    .schema .schema-tables .schema-table .color-1 .referred-attribute, .schema .schema-tables .schema-table .color-1 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-1 .referred-attribute, .schema-query .schema-tables .schema-table .color-1 md-checkbox.md-checked .md-ink-ripple md-icon {
+      background-color: #FF88BB; }
+    .schema .schema-tables .schema-table .color-2 .schema-underline, .schema-query .schema-tables .schema-table .color-2 .schema-underline {
+      text-decoration-color: #63BAB9; }
+    .schema .schema-tables .schema-table .color-2 h3, .schema .schema-tables .schema-table .color-2 md-icon, .schema .schema-tables .schema-table .color-2 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-2 h3, .schema-query .schema-tables .schema-table .color-2 md-icon, .schema-query .schema-tables .schema-table .color-2 md-checkbox.md-checked .md-ink-ripple {
+      color: #63BAB9; }
+    .schema .schema-tables .schema-table .color-2 .referred-attribute, .schema .schema-tables .schema-table .color-2 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-2 .referred-attribute, .schema-query .schema-tables .schema-table .color-2 md-checkbox.md-checked .md-ink-ripple md-icon {
+      background-color: #63BAB9; }
+    .schema .schema-tables .schema-table .color-3 .schema-underline, .schema-query .schema-tables .schema-table .color-3 .schema-underline {
+      text-decoration-color: #F9B450; }
+    .schema .schema-tables .schema-table .color-3 h3, .schema .schema-tables .schema-table .color-3 md-icon, .schema .schema-tables .schema-table .color-3 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-3 h3, .schema-query .schema-tables .schema-table .color-3 md-icon, .schema-query .schema-tables .schema-table .color-3 md-checkbox.md-checked .md-ink-ripple {
+      color: #F9B450; }
+    .schema .schema-tables .schema-table .color-3 .referred-attribute, .schema .schema-tables .schema-table .color-3 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-3 .referred-attribute, .schema-query .schema-tables .schema-table .color-3 md-checkbox.md-checked .md-ink-ripple md-icon {
+      background-color: #F9B450; }
+    .schema .schema-tables .schema-table .color-4 .schema-underline, .schema-query .schema-tables .schema-table .color-4 .schema-underline {
+      text-decoration-color: #74BC62; }
+    .schema .schema-tables .schema-table .color-4 h3, .schema .schema-tables .schema-table .color-4 md-icon, .schema .schema-tables .schema-table .color-4 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-4 h3, .schema-query .schema-tables .schema-table .color-4 md-icon, .schema-query .schema-tables .schema-table .color-4 md-checkbox.md-checked .md-ink-ripple {
+      color: #74BC62; }
+    .schema .schema-tables .schema-table .color-4 .referred-attribute, .schema .schema-tables .schema-table .color-4 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-4 .referred-attribute, .schema-query .schema-tables .schema-table .color-4 md-checkbox.md-checked .md-ink-ripple md-icon {
+      background-color: #74BC62; }
+    .schema .schema-tables .schema-table .color-5 .schema-underline, .schema-query .schema-tables .schema-table .color-5 .schema-underline {
+      text-decoration-color: #F9835A; }
+    .schema .schema-tables .schema-table .color-5 h3, .schema .schema-tables .schema-table .color-5 md-icon, .schema .schema-tables .schema-table .color-5 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-5 h3, .schema-query .schema-tables .schema-table .color-5 md-icon, .schema-query .schema-tables .schema-table .color-5 md-checkbox.md-checked .md-ink-ripple {
+      color: #F9835A; }
+    .schema .schema-tables .schema-table .color-5 .referred-attribute, .schema .schema-tables .schema-table .color-5 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-5 .referred-attribute, .schema-query .schema-tables .schema-table .color-5 md-checkbox.md-checked .md-ink-ripple md-icon {
+      background-color: #F9835A; }
+    .schema .schema-tables .schema-table .color-6 .schema-underline, .schema-query .schema-tables .schema-table .color-6 .schema-underline {
+      text-decoration-color: #CC88FF; }
+    .schema .schema-tables .schema-table .color-6 h3, .schema .schema-tables .schema-table .color-6 md-icon, .schema .schema-tables .schema-table .color-6 md-checkbox.md-checked .md-ink-ripple, .schema-query .schema-tables .schema-table .color-6 h3, .schema-query .schema-tables .schema-table .color-6 md-icon, .schema-query .schema-tables .schema-table .color-6 md-checkbox.md-checked .md-ink-ripple {
+      color: #CC88FF; }
+    .schema .schema-tables .schema-table .color-6 .referred-attribute, .schema .schema-tables .schema-table .color-6 md-checkbox.md-checked .md-ink-ripple md-icon, .schema-query .schema-tables .schema-table .color-6 .referred-attribute, .schema-query .schema-tables .schema-table .color-6 md-checkbox.md-checked .md-ink-ripple md-icon {
+      background-color: #CC88FF; }
+.schema h3, .schema-query h3 {
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.schema-select {
+  color: rgba(0, 0, 0, 0.4);
+  background-color: #F2F4F5;
+  border-bottom: solid 1px #DFE7ED;
+  overflow: auto;
+  text-align: center; }
+  .schema-select md-select {
+    background-color: #F2F4F5;
+    margin: 0;
+    padding: 10px;
+    max-height: 60px; }
+    .schema-select md-select.md-default-theme:not([disabled]):focus .md-select-value, .schema-select md-select:not([disabled]):focus .md-select-value {
+      color: #26ACF5; }
+
+.console {
+  height: 140px;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s; }
+  .console.hidden {
+    height: 40px; }
+  .console .console-label {
+    background-color: #1D2126;
+    color: #FFFFFF;
+    height: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer; }
+    .console .console-label md-icon {
+      color: #FFFFFF;
+      margin: 0;
+      position: relative;
+      bottom: 1px;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: transform 0.5s; }
+      .console .console-label md-icon.hidden {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg); }
+  .console .query-history {
+    background-color: #333639;
+    color: #FFFFFF;
+    width: 100%;
+    height: 66px;
+    max-height: 66px;
+    overflow-y: scroll;
+    padding: 2px;
+    display: flex;
+    flex-direction: column-reverse;
+    cursor: text; }
+    .console .query-history span {
+      padding: 2px 0; }
+  .console md-input-container.console-text {
+    width: 100%;
+    height: 30px;
+    -webkit-transition: height 0.1s;
+    transition: height 0.1s;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #333639;
+    border: none; }
+    .console md-input-container.console-text.hidden {
+      height: 0;
+      -webkit-transition: height 0.9s;
+      transition: height 0.9s; }
+    .console md-input-container.console-text input {
+      max-height: 100%;
+      color: #FFFFFF; }
+      .console md-input-container.console-text input.md-input {
+        overflow: auto;
+        border: none; }
+    .console md-input-container.console-text:not(.md-input-invalid).md-input-focused .md-input {
+      border: none; }
+    .console md-input-container.console-text .md-errors-spacer {
+      display: none; }
+
+.datatable {
+  background-color: #F2F4F5;
+  color: #808080;
+  height: 100%;
+  overflow: auto;
+  border-left: solid 1px #DFE7ED; }
+  .datatable .datatable-title h3 {
+    font-size: 20px;
+    font-weight: normal;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    width: 250px;
+    text-align: center; }
+  .datatable .datatable-content {
+    padding: 15px;
+    margin-top: 20px; }
+    .datatable .datatable-content .datatable-messages, .datatable .datatable-content .datatable-stats {
+      text-align: center;
+      margin-bottom: 20px; }
+      .datatable .datatable-content .datatable-messages .error, .datatable .datatable-content .datatable-stats .error {
+        color: #F44336; }
+      .datatable .datatable-content .datatable-messages .number, .datatable .datatable-content .datatable-stats .number {
+        color: #26ACF5;
+        font-weight: 500; }
+        .datatable .datatable-content .datatable-messages .number.first, .datatable .datatable-content .datatable-stats .number.first {
+          margin-right: 20px; }
+    .datatable .datatable-content table {
+      margin: auto; }
+      .datatable .datatable-content table .table-header {
+        color: #26ACF5; }
+      .datatable .datatable-content table td, .datatable .datatable-content table th {
+        padding: 8px; }
+    .datatable .datatable-content .pagination {
+      padding-top: 30px;
+      text-align: center; }
+      .datatable .datatable-content .pagination .items {
+        width: 115px;
+        margin-right: 50px; }
+      .datatable .datatable-content .pagination md-icon {
+        color: #26ACF5;
+        cursor: pointer; }
+        .datatable .datatable-content .pagination md-icon.disabled {
+          color: #808080;
+          cursor: default; }
+
+/*# sourceMappingURL=sqlook.css.map */

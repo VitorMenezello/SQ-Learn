@@ -16,42 +16,40 @@
 @endsection
 
 @section('stylesheets')
-    <link rel="stylesheet" href="{{ url('/css/console.css') }}">
-    <link rel="stylesheet" href="{{ url('/css/schema.css') }}">
-    <link rel="stylesheet" href="{{ url('/css/dialogs.css') }}">
+    <link rel="stylesheet" href="{{ url('/css/sqlook.css') }}">
 @endsection
 
 @section('body')
 
     <div ng-controller="SQLookController" id="sqlook" class="full-height">
 
-        <md-content class="content-container" layout="column">
+        <md-content class="content-container" layout="row">
 
-            <div flex="80" layout="row">
+            <div flex="66" layout="column" class="full-height">
 
-                <div id="schema-select" class="schema-select" flex="70" layout="column">
-                    @component('components.schema-select')
+                @component('components.schema-select')
+                @endcomponent
+
+                <div flex>
+
+                    @component('components.schema-query')
                     @endcomponent
 
-                    <div flex>
-                        @component('components.schema-query')
-                        @endcomponent
-                    </div>
-                </div>
-
-                <div flex="30">
-                    @component('components.datatable')
-                    @endcomponent
                 </div>
 
             </div>
 
-            <div flex="20">
-                @component('components.run-query')
+            <div flex="33" class="full-height">
+
+                @component('components.datatable')
                 @endcomponent
+
             </div>
 
         </md-content>
+
+        @component('components.run-query')
+        @endcomponent
 
     </div>
 
