@@ -1,17 +1,17 @@
 @extends('base')
 
-@section('title', 'Praticando SQL')
+@section('title', 'SQLook')
 
 @section('scripts')
-    <script src="{{ url('/angularjs/controllers/sqlook.js) }}"></script>
+    <script src="{{ url('/angularjs/controllers/sqlook.js') }}"></script>
     <script>
         let closeIconUrl = '{{ url('/icons/close.svg') }}';
         let plusCircleIconUrl = '{{ url('/icons/plus-circle.svg') }}';
         let filtersDialogTemplate = '{{ url('/dialogs/filters.html') }}';
         let labelsDialogTemplate = '{{ url('/dialogs/labels.html') }}';
         let functionsDialogTemplate = '{{ url('/dialogs/functions.html') }}';
-        let joinsDialogTemplate = '{{ url('/dialogs/joins.html') }}'
-        let schemas = <?php echo json_encode($schemas); ?>;
+        let joinsDialogTemplate = '{{ url('/dialogs/joins.html') }}';
+        let schemas = @json($schemas);
     </script>
 @endsection
 
