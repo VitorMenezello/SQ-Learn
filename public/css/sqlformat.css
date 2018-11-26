@@ -24,30 +24,33 @@
   left: 5px; }
 /* line 32, ../../sass/format.scss */
 .format-container .format .format-fields .format-input md-input-container textarea {
+  min-height: 20px;
+  max-height: 200px;
+  overflow: auto;
+  color: #505050;
   background-color: #FFFFFF;
   border: 1px solid #DFE7ED;
-  border-radius: 2px;
-  color: #505050; }
-/* line 39, ../../sass/format.scss */
+  border-radius: 2px; }
+/* line 42, ../../sass/format.scss */
 .format-container .format .format-fields .format-input md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   border: 1px solid #26ACF5;
   border-radius: 2px; }
-/* line 44, ../../sass/format.scss */
+/* line 47, ../../sass/format.scss */
 .format-container .format .format-fields .format-input md-input-container .md-errors-spacer {
   display: none; }
-/* line 50, ../../sass/format.scss */
+/* line 53, ../../sass/format.scss */
 .format-container .format .format-fields .format-buttons {
   margin: 0 10px;
   border-bottom: 1px solid #DFE7ED;
   padding-bottom: 15px;
   text-align: right; }
-/* line 56, ../../sass/format.scss */
+/* line 59, ../../sass/format.scss */
 .format-container .format .format-fields .format-buttons .main-button {
   background-color: #26ACF5;
   color: #FFFFFF;
   padding: 0 20px;
   border-radius: 20px; }
-/* line 64, ../../sass/format.scss */
+/* line 67, ../../sass/format.scss */
 .format-container .format .format-fields .format-result {
   margin: 20px 10px;
   padding: 5px;
@@ -57,7 +60,8 @@
   border-radius: 2px;
   min-height: 200px;
   height: 200px;
-  white-space: pre; }
+  white-space: pre;
+  overflow: auto; }
 
 /* line 3, ../../sass/format-options.scss */
 .format-options {

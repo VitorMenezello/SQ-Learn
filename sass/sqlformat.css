@@ -17,10 +17,13 @@
       .format-container .format .format-fields .format-input md-input-container label:not(.md-no-float):not(.md-container-ignore) {
         left: 5px; }
       .format-container .format .format-fields .format-input md-input-container textarea {
+        min-height: 28px;
+        max-height: 280px;
+        overflow: auto;
+        color: #505050;
         background-color: #FFFFFF;
         border: 1px solid #DFE7ED;
-        border-radius: 2px;
-        color: #505050; }
+        border-radius: 2px; }
       .format-container .format .format-fields .format-input md-input-container:not(.md-input-invalid).md-input-focused .md-input {
         border: 1px solid #26ACF5;
         border-radius: 2px; }
@@ -45,7 +48,8 @@
       border-radius: 2px;
       min-height: 200px;
       height: 200px;
-      white-space: pre; }
+      white-space: pre;
+      overflow: auto; }
 
 .format-options {
   background-color: #F2F4F5;
