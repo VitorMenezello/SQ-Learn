@@ -18,6 +18,10 @@
             SQLook
         </a>
 
+        <a class="navitem" href="sql-format" ng-class="{'current-page': currentPage === 'sql-format'}">
+            SQL Format
+        </a>
+
     </div>
 
     <div flex="20" class="logo" layout="column" layout-align="center center">

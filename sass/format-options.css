@@ -1,0 +1,16 @@
+.format-options {
+  background-color: #F2F4F5;
+  color: #808080;
+  height: 100%;
+  overflow: auto;
+  border-left: solid 1px #DFE7ED; }
+  .format-options .format-options-title h3 {
+    font-size: 20px;
+    font-weight: normal;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    width: 250px;
+    text-align: center; }
+
+/*# sourceMappingURL=format-options.css.map */

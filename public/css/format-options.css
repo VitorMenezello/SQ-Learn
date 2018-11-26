@@ -1,0 +1,44 @@
+/* line 3, ../../sass/format-options.scss */
+.format-options {
+  background-color: #F2F4F5;
+  color: #808080;
+  height: 100%;
+  overflow: auto;
+  border-left: solid 1px #DFE7ED; }
+/* line 10, ../../sass/format-options.scss */
+.format-options .format-options-title h3 {
+  font-size: 20px;
+  font-weight: normal;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+  width: 250px;
+  text-align: center; }
+/* line 20, ../../sass/format-options.scss */
+.format-options .format-options-content {
+  padding: 40px; }
+/* line 23, ../../sass/format-options.scss */
+.format-options .format-options-content md-select {
+  background-color: #FFFFFF;
+  border: 1px solid #DFE7ED;
+  border-radius: 2px;
+  padding: 1px 3px 4px;
+  margin-top: 5px; }
+/* line 31, ../../sass/format-options.scss */
+.format-options .format-options-content .md-input {
+  color: #505050;
+  background-color: #FFFFFF;
+  border: 1px solid #DFE7ED;
+  border-radius: 2px;
+  padding: 4px 5px;
+  margin-top: 5px;
+  height: 37px; }
+/* line 41, ../../sass/format-options.scss */
+.format-options .format-options-content md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+  border-color: #26ACF5; }
+/* line 45, ../../sass/format-options.scss */
+.format-options .format-options-content md-checkbox.md-checked .md-ink-ripple {
+  color: #26ACF5; }
+/* line 49, ../../sass/format-options.scss */
+.format-options .format-options-content md-checkbox.md-checked .md-icon {
+  background-color: #26ACF5; }

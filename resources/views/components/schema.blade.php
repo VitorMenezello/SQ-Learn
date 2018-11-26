@@ -1,4 +1,4 @@
-<div id="schema" class="schema-background">
+<div id="schema">
 
     <div class="schema" layout="column">
 

@@ -1,0 +1,60 @@
+/* line 3, ../../sass/format.scss */
+.format-container {
+  padding-top: 70px;
+  padding-bottom: 0;
+  height: 100%; }
+/* line 9, ../../sass/format.scss */
+.format-container .format .format-title {
+  color: #808080;
+  padding: 15px;
+  border-bottom: solid 1px #DFE7ED; }
+/* line 14, ../../sass/format.scss */
+.format-container .format .format-title h3 {
+  font-weight: normal;
+  font-size: 20px;
+  margin: 10px; }
+/* line 21, ../../sass/format.scss */
+.format-container .format .format-fields {
+  padding: 20px; }
+/* line 25, ../../sass/format.scss */
+.format-container .format .format-fields .format-input md-input-container {
+  margin: 10px; }
+/* line 28, ../../sass/format.scss */
+.format-container .format .format-fields .format-input md-input-container label:not(.md-no-float):not(.md-container-ignore) {
+  left: 5px; }
+/* line 32, ../../sass/format.scss */
+.format-container .format .format-fields .format-input md-input-container textarea {
+  background-color: #FFFFFF;
+  border: 1px solid #DFE7ED;
+  border-radius: 2px;
+  color: #505050; }
+/* line 39, ../../sass/format.scss */
+.format-container .format .format-fields .format-input md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+  border: 1px solid #26ACF5;
+  border-radius: 2px; }
+/* line 44, ../../sass/format.scss */
+.format-container .format .format-fields .format-input md-input-container .md-errors-spacer {
+  display: none; }
+/* line 50, ../../sass/format.scss */
+.format-container .format .format-fields .format-buttons {
+  margin: 0 10px;
+  border-bottom: 1px solid #DFE7ED;
+  padding-bottom: 15px;
+  text-align: right; }
+/* line 56, ../../sass/format.scss */
+.format-container .format .format-fields .format-buttons .main-button {
+  background-color: #26ACF5;
+  color: #FFFFFF;
+  padding: 0 20px;
+  border-radius: 20px; }
+/* line 64, ../../sass/format.scss */
+.format-container .format .format-fields .format-result {
+  margin: 20px 10px;
+  padding: 5px;
+  color: #505050;
+  background-color: #F2F4F5;
+  border: 1px solid #DFE7ED;
+  border-radius: 2px;
+  min-height: 200px;
+  height: 200px;
+  white-space: pre; }

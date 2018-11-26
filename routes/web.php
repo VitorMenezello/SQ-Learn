@@ -27,7 +27,7 @@ $router->get('/praticando', 'SchemaController@praticandoView');
 $router->get('/sqlook', 'SchemaController@sqlookView');
 
 $router->get('/sql-format', function (){
-    return view('sql-format');
+    return view('sqlformat');
 });
 
 $router->post('/post-query', 'SchemaController@postQueryAjax');

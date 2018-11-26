@@ -51,23 +51,24 @@
   height: 100px;
   max-height: 100px;
   border: 1px solid #26ACF5;
-  border-radius: 2px; }
-/* line 69, ../../sass/lesson.scss */
+  border-radius: 2px;
+  color: #505050; }
+/* line 70, ../../sass/lesson.scss */
 .lesson .lesson-content .lesson-form md-input-container.question:not(.md-input-invalid).md-input-focused .md-input {
   border: 1px solid #26ACF5;
   border-radius: 2px; }
-/* line 75, ../../sass/lesson.scss */
+/* line 76, ../../sass/lesson.scss */
 .lesson .lesson-content .lesson-form .lesson-footer {
   text-align: right; }
-/* line 78, ../../sass/lesson.scss */
+/* line 79, ../../sass/lesson.scss */
 .lesson .lesson-content .lesson-form .lesson-footer .md-button {
   background-color: #26ACF5;
   color: #FFFFFF;
   margin: 0 10px; }
-/* line 84, ../../sass/lesson.scss */
+/* line 85, ../../sass/lesson.scss */
 .lesson .lesson-content .lesson-form .lesson-footer span {
   margin: 0 10px; }
-/* line 88, ../../sass/lesson.scss */
+/* line 89, ../../sass/lesson.scss */
 .lesson .lesson-content .lesson-form .lesson-footer .md-icon {
   bottom: 2px;
   position: relative; }

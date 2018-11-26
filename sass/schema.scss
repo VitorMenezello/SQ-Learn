@@ -1,11 +1,6 @@
 @import "color";
 
 .schema, .schema-query  {
-  .schema-background {
-    background-color: $secondary-color;
-    height: 100%;
-  }
-
   .schema-title {
     color: $sidenav-color;
     padding: 15px;

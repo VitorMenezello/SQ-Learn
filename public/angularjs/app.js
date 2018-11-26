@@ -1,9 +1,10 @@
 let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSanitize'])
 
 // Avoiding conflicts with blade
-.config(function ($interpolateProvider)
+.config(function ($interpolateProvider, $httpProvider)
 {
     $interpolateProvider.startSymbol('@{').endSymbol('}@');
+    //$httpProvider.defaults.withCredentials = true;
 })
 
 .controller('MenuController', function($scope, $window)

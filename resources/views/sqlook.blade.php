@@ -3,7 +3,7 @@
 @section('title', 'Praticando SQL')
 
 @section('scripts')
-    <script src="{{ url('/angularjs/controllers/sq-look.js') }}"></script>
+    <script src="{{ url('/angularjs/controllers/sqlook.js) }}"></script>
     <script>
         let closeIconUrl = '{{ url('/icons/close.svg') }}';
         let plusCircleIconUrl = '{{ url('/icons/plus-circle.svg') }}';

@@ -1,6 +1,3 @@
-.schema .schema-background, .schema-query .schema-background {
-  background-color: #FFFFFF;
-  height: 100%; }
 .schema .schema-title, .schema-query .schema-title {
   color: #808080;
   padding: 15px;
