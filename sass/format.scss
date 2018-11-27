@@ -39,7 +39,7 @@
             border-radius: 2px;
           }
 
-          &:not(.md-input-invalid).md-input-focused .md-input{
+          &:not(.md-input-invalid).md-input-focused .md-input {
             border: 1px solid $primary-color;
             border-radius: 2px;
           }
@@ -61,6 +61,11 @@
           color: $secondary-color;
           padding: 0 20px;
           border-radius: 20px;
+
+          &.disabled {
+            background-color: $sidenav-bg-color;
+            color: $sidenav-color;
+          }
         }
       }
 

@@ -50,7 +50,11 @@
   color: #FFFFFF;
   padding: 0 20px;
   border-radius: 20px; }
-/* line 67, ../../sass/format.scss */
+/* line 65, ../../sass/format.scss */
+.format-container .format .format-fields .format-buttons .main-button.disabled {
+  background-color: #F2F4F5;
+  color: #808080; }
+/* line 72, ../../sass/format.scss */
 .format-container .format .format-fields .format-result {
   margin: 20px 10px;
   padding: 5px;

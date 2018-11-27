@@ -17,8 +17,8 @@
       .format-container .format .format-fields .format-input md-input-container label:not(.md-no-float):not(.md-container-ignore) {
         left: 5px; }
       .format-container .format .format-fields .format-input md-input-container textarea {
-        min-height: 28px;
-        max-height: 280px;
+        min-height: 20px;
+        max-height: 200px;
         overflow: auto;
         color: #505050;
         background-color: #FFFFFF;
@@ -39,6 +39,9 @@
         color: #FFFFFF;
         padding: 0 20px;
         border-radius: 20px; }
+        .format-container .format .format-fields .format-buttons .main-button.disabled {
+          background-color: #F2F4F5;
+          color: #808080; }
     .format-container .format .format-fields .format-result {
       margin: 20px 10px;
       padding: 5px;

@@ -26,6 +26,7 @@
 
             <div class="format-buttons">
                 <md-button class="md-raised main-button"
+                           ng-class="{'disabled': loading}"
                            ng-click="formatQuery()"
                            ng-disabled="loading">Formatar</md-button>
             </div>

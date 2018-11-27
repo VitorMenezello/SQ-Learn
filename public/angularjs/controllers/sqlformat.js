@@ -37,7 +37,8 @@ app.controller('SQLFormatController', function ($scope, $http)
         let data = {
             sql: $scope.query,
             reindent: 1,
-            indent_width: $scope.indentation
+            indent_width: $scope.indentation,
+            strip_comments: $scope.removeComments
         };
         if ($scope.keyword) {
             data.keyword_case = $scope.keyword;
@@ -70,18 +71,4 @@ app.controller('SQLFormatController', function ($scope, $http)
                 });
 
     };
-
-    $scope.test_one = function (config) {
-
-    };
-
-    $scope.test_two = function (config) {
-        $http({
-            url: 'http://sqlformat.org/api/v1/format',
-            method: 'POST',
-            data: config
-        }).success(function (data, status) {
-            console.log(status, data);
-        });
-    }
 });

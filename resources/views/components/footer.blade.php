@@ -18,7 +18,7 @@
     </div>
 
     <div flex="20" class="text" layout="row" layout-align="center center">
-        <a href="https://github.com/VitorMenezello/SQ-Learn">
+        <a href="https://github.com/VitorMenezello/SQ-Learn" target="_blank">
             <md-icon md-svg-src="{{ url('/icons/github-box.svg') }}"></md-icon>
             @vitormenezello
         </a>
