@@ -140,8 +140,13 @@ let app = angular.module('App', ['ngMaterial', 'ngMessages', 'ngMdIcons', 'ngSan
                             $scope.error = response.data.error;
                         }
                         else {
+                            console.log(response);
                             $scope.error = 'Erro desconhecido.';
                         }
+                    },
+                    function (error) {
+                        $scope.loading = false;
+                        console.log(error);
                     });
         }
         else {

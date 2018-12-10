@@ -136,7 +136,6 @@ class SchemaController extends Controller
      */
     public function executeQuery($query, $schema, $limit, $offset)
     {
-
         try {
             $result = DB::connection($schema)->select(DB::raw($query));
             $count = count($result);
@@ -147,6 +146,7 @@ class SchemaController extends Controller
                 'error' => $e->getMessage()
             ];
         }
+
         return [
             'success' => true,
             'result' => $result,
