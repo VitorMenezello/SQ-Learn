@@ -137,9 +137,14 @@ class SchemaController extends Controller
     public function executeQuery($query, $schema, $limit, $offset)
     {
         try {
+            // Get query result with limit and offset
+            // $result = DB::connection($schema)->select(DB::raw($query . " LIMIT " . $limit . " OFFSET " . $offset));
             $result = DB::connection($schema)->select(DB::raw($query));
-            $count = count($result);
             $result = array_slice($result, $offset, $limit);
+
+            // Get row count from query
+            $countResult = DB::connection($schema)->select(DB::raw("SELECT COUNT(*) FROM (" . $query . ") Q"));
+            $count = array_pop($countResult)->count;
         } catch (Exception $e) {
             return [
                 'success' => false,
